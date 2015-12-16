@@ -15,8 +15,8 @@ public var SurveyTask: ORKOrderedTask {
     
     // INSTRUCTION STEP
     let instructionStep = ORKInstructionStep(identifier: Identifier.IntroStep.rawValue)
-    instructionStep.title = "SURVEYINSTRUCTIONSTEP_TITLE".localized
-    instructionStep.text = "SURVEYINSTRUCTIONSTEP_TEXT".localized
+    instructionStep.title = "SURVEY_INTR_TITLE".localized
+    instructionStep.text = "SURVEY_INTR_TEXT".localized
     steps += [instructionStep]
 
     return ORKOrderedTask(identifier: Identifier.SurveyTask.rawValue, steps: steps)
