@@ -19,9 +19,6 @@ public var SurveyTask: ORKOrderedTask {
     instructionStep.text = "SURVEYINSTRUCTIONSTEP_TEXT".localized
     steps += [instructionStep]
 
-    
-    
-
     return ORKOrderedTask(identifier: Identifier.SurveyTask.rawValue, steps: steps)
 
 }
