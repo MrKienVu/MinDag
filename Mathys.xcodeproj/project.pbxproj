@@ -25,6 +25,7 @@
 		5F7F07351C202578007B0B93 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7F07411C202672007B0B93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07401C202672007B0B93 /* Constants.swift */; };
 		5FDA123A1C2157E200BF0363 /* SlidersExampleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12391C2157E200BF0363 /* SlidersExampleTask.swift */; };
+		5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		5F7F07401C202672007B0B93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5FDA12391C2157E200BF0363 /* SlidersExampleTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersExampleTask.swift; sourceTree = "<group>"; };
+		5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepSurveyTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				5F6959CC1C205B80002568CF /* SurveyTask.swift */,
 				5FDA12391C2157E200BF0363 /* SlidersExampleTask.swift */,
+				5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				5FDA123A1C2157E200BF0363 /* SlidersExampleTask.swift in Sources */,
 				5F6959CD1C205B80002568CF /* SurveyTask.swift in Sources */,
 				5F4542E31C20271200A408A1 /* StringExtensions.swift in Sources */,
+				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				5F4542E11C20270500A408A1 /* Identifier.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
