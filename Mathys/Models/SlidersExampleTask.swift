@@ -60,7 +60,7 @@ public var SlidersExampleTask: ORKOrderedTask {
     
     steps += [questionStep4]
     
-    // The fifth step is a scale control that allows text choices.
+    /* The fifth step is a scale control that allows text choices.
     let textChoices : [ORKTextChoice] = [ORKTextChoice(text: "Poor", value: 1), ORKTextChoice(text: "Fair", value: 2), ORKTextChoice(text: "Good", value: 3), ORKTextChoice(text: "Above Average", value: 10), ORKTextChoice(text: "Excellent", value: 5)]
     
     let step5AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: false)
@@ -78,7 +78,7 @@ public var SlidersExampleTask: ORKOrderedTask {
     
     questionStep6.text = exampleDetailText
     
-    steps += [questionStep6]
+    steps += [questionStep6]*/
     
-    return ORKOrderedTask(identifier: Identifier.SurveyTask.rawValue, steps: steps)
+    return ORKOrderedTask(identifier: Identifier.SlidersExampleTask.rawValue, steps: steps)
 }

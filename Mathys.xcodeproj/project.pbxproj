@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32CEB6BC1C20C39F0021A363 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */; };
+		32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */; };
 		5F4542E11C20270500A408A1 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4542E01C20270500A408A1 /* Identifier.swift */; };
 		5F4542E31C20271200A408A1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4542E21C20271200A408A1 /* StringExtensions.swift */; };
 		5F4542E71C20272900A408A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E41C20272900A408A1 /* Localizable.strings */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		5F4542E01C20270500A408A1 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = ../../../tusentac/Identifier.swift; sourceTree = "<group>"; };
 		5F4542E21C20271200A408A1 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = ../../../tusentac/StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E51C20272900A408A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../../tusentac/en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5F6959CC1C205B80002568CF /* SurveyTask.swift */,
 				5FDA12391C2157E200BF0363 /* SlidersExampleTask.swift */,
 				5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */,
+				32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -319,7 +322,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "ingeborg ødegård oftedal";
+				ORGANIZATIONNAME = "Universitetet i Oslo";
 				TargetAttributes = {
 					5F7F06F81C202523007B0B93 = {
 						CreatedOnToolsVersion = 7.2;
@@ -423,6 +426,7 @@
 				5F4542E11C20270500A408A1 /* Identifier.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
+				32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
