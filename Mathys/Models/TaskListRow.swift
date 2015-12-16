@@ -46,6 +46,7 @@ import ResearchKit
  */
 enum TaskListRow: Int, CustomStringConvertible {
     case Survey
+    case SlidersExample
     
     
     /// Returns an array of all the task list row enum cases.
@@ -71,6 +72,8 @@ enum TaskListRow: Int, CustomStringConvertible {
         switch self {
         case .Survey:
             return "SURVEYTASK_DESCRIPTION".localized
+        case .SlidersExample:
+            return "Sliders Example"
         }
     }
     
@@ -81,6 +84,8 @@ enum TaskListRow: Int, CustomStringConvertible {
         switch self {
         case .Survey:
             return SurveyTask
+        case .SlidersExample:
+            return SlidersExampleTask
         }
     }
 }
