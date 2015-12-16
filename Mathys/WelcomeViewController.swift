@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  Mathys
 //
 //  Created by ingeborg ødegård oftedal on 15/12/15.
@@ -8,8 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
+    @IBAction func joinTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        let taskList = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TaskList")
+        self.presentViewController(taskList, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
