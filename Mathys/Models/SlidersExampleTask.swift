@@ -11,13 +11,13 @@ import ResearchKit
 
 public var SlidersExampleTask: ORKOrderedTask {
     
-    let exampleQuestionText = NSLocalizedString("Hvor sensitiv er du for farge?.", comment: "")
+    let exampleQuestionText = "SLIDERS_QUESTION_TEXT".localized
     
-    let exampleHighValueText = NSLocalizedString("Veldig sensitiv", comment: "")
+    let exampleHighValueText = "SLIDERS_HIGHVALUE_TEXT".localized
     
-    let exampleLowValueText = NSLocalizedString("Lite sensitiv", comment: "")
+    let exampleLowValueText = "SLIDERS_LOWVALUE_TEXT".localized
     
-    let exampleDetailText = NSLocalizedString("Indiker hva du vanligvis føler.", comment: "")
+    let exampleDetailText = "SLIDERS_DETAIL_TEXT".localized
 
     
     var steps = [ORKStep]()

@@ -72,9 +72,9 @@ enum TaskListRow: Int, CustomStringConvertible {
     var description: String {
         switch self {
         case .Survey:
-            return "SURVEYTASK_DESCRIPTION".localized
+            return "SURVEY_DESCRIPTION".localized
         case .SlidersExample:
-            return "Sliders Example"
+            return "SLIDERS_DESCRIPTION".localized
         case .SleepSurvey:
             return "Sleep survey"
         }
