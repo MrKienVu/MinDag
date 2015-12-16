@@ -13,15 +13,33 @@ public var SleepSurveyTask: ORKOrderedTask {
 
     var steps = [ORKStep]()
     
-    var i = 1
-    var pickerValue = 1
+    let text1 = NSLocalizedString("1", comment: "")
+    let text2 = NSLocalizedString("2", comment: "")
+    let text3 = NSLocalizedString("3", comment: "")
+    let text4 = NSLocalizedString("4", comment: "")
+    let text5 = NSLocalizedString("5", comment: "")
+    let text6 = NSLocalizedString(">14", comment: "")
+
     
-    if(i < 14) {
-        pickerValue = i
-        i++
-        ORKTextChoice(text: "verdi", value: pickerValue)
-    }
-        ORKTextChoice(text: "verdi", value: ">14")
+    let pickerValueChoice = [
+        ORKTextChoice (text: text1, value: "1"),
+        ORKTextChoice (text: text2, value: "2"),
+        ORKTextChoice (text: text3, value: "3"),
+        ORKTextChoice (text: text4, value: "4"),
+        ORKTextChoice (text: text5, value: "5"),
+        ORKTextChoice (text: text6, value: "14")
+        ]
     
-    return ORKOrderedTask(identifier: Identifier.SurveyTask.rawValue, steps: steps)
+
+    let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
+    
+    let questionStep = ORKQuestionStep(identifier: String(Identifier.SleepSurveyStep), title: "hvor lenge sov du",
+        answer: answerFormat)
+    
+    questionStep.text = "yolo"
+    
+    steps+=[questionStep]
+
+    
+    return ORKOrderedTask(identifier: Identifier.SleepSurveyTask.rawValue, steps: steps)
 }
