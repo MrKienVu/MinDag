@@ -10,6 +10,19 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    
+    @IBOutlet weak var morningTimePicker: UIDatePicker!
+    @IBOutlet weak var bedTimePicker: UIDatePicker!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueShowTaskList" {
+            let morningTime = morningTimePicker.date
+            let bedTime = bedTimePicker.date
+            NSUserDefaults.standardUserDefaults().setObject(morningTime, forKey: UserDefaultKey.morningTime)
+            NSUserDefaults.standardUserDefaults().setObject(bedTime, forKey: UserDefaultKey.bedTime)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
