@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */; };
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32CEB6BC1C20C39F0021A363 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */; };
 		32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NettskjemaHandler.swift; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				5F7F07031C202523007B0B93 /* Assets.xcassets */,
 				5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */,
 				5F7F07081C202523007B0B93 /* Info.plist */,
+				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
 			);
 			path = Mathys;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5F4542E11C20270500A408A1 /* Identifier.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
+				329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */,
 				32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

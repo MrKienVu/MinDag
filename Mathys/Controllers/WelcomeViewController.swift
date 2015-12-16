@@ -10,6 +10,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var morningTimePicker: UIDatePicker!
     @IBOutlet weak var bedTimePicker: UIDatePicker!
@@ -18,8 +19,8 @@ class WelcomeViewController: UIViewController {
         if segue.identifier == "segueShowTaskList" {
             let morningTime = morningTimePicker.date
             let bedTime = bedTimePicker.date
-            NSUserDefaults.standardUserDefaults().setObject(morningTime, forKey: UserDefaultKey.morningTime)
-            NSUserDefaults.standardUserDefaults().setObject(bedTime, forKey: UserDefaultKey.bedTime)
+            defaults.setObject(morningTime, forKey: UserDefaultKey.morningTime)
+            defaults.setObject(bedTime, forKey: UserDefaultKey.bedTime)
         }
     }
     
