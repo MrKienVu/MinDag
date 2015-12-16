@@ -9,12 +9,6 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
-    @IBAction func joinTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        let taskList = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TaskList")
-        self.presentViewController(taskList, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +19,6 @@ class WelcomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
