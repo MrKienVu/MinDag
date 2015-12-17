@@ -1,0 +1,27 @@
+/*
+ Localizable.strings
+ Mathys
+ 
+ Created by ingeborg ødegård oftedal on 15/12/15.
+ Copyright © 2015 Paul Philip Mitchell. All rights reserved.
+ */
+
+/**************************
+ *      SurveyTask        *
+ **************************/
+
+"SURVEY_DESCRIPTION" = "Survey";
+"SURVEY_INTR_TITLE" = "Example survey";
+"SURVEY_INTR_TEXT" = "This is an example to demonstrate the survey features of ResearchKit.";
+
+
+/**************************
+ *   SlidersExampleTask   *
+ **************************/
+
+"SLIDERS_DESCRIPTION" = "Sliders";
+"SLIDERS_QUESTION_TEXT" = "How awesome are sliders?";
+"SLIDERS_HIGHVALUE_TEXT" = "Very";
+"SLIDERS_LOWVALUE_TEXT" = "Not at all";
+"SLIDERS_DETAIL_TEXT" = "Detail";
+
