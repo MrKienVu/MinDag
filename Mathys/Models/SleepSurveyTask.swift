@@ -24,7 +24,7 @@ public var SleepSurveyTask: ORKOrderedTask {
         }
         
         pickerValueChoice.append(ORKTextChoice (text: textValue, value: i))
-    }
+    }   
     
     let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
     

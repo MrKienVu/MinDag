@@ -108,10 +108,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let currentStepViewController = stepViewController.step?.identifier
         if currentStepViewController == Identifier.MoodQuestionStep.rawValue {
             // Set ORKScaleValueLabel to hidden
-            let scaleValueLabel = stepViewController.view.subviews[0].subviews[0].subviews[0].subviews[1].subviews[0].subviews[0].subviews[1].subviews[5] as! UILabel;
+            let scaleValueLabel = stepViewController.view.subviews[0].subviews[0].subviews[1].subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[1].subviews[0].subviews[0].subviews[0].subviews[0].subviews[5].subviews[0].subviews[1].subviews[1] as! UILabel;
+            print(scaleValueLabel.text);
             scaleValueLabel.hidden = true
         }
-    }*/
+    } */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
