@@ -10,75 +10,57 @@ import Foundation
 import ResearchKit
 
 public var SlidersExampleTask: ORKOrderedTask {
-    
-    let exampleQuestionText = "SLIDERS_QUESTION_TEXT".localized
-    
-    let exampleHighValueText = "SLIDERS_HIGHVALUE_TEXT".localized
-    
-    let exampleLowValueText = "SLIDERS_LOWVALUE_TEXT".localized
-    
-    let exampleDetailText = "SLIDERS_DETAIL_TEXT".localized
 
+    let step = ORKFormStep (identifier: String(Identifier.FormStep), title: "MAThyS (Multidimensional Assessment of Thymic States) by Henry et al.", text:"This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements." )
     
-    var steps = [ORKStep]()
+   //let exampleQuestionText = "SLIDERS_QUESTION_TEXT".localized
+    
+    let exampleQuestionText = "Hvor sensitiv til farge er du?"
+    
+    //let exampleHighValueText = "SLIDERS_HIGHVALUE_TEXT".localized
+    
+    let exampleHighValueText = "Veldig sensitiv"
+    let exampleHighValueText2 = "I am more sensitive to colours than usual"
+    
+    //let exampleLowValueText = "SLIDERS_LOWVALUE_TEXT".localized
+    
+    let exampleLowValueText = "Lite sensitiv"
+    let exampleLowValueText2 = "I am less sensitive to colours than usual"
+    
+    //let exampleDetailText = "SLIDERS_DETAIL_TEXT".localized
+    
+    let exampleDetailText = "Indiker hva du vanligvis føler"
+    let exampleDetailText2 = "For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements."
     
     let step1AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
     
+    let formItem01 = ORKFormItem(identifier: String(Identifier.DiscreteScaleQuestionStep), text: exampleQuestionText, answerFormat: step1AnswerFormat)
+    
+    let step3AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: exampleHighValueText2, minimumValueDescription: exampleLowValueText2)
+    
+    let longAns = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText2, minimumValueDescription: exampleLowValueText2)
+    
+    let formItem001 = ORKFormItem(identifier: String(Identifier.TestStep1), text: "", answerFormat: longAns)
+    
+    let formItem02 = ORKFormItem(identifier: String(Identifier.DiscreteVerticalScaleQuestionStep), text: "", answerFormat: step3AnswerFormat)
+    
+    let long2s = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
+    
+    let formItem002 = ORKFormItem(identifier: String(Identifier.TestStep2), text: exampleQuestionText, answerFormat: long2s)
+    
+    /*let moodQuestionStepAnswerFormat = ORKAnswerFormat.continuousScaleAnswerFormatWithMaximumValue(100.0, minimumValue: 0.0, defaultValue: 50.0, maximumFractionDigits: 0, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
     
     
-    let questionStep1 = ORKQuestionStep(identifier: String(Identifier.DiscreteScaleQuestionStep), title: exampleQuestionText, answer: step1AnswerFormat)
+    let moodQuestionStep = ORKFormItem(identifier: Identifier.MoodQuestionStep.rawValue, text: "", answerFormat: moodQuestionStepAnswerFormat) */
     
-    questionStep1.text = exampleDetailText
     
-    steps += [questionStep1]
+    step.formItems = [
+        formItem001,
+        formItem02,
+        formItem01,
+       // moodQuestionStep,
+        formItem002
+    ]
     
-    // The second step is a scale control that allows continuous movement with a percent formatter.
-    let step2AnswerFormat = ORKAnswerFormat.continuousScaleAnswerFormatWithMaximumValue(1.0, minimumValue: 0.0, defaultValue: 99.0, maximumFractionDigits: 0, vertical: false, maximumValueDescription: nil, minimumValueDescription: nil)
-    step2AnswerFormat.numberStyle = .Percent
-    
-    let questionStep2 = ORKQuestionStep(identifier: String(Identifier.ContinuousScaleQuestionStep), title: exampleQuestionText, answer: step2AnswerFormat)
-    
-    questionStep2.text = exampleDetailText
-    
-    steps += [questionStep2]
-    
-    // The third step is a vertical scale control with 10 discrete ticks.
-    let step3AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: nil, minimumValueDescription: nil)
-    
-    let questionStep3 = ORKQuestionStep(identifier: String(Identifier.DiscreteVerticalScaleQuestionStep), title: exampleQuestionText, answer: step3AnswerFormat)
-    
-    questionStep3.text = exampleDetailText
-    
-    steps += [questionStep3]
-    
-    // The fourth step is a vertical scale control that allows continuous movement.
-    let step4AnswerFormat = ORKAnswerFormat.continuousScaleAnswerFormatWithMaximumValue(5.0, minimumValue: 1.0, defaultValue: 99.0, maximumFractionDigits: 2, vertical: true, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
-    
-    let questionStep4 = ORKQuestionStep(identifier: String(Identifier.ContinuousVerticalScaleQuestionStep), title: exampleQuestionText, answer: step4AnswerFormat)
-    
-    questionStep4.text = exampleDetailText
-    
-    steps += [questionStep4]
-    
-    /* The fifth step is a scale control that allows text choices.
-    let textChoices : [ORKTextChoice] = [ORKTextChoice(text: "Poor", value: 1), ORKTextChoice(text: "Fair", value: 2), ORKTextChoice(text: "Good", value: 3), ORKTextChoice(text: "Above Average", value: 10), ORKTextChoice(text: "Excellent", value: 5)]
-    
-    let step5AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: false)
-    
-    let questionStep5 = ORKQuestionStep(identifier: String(Identifier.TextScaleQuestionStep), title: exampleQuestionText, answer: step5AnswerFormat)
-    
-    questionStep5.text = exampleDetailText
-    
-    steps += [questionStep5]
-    
-    // The sixth step is a vertical scale control that allows text choices.
-    let step6AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: true)
-    
-    let questionStep6 = ORKQuestionStep(identifier: String(Identifier.TextVerticalScaleQuestionStep), title: exampleQuestionText, answer: step6AnswerFormat)
-    
-    questionStep6.text = exampleDetailText
-    
-    steps += [questionStep6]*/
-    
-    return ORKOrderedTask(identifier: Identifier.SlidersExampleTask.rawValue, steps: steps)
+    return ORKOrderedTask(identifier: String(Identifier.FormTask), steps: [step])
 }
