@@ -8,7 +8,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Mathys" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Norment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -89,7 +89,7 @@
         <!--Hjem-->
         <scene sceneID="6OC-P0-Vh1">
             <objects>
-                <viewController storyboardIdentifier="TaskList" id="Fad-5L-Jt8" customClass="TaskListViewController" customModule="Mathys" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskList" id="Fad-5L-Jt8" customClass="TaskListViewController" customModule="Norment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rYW-pp-uh6"/>
                         <viewControllerLayoutGuide type="bottom" id="X6r-tg-T4k"/>
@@ -133,7 +133,7 @@
         <!--Settings View Controller-->
         <scene sceneID="rEx-YL-1PD">
             <objects>
-                <viewController id="hOe-iG-ZLZ" customClass="SettingsViewController" customModule="Mathys" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hOe-iG-ZLZ" customClass="SettingsViewController" customModule="Norment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DcZ-NB-1Tq"/>
                         <viewControllerLayoutGuide type="bottom" id="gj9-Iy-9Vr"/>
