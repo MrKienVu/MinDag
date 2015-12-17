@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let USERDEFAULTS = NSUserDefaults.standardUserDefaults()
+
 struct Color {
     static let primaryColor = UIColor(red: 0.22, green: 0.58, blue: 0.29, alpha: 1.0)
     static let secondaryColor = UIColor.lightGrayColor()
@@ -18,4 +20,6 @@ struct UserDefaultKey {
     static let morningTime = "MorningTime"
     static let bedTime = "BedTime"
     static let mathysTime = "MathysTime"
+    static let hasLaunchedBefore = "HasLaunchedBefore"
+    static let UUID = "UUID"
 }

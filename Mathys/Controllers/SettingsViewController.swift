@@ -9,29 +9,28 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var mathysTimePicker: UIDatePicker!
     @IBOutlet weak var bedTimePicker: UIDatePicker!
     @IBOutlet weak var morningTimePicker: UIDatePicker!
     
+    @IBOutlet weak var userIdLabel: UILabel!
     @IBAction func morningTimeChanged(sender: AnyObject) {
-        defaults.setObject(
+        USERDEFAULTS.setObject(
             morningTimePicker.date,
             forKey: UserDefaultKey.morningTime
         )
     }
     
     @IBAction func bedTimeChanged(sender: AnyObject) {
-        defaults.setObject(
+        USERDEFAULTS.setObject(
             bedTimePicker.date,
             forKey: UserDefaultKey.bedTime
         )
     }
     
     @IBAction func mathysTimeChanged(sender: AnyObject) {
-        defaults.setObject(
+        USERDEFAULTS.setObject(
             mathysTimePicker.date,
             forKey: UserDefaultKey.mathysTime
         )
@@ -41,14 +40,23 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         morningTimePicker.setDate(
-            defaults.objectForKey(UserDefaultKey.morningTime) as! NSDate,
+            USERDEFAULTS.objectForKey(UserDefaultKey.morningTime) as! NSDate,
             animated: true
         )
         
         bedTimePicker.setDate(
-            defaults.objectForKey(UserDefaultKey.bedTime) as! NSDate,
+            USERDEFAULTS.objectForKey(UserDefaultKey.bedTime) as! NSDate,
             animated: true
         )
+        
+        if let mathysTime = USERDEFAULTS.objectForKey(UserDefaultKey.mathysTime) {
+            mathysTimePicker.setDate(
+                mathysTime as! NSDate,
+                animated: true
+            )
+        }
+        
+        userIdLabel.text! += USERDEFAULTS.objectForKey(UserDefaultKey.UUID) as! String
 
     }
 

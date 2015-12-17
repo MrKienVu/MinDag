@@ -24,8 +24,8 @@
                                     <segue destination="bwF-AQ-UJZ" kind="show" identifier="segueShowTaskList" id="P5g-n6-tIR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen til MAThyS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60T-zz-5y2">
-                                <rect key="frame" x="163" y="48" width="275" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen til Norment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60T-zz-5y2">
+                                <rect key="frame" x="160" y="48" width="280.5" height="33.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,6 +66,7 @@
                             <constraint firstItem="nPB-Dg-pL3" firstAttribute="top" secondItem="60T-zz-5y2" secondAttribute="bottom" constant="50" id="3nZ-U1-ZED"/>
                             <constraint firstItem="V6X-lq-hxi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Agt-8F-eeD"/>
                             <constraint firstItem="V6X-lq-hxi" firstAttribute="top" secondItem="G12-IR-c72" secondAttribute="bottom" constant="35" id="CvO-JT-anf"/>
+                            <constraint firstItem="60T-zz-5y2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DD5-Xu-iTG"/>
                             <constraint firstItem="60T-zz-5y2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="Dmb-vb-JBb"/>
                             <constraint firstItem="k5Y-rJ-b8K" firstAttribute="top" secondItem="V6X-lq-hxi" secondAttribute="bottom" constant="4" id="GZU-BY-MEZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XjH-Sa-Lcl" secondAttribute="bottom" constant="20" id="Jw6-ae-ZbK"/>
@@ -76,6 +77,11 @@
                             <constraint firstItem="nPB-Dg-pL3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cji-Sg-l2r"/>
                             <constraint firstItem="G12-IR-c72" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPz-im-EeF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Udh-jZ-CrI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bedTimePicker" destination="k5Y-rJ-b8K" id="01f-3M-QpE"/>
@@ -214,16 +220,27 @@
                                     <action selector="mathysTimeChanged:" destination="hOe-iG-ZLZ" eventType="valueChanged" id="JtG-sg-Zz7"/>
                                 </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S8-hK-xyA">
+                                <rect key="frame" x="282.5" y="573" width="36.5" height="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="0SZ-gz-Gm0"/>
                             <constraint firstItem="tmG-cy-50q" firstAttribute="top" secondItem="GPU-FY-HIz" secondAttribute="bottom" constant="8" id="1da-zM-qF1"/>
+                            <constraint firstItem="6S8-hK-xyA" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="68y-we-Lsm"/>
+                            <constraint firstItem="6S8-hK-xyA" firstAttribute="top" secondItem="tmG-cy-50q" secondAttribute="bottom" constant="30" id="8pg-65-WEk"/>
                             <constraint firstItem="Ove-kJ-77G" firstAttribute="top" secondItem="lDN-gW-XHx" secondAttribute="bottom" constant="50" id="9sP-o7-FJg"/>
                             <constraint firstItem="ryn-OJ-CPb" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="CbU-V7-0xd"/>
                             <constraint firstItem="lDN-gW-XHx" firstAttribute="top" secondItem="JZB-bT-FWJ" secondAttribute="bottom" constant="8" id="J1v-4C-jne"/>
                             <constraint firstItem="JZB-bT-FWJ" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="MHC-R3-Bby"/>
+                            <constraint firstItem="gj9-Iy-9Vr" firstAttribute="top" secondItem="6S8-hK-xyA" secondAttribute="bottom" constant="15" id="MKE-gz-KLm"/>
                             <constraint firstItem="JZB-bT-FWJ" firstAttribute="top" secondItem="DcZ-NB-1Tq" secondAttribute="bottom" constant="8" id="S4G-lu-Zm6"/>
+                            <constraint firstItem="6S8-hK-xyA" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="YcU-vU-i90"/>
+                            <constraint firstItem="6S8-hK-xyA" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="c3e-At-CWh"/>
                             <constraint firstItem="tmG-cy-50q" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="cwO-zC-vck"/>
                             <constraint firstItem="GPU-FY-HIz" firstAttribute="top" secondItem="ryn-OJ-CPb" secondAttribute="bottom" constant="50" id="vbn-QM-c4R"/>
                             <constraint firstItem="ryn-OJ-CPb" firstAttribute="top" secondItem="Ove-kJ-77G" secondAttribute="bottom" constant="8" id="wws-J3-jbX"/>
@@ -231,11 +248,19 @@
                             <constraint firstItem="JZB-bT-FWJ" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yPk-XO-O5W"/>
                             <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yvz-GQ-jh8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="68y-we-Lsm"/>
+                                <exclude reference="8pg-65-WEk"/>
+                                <exclude reference="YcU-vU-i90"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bedTimePicker" destination="ryn-OJ-CPb" id="8S3-XC-iav"/>
                         <outlet property="mathysTimePicker" destination="tmG-cy-50q" id="VjC-3b-AQI"/>
                         <outlet property="morningTimePicker" destination="lDN-gW-XHx" id="nk9-bs-R6c"/>
+                        <outlet property="userIdLabel" destination="6S8-hK-xyA" id="NKl-D3-ACa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljd-tD-QIc" userLabel="First Responder" sceneMemberID="firstResponder"/>

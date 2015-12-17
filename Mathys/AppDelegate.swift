@@ -16,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        // Generate UUID & retrieve device ID here
+        let hasLaunchedBefore = USERDEFAULTS.boolForKey(UserDefaultKey.hasLaunchedBefore)
+        if !hasLaunchedBefore  {
+            print("First launch, setting NSUserDefault.")
+            let uuid = NSUUID().UUIDString
+            
+            USERDEFAULTS.setObject(uuid, forKey: UserDefaultKey.UUID)
+            USERDEFAULTS.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
+        }
         return true
     }
 
