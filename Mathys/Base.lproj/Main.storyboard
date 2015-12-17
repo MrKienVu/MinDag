@@ -142,14 +142,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du står opp klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-bT-FWJ">
-                                <rect key="frame" x="213" y="72" width="174.5" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeg står opp klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-bT-FWJ">
+                                <rect key="frame" x="209" y="72" width="182" height="25"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du legger deg klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-kJ-77G">
-                                <rect key="frame" x="202" y="235" width="196" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeg legger meg klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-kJ-77G">
+                                <rect key="frame" x="196" y="235" width="208" height="25"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,31 +217,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="0SZ-gz-Gm0"/>
                             <constraint firstItem="tmG-cy-50q" firstAttribute="top" secondItem="GPU-FY-HIz" secondAttribute="bottom" constant="8" id="1da-zM-qF1"/>
-                            <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="1wx-kE-Pg0"/>
                             <constraint firstItem="Ove-kJ-77G" firstAttribute="top" secondItem="lDN-gW-XHx" secondAttribute="bottom" constant="50" id="9sP-o7-FJg"/>
-                            <constraint firstItem="GPU-FY-HIz" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="ArX-us-Y46"/>
                             <constraint firstItem="ryn-OJ-CPb" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="CbU-V7-0xd"/>
-                            <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="GhM-z9-lj7"/>
                             <constraint firstItem="lDN-gW-XHx" firstAttribute="top" secondItem="JZB-bT-FWJ" secondAttribute="bottom" constant="8" id="J1v-4C-jne"/>
+                            <constraint firstItem="JZB-bT-FWJ" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="MHC-R3-Bby"/>
                             <constraint firstItem="JZB-bT-FWJ" firstAttribute="top" secondItem="DcZ-NB-1Tq" secondAttribute="bottom" constant="8" id="S4G-lu-Zm6"/>
                             <constraint firstItem="tmG-cy-50q" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="cwO-zC-vck"/>
-                            <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="fzd-K3-KQg"/>
-                            <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="grh-zZ-41p"/>
                             <constraint firstItem="GPU-FY-HIz" firstAttribute="top" secondItem="ryn-OJ-CPb" secondAttribute="bottom" constant="50" id="vbn-QM-c4R"/>
                             <constraint firstItem="ryn-OJ-CPb" firstAttribute="top" secondItem="Ove-kJ-77G" secondAttribute="bottom" constant="8" id="wws-J3-jbX"/>
                             <constraint firstItem="GPU-FY-HIz" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="xuD-wG-2LI"/>
                             <constraint firstItem="JZB-bT-FWJ" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yPk-XO-O5W"/>
                             <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yvz-GQ-jh8"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="GhM-z9-lj7"/>
-                                <exclude reference="grh-zZ-41p"/>
-                                <exclude reference="1wx-kE-Pg0"/>
-                                <exclude reference="ArX-us-Y46"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="bedTimePicker" destination="ryn-OJ-CPb" id="8S3-XC-iav"/>
