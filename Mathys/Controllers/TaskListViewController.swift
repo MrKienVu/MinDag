@@ -10,6 +10,8 @@ import UIKit
 import ResearchKit
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ORKTaskViewControllerDelegate {
+    
+    let nettskjema = NettskjemaHandler(scheme: .Mathys)
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -95,7 +97,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         view controller.
         */
         taskResultFinishedCompletionHandler?(taskViewController.result)
-        // Do something with result...
+        
+        self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)
+        self.nettskjema.submit()
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }

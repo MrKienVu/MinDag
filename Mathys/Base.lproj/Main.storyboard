@@ -8,7 +8,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Mathys" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,16 +24,67 @@
                                     <segue destination="bwF-AQ-UJZ" kind="show" identifier="segueShowTaskList" id="P5g-n6-tIR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen til MAThyS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60T-zz-5y2">
+                                <rect key="frame" x="163" y="48" width="275" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Når står du opp om morgenen?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPB-Dg-pL3">
+                                <rect key="frame" x="162" y="131" width="276.5" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Når legger du deg om kvelden?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-lq-hxi">
+                                <rect key="frame" x="162" y="315" width="276" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G12-IR-c72">
+                                <rect key="frame" x="140" y="160" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="aws-hS-Va3"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="471945600.23969299">
+                                    <!--2015-12-16 08:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5Y-rJ-b8K">
+                                <rect key="frame" x="140" y="344" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5dZ-ad-H5l"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="471994200.23969299">
+                                    <!--2015-12-16 21:30:00 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nPB-Dg-pL3" firstAttribute="top" secondItem="60T-zz-5y2" secondAttribute="bottom" constant="50" id="3nZ-U1-ZED"/>
+                            <constraint firstItem="V6X-lq-hxi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Agt-8F-eeD"/>
+                            <constraint firstItem="V6X-lq-hxi" firstAttribute="top" secondItem="G12-IR-c72" secondAttribute="bottom" constant="35" id="CvO-JT-anf"/>
+                            <constraint firstItem="60T-zz-5y2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="Dmb-vb-JBb"/>
+                            <constraint firstItem="k5Y-rJ-b8K" firstAttribute="top" secondItem="V6X-lq-hxi" secondAttribute="bottom" constant="4" id="GZU-BY-MEZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XjH-Sa-Lcl" secondAttribute="bottom" constant="20" id="Jw6-ae-ZbK"/>
                             <constraint firstItem="XjH-Sa-Lcl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LY9-4o-ff0"/>
+                            <constraint firstItem="k5Y-rJ-b8K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NSt-BP-k6x"/>
+                            <constraint firstItem="G12-IR-c72" firstAttribute="top" secondItem="nPB-Dg-pL3" secondAttribute="bottom" constant="4" id="TJd-k6-34w"/>
+                            <constraint firstItem="60T-zz-5y2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Udh-jZ-CrI"/>
+                            <constraint firstItem="nPB-Dg-pL3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cji-Sg-l2r"/>
+                            <constraint firstItem="G12-IR-c72" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPz-im-EeF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bedTimePicker" destination="k5Y-rJ-b8K" id="01f-3M-QpE"/>
+                        <outlet property="morningTimePicker" destination="G12-IR-c72" id="gHp-H5-ZEv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="272"/>
         </scene>
         <!--Hjem-->
         <scene sceneID="6OC-P0-Vh1">
@@ -91,15 +142,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUl-sF-Lkg">
-                                <rect key="frame" x="20" y="72" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du står opp klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-bT-FWJ">
+                                <rect key="frame" x="213" y="72" width="174.5" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du legger deg klokken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-kJ-77G">
+                                <rect key="frame" x="202" y="235" width="196" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAThyS sendetidspunkt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-FY-HIz">
+                                <rect key="frame" x="194" y="398" width="212" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="lDN-gW-XHx">
+                                <rect key="frame" x="140" y="105" width="320" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="LbC-jG-4Cr"/>
+                                    <constraint firstAttribute="height" constant="80" id="cwz-MY-fTE"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="471961914.45184702">
+                                    <!--2015-12-16 12:31:54 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cwz-MY-fTE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="morningTimeChanged:" destination="hOe-iG-ZLZ" eventType="valueChanged" id="eeq-Ry-oHp"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="ryn-OJ-CPb">
+                                <rect key="frame" x="140" y="268" width="320" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="UBY-VT-9ni"/>
+                                    <constraint firstAttribute="height" constant="80" id="fRR-j3-z3b"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="471961914.45184702">
+                                    <!--2015-12-16 12:31:54 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UBY-VT-9ni"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="bedTimeChanged:" destination="hOe-iG-ZLZ" eventType="valueChanged" id="tXG-ls-kjj"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmG-cy-50q">
+                                <rect key="frame" x="140" y="431" width="320" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="PsN-1B-bEh"/>
+                                    <constraint firstAttribute="height" constant="80" id="dGX-Gz-Je0"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="471978000.45184702">
+                                    <!--2015-12-16 17:00:00 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PsN-1B-bEh"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="mathysTimeChanged:" destination="hOe-iG-ZLZ" eventType="valueChanged" id="JtG-sg-Zz7"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tmG-cy-50q" firstAttribute="top" secondItem="GPU-FY-HIz" secondAttribute="bottom" constant="8" id="1da-zM-qF1"/>
+                            <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="1wx-kE-Pg0"/>
+                            <constraint firstItem="Ove-kJ-77G" firstAttribute="top" secondItem="lDN-gW-XHx" secondAttribute="bottom" constant="50" id="9sP-o7-FJg"/>
+                            <constraint firstItem="GPU-FY-HIz" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="ArX-us-Y46"/>
+                            <constraint firstItem="ryn-OJ-CPb" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="CbU-V7-0xd"/>
+                            <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="GhM-z9-lj7"/>
+                            <constraint firstItem="lDN-gW-XHx" firstAttribute="top" secondItem="JZB-bT-FWJ" secondAttribute="bottom" constant="8" id="J1v-4C-jne"/>
+                            <constraint firstItem="JZB-bT-FWJ" firstAttribute="top" secondItem="DcZ-NB-1Tq" secondAttribute="bottom" constant="8" id="S4G-lu-Zm6"/>
+                            <constraint firstItem="tmG-cy-50q" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="cwO-zC-vck"/>
+                            <constraint firstItem="Ove-kJ-77G" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="fzd-K3-KQg"/>
+                            <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="grh-zZ-41p"/>
+                            <constraint firstItem="GPU-FY-HIz" firstAttribute="top" secondItem="ryn-OJ-CPb" secondAttribute="bottom" constant="50" id="vbn-QM-c4R"/>
+                            <constraint firstItem="ryn-OJ-CPb" firstAttribute="top" secondItem="Ove-kJ-77G" secondAttribute="bottom" constant="8" id="wws-J3-jbX"/>
+                            <constraint firstItem="GPU-FY-HIz" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="xuD-wG-2LI"/>
+                            <constraint firstItem="JZB-bT-FWJ" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yPk-XO-O5W"/>
+                            <constraint firstItem="lDN-gW-XHx" firstAttribute="centerX" secondItem="WaR-FF-fWG" secondAttribute="centerX" id="yvz-GQ-jh8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GhM-z9-lj7"/>
+                                <exclude reference="grh-zZ-41p"/>
+                                <exclude reference="1wx-kE-Pg0"/>
+                                <exclude reference="ArX-us-Y46"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="bedTimePicker" destination="ryn-OJ-CPb" id="8S3-XC-iav"/>
+                        <outlet property="mathysTimePicker" destination="tmG-cy-50q" id="VjC-3b-AQI"/>
+                        <outlet property="morningTimePicker" destination="lDN-gW-XHx" id="nk9-bs-R6c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljd-tD-QIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
