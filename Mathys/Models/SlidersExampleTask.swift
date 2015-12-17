@@ -31,7 +31,7 @@ public var SlidersExampleTask: ORKOrderedTask {
     
     _ = "Indiker hva du vanligvis føler"
     _ = "For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements."
-    
+
     let step1AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
     
     let formItem01 = ORKFormItem(identifier: String(Identifier.DiscreteScaleQuestionStep), text: exampleQuestionText, answerFormat: step1AnswerFormat)
