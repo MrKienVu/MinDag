@@ -29,8 +29,8 @@ public var SlidersExampleTask: ORKOrderedTask {
     
     //let exampleDetailText = "SLIDERS_DETAIL_TEXT".localized
     
-    let exampleDetailText = "Indiker hva du vanligvis føler"
-    let exampleDetailText2 = "For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements."
+    _ = "Indiker hva du vanligvis føler"
+    _ = "For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements."
     
     let step1AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
     

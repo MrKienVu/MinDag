@@ -24,11 +24,12 @@ enum Identifier: String {
     case IntroStep =                                    "IntroStep"
     
     // Sliders Example Task
-    case SlidersExampleTask =                           "SlidersExampleTask"
+    case FormTask =                                     "FormTask"
+    case FormStep =                                     "FormStep"
+    case TestStep1 =                                    "TestStep1"
+    case TestStep2 =                                    "TestStep2"
     case DiscreteScaleQuestionStep =                    "DiscreteScaleQuestionStep"
-    case ContinuousScaleQuestionStep =                  "CSQP"
-    case DiscreteVerticalScaleQuestionStep =            "DVSQS"
-    case ContinuousVerticalScaleQuestionStep =          "CVSQS"
+    case DiscreteVerticalScaleQuestionStep =            "DiscreteVerticalScaleQuestionStep"
     
     // Sleep Survey Task
     case SleepSurveyTask =                              "SleepSurveyTask"
