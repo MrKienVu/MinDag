@@ -44,8 +44,7 @@ class NettskjemaHandler {
         print("Got result")
         let serializedResult = try? ORKESerializer.JSONDataForObject(result)
         print(NSString(data: serializedResult!, encoding: NSUTF8StringEncoding))
-        //backgroundWebView.stringByEvaluatingJavaScriptFromString("Nettskjema.setExtraField('\(key)', \(serializedResultJSON));")
-        backgroundWebView.stringByEvaluatingJavaScriptFromString("Nettskjema.setExtraField('\(key)', \(serializedResult!));")
+        //backgroundWebView.stringByEvaluatingJavaScriptFromString("Nettskjema.setExtraField('\(key)', \(serializedResult!));")
     }
     
 }

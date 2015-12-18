@@ -99,7 +99,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         taskResultFinishedCompletionHandler?(taskViewController.result)
         
         self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)
-        self.nettskjema.submit()
+        //self.nettskjema.submit()
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
