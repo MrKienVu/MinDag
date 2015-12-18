@@ -13,7 +13,7 @@
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32CEB6BC1C20C39F0021A363 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */; };
 		32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */; };
-		5F4542E31C20271200A408A1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4542E21C20271200A408A1 /* StringExtensions.swift */; };
+		5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */; };
 		5F4542E91C2059DE00A408A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E81C2059DE00A408A1 /* .gitignore */; };
 		5F6959CD1C205B80002568CF /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6959CC1C205B80002568CF /* SurveyTask.swift */; };
 		5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FC1C202523007B0B93 /* AppDelegate.swift */; };
@@ -91,7 +91,7 @@
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
-		5F4542E21C20271200A408A1 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = ../../../tusentac/StringExtensions.swift; sourceTree = "<group>"; };
+		5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5F6959CC1C205B80002568CF /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		5F7F06F91C202523007B0B93 /* Norment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Norment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,10 +220,10 @@
 		5F7F07391C20258F007B0B93 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5F4542E21C20271200A408A1 /* StringExtensions.swift */,
 				5F7F07401C202672007B0B93 /* Constants.swift */,
 				329EACA71C22A8D5008B0038 /* Identifier.swift */,
 				329EACAD1C22A97E008B0038 /* Localizable.strings */,
+				5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -420,13 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */,
 				5F7F06FF1C202523007B0B93 /* WelcomeViewController.swift in Sources */,
 				5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */,
 				32CEB6BC1C20C39F0021A363 /* SettingsViewController.swift in Sources */,
 				329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */,
 				5FDA123A1C2157E200BF0363 /* SlidersExampleTask.swift in Sources */,
 				5F6959CD1C205B80002568CF /* SurveyTask.swift in Sources */,
-				5F4542E31C20271200A408A1 /* StringExtensions.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
