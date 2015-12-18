@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let hasLaunchedBefore = USERDEFAULTS.boolForKey(UserDefaultKey.hasLaunchedBefore)
         if !hasLaunchedBefore  {
-            print("First launch, setting NSUserDefault.")
+            print("First launch, storing UUID and hasLaunched-flag in UserDefaults")
             let uuid = NSUUID().UUIDString
             
             USERDEFAULTS.setObject(uuid, forKey: UserDefaultKey.UUID)
