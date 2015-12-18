@@ -30,6 +30,8 @@ enum Identifier: String {
     case TestStep2 =                                    "TestStep2"
     case DiscreteScaleQuestionStep =                    "DiscreteScaleQuestionStep"
     case DiscreteVerticalScaleQuestionStep =            "DiscreteVerticalScaleQuestionStep"
+    case TextVerticalScaleQuestionStep =                "TVSQS"
+    case TextHorizontalScaleQuestionStep =              "THSQS"
     
     // Sleep Survey Task
     case SleepSurveyTask =                              "SleepSurveyTask"

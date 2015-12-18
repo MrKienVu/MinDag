@@ -53,13 +53,22 @@ public var SlidersExampleTask: ORKOrderedTask {
     
     let moodQuestionStep = ORKFormItem(identifier: Identifier.MoodQuestionStep.rawValue, text: "", answerFormat: moodQuestionStepAnswerFormat) */
     
+    let textChoices : [ORKTextChoice] = [ORKTextChoice(text: "Never", value: 1), ORKTextChoice(text: "Occasionally", value: 2), ORKTextChoice(text: "Often", value: 3), ORKTextChoice(text: "Very often", value: 10), ORKTextChoice(text: "Constantly", value: 5)]
+    let step6AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: false)
+    let questionStep6 = ORKFormItem(identifier: String(Identifier.TextVerticalScaleQuestionStep), text: "How often are you sad?", answerFormat: step6AnswerFormat)
+    
+    let step7AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: true)
+    let questionStep7 = ORKFormItem(identifier: String(Identifier.TextHorizontalScaleQuestionStep), text: "How often are you sad?", answerFormat: step7AnswerFormat)
+
     
     step.formItems = [
         formItem001,
         formItem02,
         formItem01,
        // moodQuestionStep,
-        formItem002
+        formItem002,
+        questionStep6,
+        questionStep7
     ]
     
     return ORKOrderedTask(identifier: String(Identifier.FormTask), steps: [step])
