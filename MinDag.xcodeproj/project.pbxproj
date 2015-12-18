@@ -22,8 +22,8 @@
 		5F7F07021C202523007B0B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07001C202523007B0B93 /* Main.storyboard */; };
 		5F7F07041C202523007B0B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07031C202523007B0B93 /* Assets.xcassets */; };
 		5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */; };
-		5F7F07121C202523007B0B93 /* MathysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07111C202523007B0B93 /* MathysTests.swift */; };
-		5F7F071D1C202523007B0B93 /* MathysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F071C1C202523007B0B93 /* MathysUITests.swift */; };
+		5F7F07121C202523007B0B93 /* MinDagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07111C202523007B0B93 /* MinDagTests.swift */; };
+		5F7F071D1C202523007B0B93 /* MinDagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F071C1C202523007B0B93 /* MinDagUITests.swift */; };
 		5F7F07341C202578007B0B93 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; };
 		5F7F07351C202578007B0B93 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7F07411C202672007B0B93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07401C202672007B0B93 /* Constants.swift */; };
@@ -90,7 +90,7 @@
 		329EACAF1C22A985008B0038 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329EACB01C22A9D1008B0038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329EACBE1C23FFC7008B0038 /* ORKESerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKESerialization.h; sourceTree = "<group>"; };
-		329EACC11C23FFFC008B0038 /* Norment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Norment-Bridging-Header.h"; sourceTree = "<group>"; };
+		329EACC11C23FFFC008B0038 /* MinDag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinDag-Bridging-Header.h"; sourceTree = "<group>"; };
 		329EACC21C23FFFD008B0038 /* ORKESerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKESerialization.m; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -98,18 +98,18 @@
 		5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5F6959CC1C205B80002568CF /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
-		5F7F06F91C202523007B0B93 /* Norment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Norment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7F06F91C202523007B0B93 /* MinDag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F06FC1C202523007B0B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5F7F07011C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F7F07031C202523007B0B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F7F07061C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F7F07081C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F7F070D1C202523007B0B93 /* Norment.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Norment.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F7F07111C202523007B0B93 /* MathysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathysTests.swift; sourceTree = "<group>"; };
+		5F7F070D1C202523007B0B93 /* MinDag.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinDag.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7F07111C202523007B0B93 /* MinDagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinDagTests.swift; sourceTree = "<group>"; };
 		5F7F07131C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F7F07181C202523007B0B93 /* Norment.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Norment.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F7F071C1C202523007B0B93 /* MathysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathysUITests.swift; sourceTree = "<group>"; };
+		5F7F07181C202523007B0B93 /* MinDag.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinDag.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7F071C1C202523007B0B93 /* MinDagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinDagUITests.swift; sourceTree = "<group>"; };
 		5F7F071E1C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		5F7F07401C202672007B0B93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -159,9 +159,9 @@
 			children = (
 				5F4542E81C2059DE00A408A1 /* .gitignore */,
 				5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */,
-				5F7F06FB1C202523007B0B93 /* Mathys */,
-				5F7F07101C202523007B0B93 /* MathysTests */,
-				5F7F071B1C202523007B0B93 /* MathysUITests */,
+				5F7F06FB1C202523007B0B93 /* MinDag */,
+				5F7F07101C202523007B0B93 /* MinDagTests */,
+				5F7F071B1C202523007B0B93 /* MinDagUITests */,
 				5F7F06FA1C202523007B0B93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,14 +169,14 @@
 		5F7F06FA1C202523007B0B93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F7F06F91C202523007B0B93 /* Norment.app */,
-				5F7F070D1C202523007B0B93 /* Norment.xctest */,
-				5F7F07181C202523007B0B93 /* Norment.xctest */,
+				5F7F06F91C202523007B0B93 /* MinDag.app */,
+				5F7F070D1C202523007B0B93 /* MinDag.xctest */,
+				5F7F07181C202523007B0B93 /* MinDag.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F7F06FB1C202523007B0B93 /* Mathys */ = {
+		5F7F06FB1C202523007B0B93 /* MinDag */ = {
 			isa = PBXGroup;
 			children = (
 				5F7F073F1C20263C007B0B93 /* Models */,
@@ -191,25 +191,25 @@
 				5F7F07081C202523007B0B93 /* Info.plist */,
 				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
 			);
-			path = Mathys;
+			path = MinDag;
 			sourceTree = "<group>";
 		};
-		5F7F07101C202523007B0B93 /* MathysTests */ = {
+		5F7F07101C202523007B0B93 /* MinDagTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F7F07111C202523007B0B93 /* MathysTests.swift */,
+				5F7F07111C202523007B0B93 /* MinDagTests.swift */,
 				5F7F07131C202523007B0B93 /* Info.plist */,
 			);
-			path = MathysTests;
+			path = MinDagTests;
 			sourceTree = "<group>";
 		};
-		5F7F071B1C202523007B0B93 /* MathysUITests */ = {
+		5F7F071B1C202523007B0B93 /* MinDagUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5F7F071C1C202523007B0B93 /* MathysUITests.swift */,
+				5F7F071C1C202523007B0B93 /* MinDagUITests.swift */,
 				5F7F071E1C202523007B0B93 /* Info.plist */,
 			);
-			path = MathysUITests;
+			path = MinDagUITests;
 			sourceTree = "<group>";
 		};
 		5F7F072B1C202562007B0B93 /* Products */ = {
@@ -229,7 +229,7 @@
 				329EACAD1C22A97E008B0038 /* Localizable.strings */,
 				329EACBE1C23FFC7008B0038 /* ORKESerialization.h */,
 				329EACC21C23FFFD008B0038 /* ORKESerialization.m */,
-				329EACC11C23FFFC008B0038 /* Norment-Bridging-Header.h */,
+				329EACC11C23FFFC008B0038 /* MinDag-Bridging-Header.h */,
 				5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */,
 			);
 			path = Helpers;
@@ -270,9 +270,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F7F06F81C202523007B0B93 /* Norment */ = {
+		5F7F06F81C202523007B0B93 /* MinDag */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F7F07211C202523007B0B93 /* Build configuration list for PBXNativeTarget "Norment" */;
+			buildConfigurationList = 5F7F07211C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDag" */;
 			buildPhases = (
 				5F7F06F51C202523007B0B93 /* Sources */,
 				5F7F06F61C202523007B0B93 /* Frameworks */,
@@ -284,14 +284,14 @@
 			dependencies = (
 				5F7F07371C202578007B0B93 /* PBXTargetDependency */,
 			);
-			name = Norment;
+			name = MinDag;
 			productName = Mathys;
-			productReference = 5F7F06F91C202523007B0B93 /* Norment.app */;
+			productReference = 5F7F06F91C202523007B0B93 /* MinDag.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5F7F070C1C202523007B0B93 /* NormentTests */ = {
+		5F7F070C1C202523007B0B93 /* MinDagTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F7F07241C202523007B0B93 /* Build configuration list for PBXNativeTarget "NormentTests" */;
+			buildConfigurationList = 5F7F07241C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDagTests" */;
 			buildPhases = (
 				5F7F07091C202523007B0B93 /* Sources */,
 				5F7F070A1C202523007B0B93 /* Frameworks */,
@@ -302,14 +302,14 @@
 			dependencies = (
 				5F7F070F1C202523007B0B93 /* PBXTargetDependency */,
 			);
-			name = NormentTests;
+			name = MinDagTests;
 			productName = MathysTests;
-			productReference = 5F7F070D1C202523007B0B93 /* Norment.xctest */;
+			productReference = 5F7F070D1C202523007B0B93 /* MinDag.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5F7F07171C202523007B0B93 /* NormentUITests */ = {
+		5F7F07171C202523007B0B93 /* MinDagUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F7F07271C202523007B0B93 /* Build configuration list for PBXNativeTarget "NormentUITests" */;
+			buildConfigurationList = 5F7F07271C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDagUITests" */;
 			buildPhases = (
 				5F7F07141C202523007B0B93 /* Sources */,
 				5F7F07151C202523007B0B93 /* Frameworks */,
@@ -320,9 +320,9 @@
 			dependencies = (
 				5F7F071A1C202523007B0B93 /* PBXTargetDependency */,
 			);
-			name = NormentUITests;
+			name = MinDagUITests;
 			productName = MathysUITests;
-			productReference = 5F7F07181C202523007B0B93 /* Norment.xctest */;
+			productReference = 5F7F07181C202523007B0B93 /* MinDag.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -349,7 +349,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F7F06F41C202523007B0B93 /* Build configuration list for PBXProject "Norment" */;
+			buildConfigurationList = 5F7F06F41C202523007B0B93 /* Build configuration list for PBXProject "MinDag" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -369,9 +369,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				5F7F06F81C202523007B0B93 /* Norment */,
-				5F7F070C1C202523007B0B93 /* NormentTests */,
-				5F7F07171C202523007B0B93 /* NormentUITests */,
+				5F7F06F81C202523007B0B93 /* MinDag */,
+				5F7F070C1C202523007B0B93 /* MinDagTests */,
+				5F7F07171C202523007B0B93 /* MinDagUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -447,7 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7F07121C202523007B0B93 /* MathysTests.swift in Sources */,
+				5F7F07121C202523007B0B93 /* MinDagTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7F071D1C202523007B0B93 /* MathysUITests.swift in Sources */,
+				5F7F071D1C202523007B0B93 /* MinDagUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,12 +464,12 @@
 /* Begin PBXTargetDependency section */
 		5F7F070F1C202523007B0B93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F7F06F81C202523007B0B93 /* Norment */;
+			target = 5F7F06F81C202523007B0B93 /* MinDag */;
 			targetProxy = 5F7F070E1C202523007B0B93 /* PBXContainerItemProxy */;
 		};
 		5F7F071A1C202523007B0B93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F7F06F81C202523007B0B93 /* Norment */;
+			target = 5F7F06F81C202523007B0B93 /* MinDag */;
 			targetProxy = 5F7F07191C202523007B0B93 /* PBXContainerItemProxy */;
 		};
 		5F7F07371C202578007B0B93 /* PBXTargetDependency */ = {
@@ -599,11 +599,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Mathys/Info.plist;
+				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.Mathys;
-				PRODUCT_NAME = Norment;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mathys/Helpers/Norment-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MinDag;
+				PRODUCT_NAME = MinDag;
+				SWIFT_OBJC_BRIDGING_HEADER = "MinDag/Helpers/MinDag-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -615,11 +615,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Mathys/Info.plist;
+				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.Mathys;
-				PRODUCT_NAME = Norment;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mathys/Helpers/Norment-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MinDag;
+				PRODUCT_NAME = MinDag;
+				SWIFT_OBJC_BRIDGING_HEADER = "MinDag/Helpers/MinDag-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -630,8 +630,8 @@
 				INFOPLIST_FILE = MathysTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MathysTests;
-				PRODUCT_NAME = Norment;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Norment.app/Norment";
+				PRODUCT_NAME = MinDag;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinDag.app/MinDag";
 			};
 			name = Debug;
 		};
@@ -642,8 +642,8 @@
 				INFOPLIST_FILE = MathysTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MathysTests;
-				PRODUCT_NAME = Norment;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Norment.app/Norment";
+				PRODUCT_NAME = MinDag;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinDag.app/MinDag";
 			};
 			name = Release;
 		};
@@ -653,7 +653,7 @@
 				INFOPLIST_FILE = MathysUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MathysUITests;
-				PRODUCT_NAME = Norment;
+				PRODUCT_NAME = MinDag;
 				TEST_TARGET_NAME = Mathys;
 				USES_XCTRUNNER = YES;
 			};
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = MathysUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MathysUITests;
-				PRODUCT_NAME = Norment;
+				PRODUCT_NAME = MinDag;
 				TEST_TARGET_NAME = Mathys;
 				USES_XCTRUNNER = YES;
 			};
@@ -674,7 +674,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F7F06F41C202523007B0B93 /* Build configuration list for PBXProject "Norment" */ = {
+		5F7F06F41C202523007B0B93 /* Build configuration list for PBXProject "MinDag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F7F071F1C202523007B0B93 /* Debug */,
@@ -683,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F7F07211C202523007B0B93 /* Build configuration list for PBXNativeTarget "Norment" */ = {
+		5F7F07211C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F7F07221C202523007B0B93 /* Debug */,
@@ -692,7 +692,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F7F07241C202523007B0B93 /* Build configuration list for PBXNativeTarget "NormentTests" */ = {
+		5F7F07241C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDagTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F7F07251C202523007B0B93 /* Debug */,
@@ -701,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F7F07271C202523007B0B93 /* Build configuration list for PBXNativeTarget "NormentUITests" */ = {
+		5F7F07271C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDagUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F7F07281C202523007B0B93 /* Debug */,
