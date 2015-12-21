@@ -10,66 +10,79 @@ import Foundation
 import ResearchKit
 
 public var SlidersExampleTask: ORKOrderedTask {
+    
+    var steps = [ORKStep]()
+    
+    let introStep = ORKInstructionStep(identifier: String(Identifier.MathysInstructionStep))
+    introStep.title = "INTRO_TITLE".localized
+    introStep.text = "INTRO_TEXT".localized
+    introStep.detailText = "INTRO_DETAIL".localized
+    steps.append(introStep)
+    
+    func verticalScaleWithHighValue(highValue: String, lowValue: String) -> ORKAnswerFormat {
+        return ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(
+            10,
+            minimumValue: 1,
+            defaultValue: NSIntegerMax,
+            step: 1,
+            vertical: true,
+            maximumValueDescription: highValue,
+            minimumValueDescription: lowValue
+        )
+    }
+    
+    for i in 1..<21 {
+        steps.append(ORKQuestionStep(
+            identifier: String(Identifier.ScaleQuestion) + "\(i)",
+            title: "Question \(i)",
+            text: nil,
+            answer: verticalScaleWithHighValue(
+                "SCALE_QUESTION_\(i)_HIGH".localized,
+                lowValue: "SCALE_QUESTION_\(i)_LOW".localized
+            )
+        ))
+    }
+    
+    let scaleCompletionStep = ORKCompletionStep(identifier: String(Identifier.MathysScaleCompletionStep))
+    scaleCompletionStep.title = "SCALE_COMPLETION_TITLE".localized
+    scaleCompletionStep.text = "SCALE_COMPLETION_TEXT".localized
+    scaleCompletionStep.detailText = "SCALE_COMPLETION_DETAIL".localized
+    steps.append(scaleCompletionStep)
+    
+    let introStep2 = ORKInstructionStep(identifier: String(Identifier.MathysInstructionStep2))
+    introStep2.title = "INTRO2_TITLE".localized
+    introStep2.text = "INTRO2_TEXT".localized
+    steps.append(introStep2)
+    
+    
+    var textChoices = [ORKTextChoice]()
+    for i in 1..<6 {
+        textChoices.append(ORKTextChoice(text: "TEXT_CHOICE_\(i)".localized, value: "\(i)"))
+    }
+    
+    let textChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: textChoices)
 
-    let step = ORKFormStep (identifier: String(Identifier.FormStep), title: "MAThyS (Multidimensional Assessment of Thymic States) by Henry et al.", text:"This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements." )
+    for i in 1..<8 {
+        steps.append(ORKQuestionStep(
+            identifier: String(Identifier.TextChoiceQuestion) + "\(i)",
+            title: "TEXT_CHOICE_\(i)_TITLE".localized,
+            answer: textChoiceAnswerFormat
+            )
+        )
+    }
     
-   //let exampleQuestionText = "SLIDERS_QUESTION_TEXT".localized
+    let textQuestionStep = ORKQuestionStep(
+        identifier: String(Identifier.TestQuestionStep),
+        title: "TEXT_QUESTION_TITLE".localized,
+        answer: ORKAnswerFormat.textAnswerFormat()
+    )
     
-    let exampleQuestionText = "Hvor sensitiv til farge er du?"
+    steps.append(textQuestionStep)
     
-    //let exampleHighValueText = "SLIDERS_HIGHVALUE_TEXT".localized
+    let textChoiceCompletionStep = ORKCompletionStep(identifier: String(Identifier.MathysTextChoiceCompletionStep))
+    textChoiceCompletionStep.title = "TEXTCHOICE_COMPLETION_TITLE".localized
+    textChoiceCompletionStep.text = "TEXTCHOICE_COMPLETION_TEXT".localized
+    steps.append(textChoiceCompletionStep)
     
-    let exampleHighValueText = "Veldig sensitiv"
-    let exampleHighValueText2 = "I am more sensitive to colours than usual"
-    
-    //let exampleLowValueText = "SLIDERS_LOWVALUE_TEXT".localized
-    
-    let exampleLowValueText = "Lite sensitiv"
-    let exampleLowValueText2 = "I am less sensitive to colours than usual"
-    
-    //let exampleDetailText = "SLIDERS_DETAIL_TEXT".localized
-    
-    _ = "Indiker hva du vanligvis føler"
-    _ = "For each item, indicate how you  usually feel by making a vertical line between the two  opposite statements."
-
-    let step1AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
-    
-    let formItem01 = ORKFormItem(identifier: String(Identifier.DiscreteScaleQuestionStep), text: exampleQuestionText, answerFormat: step1AnswerFormat)
-    
-    let step3AnswerFormat = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: exampleHighValueText2, minimumValueDescription: exampleLowValueText2)
-    
-    let longAns = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: false, maximumValueDescription: exampleHighValueText2, minimumValueDescription: exampleLowValueText2)
-    
-    let formItem001 = ORKFormItem(identifier: String(Identifier.TestStep1), text: "", answerFormat: longAns)
-    
-    let formItem02 = ORKFormItem(identifier: String(Identifier.DiscreteVerticalScaleQuestionStep), text: "", answerFormat: step3AnswerFormat)
-    
-    let long2s = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(10, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
-    
-    let formItem002 = ORKFormItem(identifier: String(Identifier.TestStep2), text: exampleQuestionText, answerFormat: long2s)
-    
-    /*let moodQuestionStepAnswerFormat = ORKAnswerFormat.continuousScaleAnswerFormatWithMaximumValue(100.0, minimumValue: 0.0, defaultValue: 50.0, maximumFractionDigits: 0, vertical: false, maximumValueDescription: exampleHighValueText, minimumValueDescription: exampleLowValueText)
-    
-    
-    let moodQuestionStep = ORKFormItem(identifier: Identifier.MoodQuestionStep.rawValue, text: "", answerFormat: moodQuestionStepAnswerFormat) */
-    
-    let textChoices : [ORKTextChoice] = [ORKTextChoice(text: "Never", value: 1), ORKTextChoice(text: "Occasionally", value: 2), ORKTextChoice(text: "Often", value: 3), ORKTextChoice(text: "Very often", value: 10), ORKTextChoice(text: "Constantly", value: 5)]
-    let step6AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: false)
-    let questionStep6 = ORKFormItem(identifier: String(Identifier.TextVerticalScaleQuestionStep), text: "How often are you sad?", answerFormat: step6AnswerFormat)
-    
-    let step7AnswerFormat = ORKAnswerFormat.textScaleAnswerFormatWithTextChoices(textChoices, defaultIndex: NSIntegerMax, vertical: true)
-    let questionStep7 = ORKFormItem(identifier: String(Identifier.TextHorizontalScaleQuestionStep), text: "How often are you sad?", answerFormat: step7AnswerFormat)
-
-    
-    step.formItems = [
-        formItem001,
-        formItem02,
-        formItem01,
-       // moodQuestionStep,
-        formItem002,
-        questionStep6,
-        questionStep7
-    ]
-    
-    return ORKOrderedTask(identifier: String(Identifier.FormTask), steps: [step])
+    return ORKOrderedTask(identifier: String(Identifier.MathysTask), steps: steps)
 }
