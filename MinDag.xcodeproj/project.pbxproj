@@ -13,6 +13,8 @@
 		329EACC31C23FFFD008B0038 /* ORKESerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 329EACC21C23FFFD008B0038 /* ORKESerialization.m */; };
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32CEB6BC1C20C39F0021A363 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */; };
+		32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD5E301C29BAF1002CB02A /* InformationViewController.swift */; };
+		32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */; };
 		32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */; };
 		5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */; };
 		5F4542E91C2059DE00A408A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E81C2059DE00A408A1 /* .gitignore */; };
@@ -20,7 +22,6 @@
 		5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FC1C202523007B0B93 /* AppDelegate.swift */; };
 		5F7F06FF1C202523007B0B93 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */; };
 		5F7F07021C202523007B0B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07001C202523007B0B93 /* Main.storyboard */; };
-		5F7F07041C202523007B0B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07031C202523007B0B93 /* Assets.xcassets */; };
 		5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */; };
 		5F7F07121C202523007B0B93 /* MinDagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07111C202523007B0B93 /* MinDagTests.swift */; };
 		5F7F071D1C202523007B0B93 /* MinDagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F071C1C202523007B0B93 /* MinDagUITests.swift */; };
@@ -94,6 +95,8 @@
 		329EACC21C23FFFD008B0038 /* ORKESerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKESerialization.m; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		32DD5E301C29BAF1002CB02A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPageContentViewController.swift; sourceTree = "<group>"; };
 		32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -102,7 +105,6 @@
 		5F7F06FC1C202523007B0B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5F7F07011C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F7F07031C202523007B0B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F7F07061C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F7F07081C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7F070D1C202523007B0B93 /* MinDag.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinDag.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +188,6 @@
 				5F7F07391C20258F007B0B93 /* Helpers */,
 				5F7F06FC1C202523007B0B93 /* AppDelegate.swift */,
 				5F7F07001C202523007B0B93 /* Main.storyboard */,
-				5F7F07031C202523007B0B93 /* Assets.xcassets */,
 				5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */,
 				5F7F07081C202523007B0B93 /* Info.plist */,
 				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
@@ -248,6 +249,8 @@
 				5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */,
 				32CEB6B91C20B7580021A363 /* TaskListViewController.swift */,
 				32CEB6BB1C20C39F0021A363 /* SettingsViewController.swift */,
+				32DD5E301C29BAF1002CB02A /* InformationViewController.swift */,
+				32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,7 +404,6 @@
 				329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */,
 				5F4542E91C2059DE00A408A1 /* .gitignore in Resources */,
 				5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */,
-				5F7F07041C202523007B0B93 /* Assets.xcassets in Resources */,
 				5F7F07021C202523007B0B93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +438,8 @@
 				5FDA123A1C2157E200BF0363 /* SlidersExampleTask.swift in Sources */,
 				5F6959CD1C205B80002568CF /* SurveyTask.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
+				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,
+				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
 				329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */,
