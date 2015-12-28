@@ -17,8 +17,6 @@ class WelcomeViewController: UIViewController {
         if segue.identifier == "segueShowTaskList" {
             let morningTime = morningTimePicker.date
             let bedTime = bedTimePicker.date
-            USERDEFAULTS.setObject(morningTime, forKey: UserDefaultKey.morningTime)
-            USERDEFAULTS.setObject(bedTime, forKey: UserDefaultKey.bedTime)
         }
     }
     

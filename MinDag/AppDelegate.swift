@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             USERDEFAULTS.setObject(uuid, forKey: UserDefaultKey.UUID)
             USERDEFAULTS.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
+            print("Stored user ID \(uuid) in UserDefaults")
         }
         return true
     }

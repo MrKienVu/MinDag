@@ -17,9 +17,10 @@ struct Color {
 }
 
 struct UserDefaultKey {
-    static let morningTime = "MorningTime"
-    static let bedTime = "BedTime"
-    static let mathysTime = "MathysTime"
+    static let WeekdayTime = "WeekdayTime"
+    static let WeekendTime = "WeekendTime"
+    static let MathysTime = "MathysTime"
+    static let MathysDay = "MathysDay"
     static let hasLaunchedBefore = "HasLaunchedBefore"
     static let UUID = "UUID"
 }
