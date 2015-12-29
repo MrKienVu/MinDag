@@ -14,7 +14,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     // MARK: Outlets
     @IBOutlet weak var weekdayTimeLabel: UILabel!
     @IBOutlet weak var weekdayTimePicker: UIDatePicker!
-    
 
     @IBOutlet weak var weekendTimeLabel: UILabel!
     @IBOutlet weak var weekendTimePicker: UIDatePicker!

@@ -11,9 +11,13 @@ import UIKit
 class InformationViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    var pageTitles: NSArray!
-    var pageImages: NSArray!
-    var pageTexts: NSArray!
+    let pageTitles = ["   ", "Datalagring", "Personvern"]
+    let pageImages = ["mindag-logo", "security", "privacy"]
+    let pageTexts = [
+        "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..",
+        "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.",
+        "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla."
+    ]
 
     @IBOutlet weak var configureButton: UIButton!
     
@@ -21,14 +25,6 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         super.viewDidLoad()
         
         setupPageControl()
-        
-        pageTitles = NSArray(objects: "   ", "Datalagring", "Personvern")
-        pageImages = NSArray(objects: "mindag-logo", "security", "privacy")
-        pageTexts = NSArray(objects:
-            "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..",
-            "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.",
-            "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla."
-        )
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InformationPageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
