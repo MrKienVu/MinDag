@@ -9,7 +9,7 @@
 import Foundation
 import ResearchKit
 
-public var SlidersExampleTask: ORKOrderedTask {
+public var MathysSurveyTask: ORKOrderedTask {
     
     var steps = [ORKStep]()
     

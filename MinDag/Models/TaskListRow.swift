@@ -45,8 +45,7 @@ import ResearchKit
  types of functionality supported by the ResearchKit framework.
  */
 enum TaskListRow: Int, CustomStringConvertible {
-    case Survey
-    case SlidersExample
+    case MathysTask
     case SleepSurvey
     
     
@@ -71,12 +70,10 @@ enum TaskListRow: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .Survey:
-            return "SURVEY_DESCRIPTION".localized
-        case .SlidersExample:
-            return "SLIDERS_DESCRIPTION".localized
+        case .MathysTask:
+            return "MATHYS_DESCRIPTION".localized
         case .SleepSurvey:
-            return "Sleep survey"
+            return "SLEEP_DESCRIPTION".localized
         }
     }
     
@@ -85,10 +82,8 @@ enum TaskListRow: Int, CustomStringConvertible {
     /// Returns a new `ORKTask` that the `TaskListRow` enumeration represents.
     var representedTask: ORKTask {
         switch self {
-        case .Survey:
-            return SurveyTask
-        case .SlidersExample:
-            return SlidersExampleTask
+        case .MathysTask:
+            return MathysSurveyTask
         case .SleepSurvey:
             return SleepSurveyTask
         }

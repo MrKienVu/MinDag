@@ -35,7 +35,9 @@ enum Identifier: String {
     
     // Sleep Survey Task
     case SleepSurveyTask =                              "SleepSurveyTask"
+    case SleepInstructionStep =                         "SleepInstructionStep"
     case SleepSurveyStep =                              "SleepSurveyStep"
+    case SleepCompletionStep =                          "SleepCompletionStep"
     
     // Mathys Survey
     case MathysTask =                                   "MathysTask"

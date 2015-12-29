@@ -6,29 +6,25 @@
  Copyright © 2015 Paul Philip Mitchell. All rights reserved.
  */
 
-/**************************
- *      SurveyTask        *
- **************************/
-
-"SURVEY_DESCRIPTION" = "Survey";
-"SURVEY_INTR_TITLE" = "Example survey";
-"SURVEY_INTR_TEXT" = "This is an example to demonstrate the survey features of ResearchKit.";
-
 
 /**************************
- *   SlidersExampleTask   *
+ *      SleepSurvey       *
  **************************/
 
-"SLIDERS_DESCRIPTION" = "Sliders";
-"SLIDERS_QUESTION_TEXT" = "How awesome are sliders?";
-"SLIDERS_HIGHVALUE_TEXT" = "Very";
-"SLIDERS_LOWVALUE_TEXT" = "Not at all";
-"SLIDERS_DETAIL_TEXT" = "Detail";
+"SLEEP_DESCRIPTION" = "Sleep survey";
+"SLEEP_INTRO_TITLE" = "Sleep survey";
+"SLEEP_INTRO_TEXT" = "How long you've slept is important to us in order to conduct great research.";
+"SLEEP_QUESTION_TITLE" = "Hours of sleep";
+"SLEEP_QUESTION_TEXT" = "Please turn the wheel below to indicate how many hours you slept last night";
+"SLEEP_COMPLETION_TITLE" = "Thank you!";
+"SLEEP_COMPLETION_TEXT" = "By submitting this information, you have helped us a lot.";
 
 
 /**************************
  *     Mathys survey      *
  **************************/
+"MATHYS_DESCRIPTION" = "Weekly MAThyS survey";
+
 "INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
 "INTRO_TEXT" = "This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
 "INTRO_DETAIL" = "More details about the survey can be placed here.";

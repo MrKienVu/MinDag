@@ -13,6 +13,12 @@ public var SleepSurveyTask: ORKOrderedTask {
 
     var steps = [ORKStep]()
     
+    let introStep = ORKInstructionStep(identifier: Identifier.SleepInstructionStep.rawValue)
+    introStep.title = "SLEEP_INTRO_TITLE".localized
+    introStep.text = "SLEEP_INTRO_TEXT".localized
+    introStep.image = UIImage(named: "sleep-icon")
+    steps.append(introStep)
+    
     //Array for values in the picker
     var pickerValueChoice = [ORKTextChoice]()
     
@@ -28,12 +34,17 @@ public var SleepSurveyTask: ORKOrderedTask {
     
     let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
     
-    let questionStep = ORKQuestionStep(identifier: String(Identifier.SleepSurveyStep), title: "Velg antall timer sovet",
+    let questionStep = ORKQuestionStep(identifier: String(Identifier.SleepSurveyStep), title: "SLEEP_QUESTION_TITLE".localized,
         answer: answerFormat)
     
-    questionStep.text = ""
+    questionStep.text = "SLEEP_QUESTION_TEXT".localized
     
     steps+=[questionStep]
+    
+    let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
+    sleepCompletionStep.title = "SLEEP_COMPLETION_TITLE".localized
+    sleepCompletionStep.text = "SLEEP_COMPLETION_TEXT".localized
+    steps.append(sleepCompletionStep)
     
     return ORKOrderedTask(identifier: Identifier.SleepSurveyTask.rawValue, steps: steps)
 }
