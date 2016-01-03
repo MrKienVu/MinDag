@@ -11,12 +11,13 @@ import UIKit
 class InformationViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    let pageTitles = ["   ", "Datalagring", "Personvern"]
-    let pageImages = ["mindag-logo", "security", "privacy"]
+    let pageTitles = ["   ", "Datalagring", "Personvern", "Påminnelser"]
+    let pageImages = ["mindag-logo", "security", "privacy", "notification-icon"]
     let pageTexts = [
         "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..",
         "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.",
-        "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla."
+        "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla.",
+        "Denne applikasjonen baserer seg på å gi deg påminnelser når du har ting du må gjøre i appen, som å fylle ut et kort spørreskjema. Det er derfor viktig at du tillater appen å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser."
     ]
 
     @IBOutlet weak var configureButton: UIButton!
@@ -50,9 +51,9 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         
         let vc: InformationPageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InformationPageContentViewController") as! InformationPageContentViewController
         
-        vc.imageFile = self.pageImages[index] as! String
-        vc.titleIndex = self.pageTitles[index] as! String
-        vc.textViewText = self.pageTexts[index] as! String
+        vc.imageFile = self.pageImages[index]
+        vc.titleIndex = self.pageTitles[index]
+        vc.textViewText = self.pageTexts[index]
         vc.pageIndex = index
         
         return vc
@@ -82,6 +83,8 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         index++
         if (index == self.pageTitles.count) {
             configureButton.enabled = true
+            vc.permissionButton.enabled = true
+            vc.permissionButton.hidden = false
             return nil
         }
         

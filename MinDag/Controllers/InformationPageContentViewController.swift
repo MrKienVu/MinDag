@@ -18,29 +18,34 @@ class InformationPageContentViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var permissionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: self.imageFile)
         titleLabel.text = titleIndex
         textView.text = textViewText
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        configureButton()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func permissionsClicked(sender: AnyObject) {
+        Notification.sharedInstance.setupNotificationSettings()
     }
-    */
+    
+    func configureButton()
+    {
+        permissionButton.layer.cornerRadius = 5
+        permissionButton.layer.borderColor = Color.primaryColor.CGColor
+        permissionButton.layer.borderWidth = 1
+        permissionButton.clipsToBounds = true
+    }
+
 
 }

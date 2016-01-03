@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		325CD4911C329FD60062C0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325CD4901C329FD60062C0B3 /* Assets.xcassets */; };
+		325CD4971C3353B90062C0B3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CD4961C3353B90062C0B3 /* Notification.swift */; };
 		329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */; };
 		329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA71C22A8D5008B0038 /* Identifier.swift */; };
 		329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 329EACAD1C22A97E008B0038 /* Localizable.strings */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		325CD4901C329FD60062C0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325CD4961C3353B90062C0B3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NettskjemaHandler.swift; sourceTree = "<group>"; };
 		329EACA71C22A8D5008B0038 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6959C91C205B58002568CF /* Tasks */,
+				325CD4961C3353B90062C0B3 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */,
+				325CD4971C3353B90062C0B3 /* Notification.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
 				329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */,
 				32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */,

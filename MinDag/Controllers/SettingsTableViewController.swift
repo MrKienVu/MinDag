@@ -12,6 +12,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
 
     
     // MARK: Outlets
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    
     @IBOutlet weak var weekdayTimeLabel: UILabel!
     @IBOutlet weak var weekdayTimePicker: UIDatePicker!
 
@@ -34,6 +36,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     
     // MARK: On Value Changed
+    @IBAction func notificationsChanged(sender: AnyObject) {
+        // TODO: Cancel notifications
+        USERDEFAULTS.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
         weekdayTimeChanged()
         USERDEFAULTS.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
@@ -74,28 +83,47 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 { toggleDatepicker(1) } // WeekdayTimePicker
-        else if indexPath.section == 0 && indexPath.row == 2 { toggleDatepicker(2) } // WeekendTimePicker
+        if      indexPath.section == 0 && indexPath.row == 1 { toggleDatepicker(1) } // WeekdayTimePicker
+        else if indexPath.section == 0 && indexPath.row == 3 { toggleDatepicker(2) } // WeekendTimePicker
         else if indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
         else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (weekdayTimePickerHidden && indexPath.section == 0 && indexPath.row == 1) ||
-            (weekendTimePickerHidden && indexPath.section == 0 && indexPath.row == 3) ||
+        
+        // Hide / Show datepickers
+        if  (weekdayTimePickerHidden && indexPath.section == 0 && indexPath.row == 2) ||
+            (weekendTimePickerHidden && indexPath.section == 0 && indexPath.row == 4) ||
             (mathysDayPickerHidden && indexPath.section == 1 && indexPath.row == 1) ||
-            (mathysTimePickerHidden && indexPath.section == 1 && indexPath.row == 3) {
-                return 0
-        } else {
+            (mathysTimePickerHidden && indexPath.section == 1 && indexPath.row == 3)
+        {
+            return 0
+        }
+        
+        // Hide / Show all rows in first section based on notification switch
+        else if (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 1) ||
+                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 2) ||
+                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 3) ||
+                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 4)
+        {
+            return 0
+        }
+        
+        else {
             return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         }
     }
     
     func toggleDatepicker(cell: Int) {
-        if cell == 1 { weekdayTimePickerHidden = !weekdayTimePickerHidden }
+        if      cell == 1 { weekdayTimePickerHidden = !weekdayTimePickerHidden }
         else if cell == 2 { weekendTimePickerHidden =  !weekendTimePickerHidden }
         else if cell == 3 { mathysDayPickerHidden = !mathysDayPickerHidden }
-        else if cell == 4 { mathysTimePickerHidden = !mathysTimePickerHidden }
+        else if cell == 4 {
+            mathysTimePickerHidden = !mathysTimePickerHidden
+            scheduleLocalNotification()
+        }
         
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -126,6 +154,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         mathysDayPicker.dataSource = self
         mathysDayPicker.delegate = self
         
+        notificationSwitch.on = USERDEFAULTS.boolForKey(UserDefaultKey.NotificationsEnabled)
+        
         if let weekdayTime = USERDEFAULTS.objectForKey(UserDefaultKey.WeekdayTime) {
             weekdayTimePicker.setDate(
                 weekdayTime as! NSDate,
@@ -155,21 +185,53 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         weekendTimeChanged()
         mathysTimeChanged()
         
+        Notification.sharedInstance.setupNotificationSettings()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    func scheduleLocalNotification() {
+        let localNotification = UILocalNotification()
+        let fireDate = fixNotificationDate(weekdayTimePicker.date)
+        localNotification.fireDate = fireDate
+        localNotification.alertBody = "Du har en ny oppgave å gjøre."
+        localNotification.alertAction = "Vise valg"
+        localNotification.category = "NOTIFICATION_CATEGORY"
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        print("Scheduled local notification at firedate: \(fireDate)")
     }
-    */
+    
+    private func fixNotificationDate(dateToFix: NSDate) -> NSDate {
+        
+        let calendar = NSCalendar.currentCalendar()
+        
+        let currentDate = NSDate()
+        let currentDateComponents = calendar.components([.Year, .Month, .Day], fromDate: currentDate)
+        
+        let otherDateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: dateToFix)
+        otherDateComponents.year = currentDateComponents.year
+        otherDateComponents.month = currentDateComponents.month
+        otherDateComponents.day = currentDateComponents.day
+        
+        let fixedDate = calendar.dateFromComponents(otherDateComponents)
+        
+        return fixedDate!
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

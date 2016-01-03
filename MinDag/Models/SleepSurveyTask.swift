@@ -22,24 +22,27 @@ public var SleepSurveyTask: ORKOrderedTask {
     //Array for values in the picker
     var pickerValueChoice = [ORKTextChoice]()
     
-    for(var i = 0; i < 15;i++){
-        var textValue = NSLocalizedString("\(i)", comment: "")
+    for (var i = 0; i < 15;i++){
+        var textValue = "\(i)"
     
         if(i == 14) {
-            textValue = NSLocalizedString(">\(i)", comment: "")
+            textValue = ">\(i)"
         }
         
-        pickerValueChoice.append(ORKTextChoice (text: textValue, value: i))
+        pickerValueChoice.append(ORKTextChoice(text: textValue, value: i))
     }   
     
     let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
     
-    let questionStep = ORKQuestionStep(identifier: String(Identifier.SleepSurveyStep), title: "SLEEP_QUESTION_TITLE".localized,
-        answer: answerFormat)
+    let questionStep = ORKQuestionStep(
+        identifier: Identifier.SleepSurveyStep.rawValue,
+        title: "SLEEP_QUESTION_TITLE".localized,
+        answer: answerFormat
+    )
     
     questionStep.text = "SLEEP_QUESTION_TEXT".localized
     
-    steps+=[questionStep]
+    steps.append(questionStep)
     
     let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
     sleepCompletionStep.title = "SLEEP_COMPLETION_TITLE".localized
