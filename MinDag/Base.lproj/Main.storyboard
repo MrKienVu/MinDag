@@ -511,34 +511,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Studie ID" id="MQh-eJ-phY">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Default" id="XM0-Wo-PrW">
-                                        <rect key="frame" x="0.0" y="880" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XM0-Wo-PrW" id="vJ9-DW-OlN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2893742" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-HX-7w2">
-                                                    <rect key="frame" x="437" y="7" width="155" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="studyIDChanged:" destination="FZi-Mq-C57" eventType="valueChanged" id="X3G-aB-Xo2"/>
-                                                    </connections>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeq-di-Xuz">
-                                                    <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="FZi-Mq-C57" id="LBu-0S-5aw"/>
@@ -553,7 +525,6 @@
                         <outlet property="mathysTimeLabel" destination="vjd-cz-cqS" id="eUc-PM-kO0"/>
                         <outlet property="mathysTimePicker" destination="lqy-tC-g7o" id="RU7-GT-VZj"/>
                         <outlet property="notificationSwitch" destination="wyE-wd-4SG" id="MNj-ZT-3Cp"/>
-                        <outlet property="studyIDLabel" destination="qTD-HX-7w2" id="OMf-22-3Os"/>
                         <outlet property="weekdayTimeLabel" destination="hWd-l8-t08" id="EEU-Dq-z2Q"/>
                         <outlet property="weekdayTimePicker" destination="rRS-2i-p94" id="JB3-42-qPT"/>
                         <outlet property="weekendTimeLabel" destination="Im8-tT-PGg" id="bCQ-J1-qK2"/>

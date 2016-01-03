@@ -25,8 +25,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var mathysTimeLabel: UILabel!
     @IBOutlet weak var mathysTimePicker: UIDatePicker!
     
-    @IBOutlet weak var studyIDLabel: UITextField!
-    
     // MARK: Variables and constants
     var weekdayTimePickerHidden = true
     var weekendTimePickerHidden = true
@@ -55,8 +53,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         mathysTimeChanged()
         USERDEFAULTS.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
     }
-    @IBAction func studyIDChanged(sender: AnyObject) {
-    }
+    
     
     func weekdayTimeChanged() {
         weekdayTimeLabel.text = NSDateFormatter.localizedStringFromDate(
@@ -81,6 +78,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             timeStyle: NSDateFormatterStyle.ShortStyle
         )
     }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if      indexPath.section == 0 && indexPath.row == 1 { toggleDatepicker(1) } // WeekdayTimePicker
