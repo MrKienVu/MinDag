@@ -25,3 +25,13 @@ struct UserDefaultKey {
     static let UUID = "UUID"
     static let NotificationsEnabled = "NotificationsEnabled"
 }
+
+let Days: [Int: String] = [
+    0: "Mandag",
+    1: "Tirsdag",
+    2: "Onsdag",
+    3: "Torsdag",
+    4: "Fredag",
+    5: "Lørdag",
+    6: "Søndag"
+]

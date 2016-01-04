@@ -30,7 +30,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     var weekendTimePickerHidden = true
     var mathysDayPickerHidden = true
     var mathysTimePickerHidden = true
-    let weekdays = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"]
     
     
     // MARK: On Value Changed
@@ -132,19 +131,20 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         return 1
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return weekdays.count
+        return Days.count
     }
     
     // MARK: Delegates
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return weekdays[row]
+        return Days[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        mathysDayLabel.text = weekdays[row]
-        UserDefaults.setObject(weekdays[row], forKey: UserDefaultKey.MathysDay)
+        mathysDayLabel.text = Days[row]
+        UserDefaults.setInteger(row, forKey: UserDefaultKey.MathysDay)
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mathysDayPicker.dataSource = self
@@ -166,9 +166,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             )
         }
         
-        if let mathysDay = UserDefaults.objectForKey(UserDefaultKey.MathysDay) {
-            mathysDayLabel.text = mathysDay as? String
-        }
+        let mathysDay = UserDefaults.integerForKey(UserDefaultKey.MathysDay)
+        mathysDayLabel.text = Days[mathysDay]
+        
+        mathysDayPicker.selectRow(mathysDay, inComponent: 0, animated: true)
         
         if let mathysTime = UserDefaults.objectForKey(UserDefaultKey.MathysTime) {
             mathysTimePicker.setDate(
