@@ -11,10 +11,18 @@ import Foundation
 class Notification {
     static let sharedInstance = Notification()
     
-    func setupNotificationSettings() {
+    func isNotificationsEnabled() -> Bool {
         let currentNotificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings()
         
         if currentNotificationSettings?.types == UIUserNotificationType.None {
+            return false
+        }
+        
+        return true
+    }
+    
+    func setupNotificationSettings() {
+        if !isNotificationsEnabled() {
             let notificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
             
             

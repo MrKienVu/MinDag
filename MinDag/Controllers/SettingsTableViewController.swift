@@ -119,10 +119,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         if      cell == 1 { weekdayTimePickerHidden = !weekdayTimePickerHidden }
         else if cell == 2 { weekendTimePickerHidden =  !weekendTimePickerHidden }
         else if cell == 3 { mathysDayPickerHidden = !mathysDayPickerHidden }
-        else if cell == 4 {
-            mathysTimePickerHidden = !mathysTimePickerHidden
-            scheduleLocalNotification()
-        }
+        else if cell == 4 { mathysTimePickerHidden = !mathysTimePickerHidden }
         
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -189,6 +186,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        scheduleLocalNotification()
     }
     
     

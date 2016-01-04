@@ -99,6 +99,13 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         return 0
     }
     
+    @IBAction func configureClicked(sender: AnyObject) {
+        if Notification.sharedInstance.isNotificationsEnabled() {
+            UserDefaults.setBool(true, forKey: UserDefaultKey.NotificationsEnabled)
+        }
+    }
+    
+    
     private func setupPageControl() {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.lightGrayColor()
