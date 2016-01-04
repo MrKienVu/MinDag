@@ -36,22 +36,23 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     // MARK: On Value Changed
     @IBAction func notificationsChanged(sender: AnyObject) {
         // TODO: Cancel notifications
-        USERDEFAULTS.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
+        if notificationSwitch.on { Notification.sharedInstance.setupNotificationSettings() }
+        UserDefaults.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
         weekdayTimeChanged()
-        USERDEFAULTS.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
+        UserDefaults.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
     }
     @IBAction func weekendTimeChanged(sender: AnyObject) {
         weekendTimeChanged()
-        USERDEFAULTS.setObject(weekendTimePicker.date, forKey: UserDefaultKey.WeekendTime)
+        UserDefaults.setObject(weekendTimePicker.date, forKey: UserDefaultKey.WeekendTime)
     }
     @IBAction func mathysTimeChanged(sender: AnyObject) {
         mathysTimeChanged()
-        USERDEFAULTS.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
+        UserDefaults.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
     }
     
     
@@ -144,7 +145,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         mathysDayLabel.text = weekdays[row]
-        USERDEFAULTS.setObject(weekdays[row], forKey: UserDefaultKey.MathysDay)
+        UserDefaults.setObject(weekdays[row], forKey: UserDefaultKey.MathysDay)
     }
     
     override func viewDidLoad() {
@@ -152,27 +153,27 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         mathysDayPicker.dataSource = self
         mathysDayPicker.delegate = self
         
-        notificationSwitch.on = USERDEFAULTS.boolForKey(UserDefaultKey.NotificationsEnabled)
+        notificationSwitch.on = UserDefaults.boolForKey(UserDefaultKey.NotificationsEnabled)
         
-        if let weekdayTime = USERDEFAULTS.objectForKey(UserDefaultKey.WeekdayTime) {
+        if let weekdayTime = UserDefaults.objectForKey(UserDefaultKey.WeekdayTime) {
             weekdayTimePicker.setDate(
                 weekdayTime as! NSDate,
                 animated: true
             )
         }
         
-        if let weekendTime = USERDEFAULTS.objectForKey(UserDefaultKey.WeekendTime) {
+        if let weekendTime = UserDefaults.objectForKey(UserDefaultKey.WeekendTime) {
             weekendTimePicker.setDate(
                 weekendTime as! NSDate,
                 animated: true
             )
         }
         
-        if let mathysDay = USERDEFAULTS.objectForKey(UserDefaultKey.MathysDay) {
+        if let mathysDay = UserDefaults.objectForKey(UserDefaultKey.MathysDay) {
             mathysDayLabel.text = mathysDay as? String
         }
         
-        if let mathysTime = USERDEFAULTS.objectForKey(UserDefaultKey.MathysTime) {
+        if let mathysTime = UserDefaults.objectForKey(UserDefaultKey.MathysTime) {
             mathysTimePicker.setDate(
                 mathysTime as! NSDate,
                 animated: true
@@ -182,8 +183,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         weekdayTimeChanged()
         weekendTimeChanged()
         mathysTimeChanged()
-        
-        Notification.sharedInstance.setupNotificationSettings()
         
     }
     

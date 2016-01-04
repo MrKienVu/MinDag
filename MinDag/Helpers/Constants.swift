@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let USERDEFAULTS = NSUserDefaults.standardUserDefaults()
+let UserDefaults = NSUserDefaults.standardUserDefaults()
 
 struct Color {
     static let primaryColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)

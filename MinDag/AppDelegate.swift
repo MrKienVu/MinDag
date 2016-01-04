@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window?.tintColor = Color.primaryColor
         
-        let hasLaunchedBefore = USERDEFAULTS.boolForKey(UserDefaultKey.hasLaunchedBefore)
+        let hasLaunchedBefore = UserDefaults.boolForKey(UserDefaultKey.hasLaunchedBefore)
         if !hasLaunchedBefore  {
             print("First launch, storing UUID and hasLaunched-flag in UserDefaults")
             let uuid = NSUUID().UUIDString
             
-            USERDEFAULTS.setObject(uuid, forKey: UserDefaultKey.UUID)
-            USERDEFAULTS.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
+            UserDefaults.setObject(uuid, forKey: UserDefaultKey.UUID)
+            UserDefaults.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
             print("Stored user ID \(uuid) in UserDefaults")
         }
         return true
