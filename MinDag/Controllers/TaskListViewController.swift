@@ -14,6 +14,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     let nettskjema = NettskjemaHandler(scheme: .Mathys)
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var settingsIcon: UIBarButtonItem!
     
     enum TableViewCellIdentifier: String {
         case Default = "Default"
@@ -36,6 +37,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         
+        animateSettingsIconWithDuration(1.7)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -51,6 +54,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let taskListRow = taskListRows[indexPath.row]
         
         cell.textLabel!.text = "\(taskListRow)"
+        cell.detailTextLabel!.text = taskListRow.subtitle
         
         return cell
     }
@@ -113,6 +117,13 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             scaleValueLabel.hidden = true
         }
     } */
+    
+    func animateSettingsIconWithDuration(duration: Double) {
+        let settingsView: UIView = settingsIcon.valueForKey("view") as! UIView
+        UIView.animateWithDuration(duration, animations: {
+            settingsView.transform = CGAffineTransformMakeRotation((90.0 * CGFloat(M_PI)) / 90.0)
+        })
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

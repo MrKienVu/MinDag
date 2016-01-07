@@ -150,17 +150,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         notificationSwitch.on = UserDefaults.boolForKey(UserDefaultKey.NotificationsEnabled)
         
         if let weekdayTime = UserDefaults.objectForKey(UserDefaultKey.WeekdayTime) {
-            weekdayTimePicker.setDate(
-                weekdayTime as! NSDate,
-                animated: true
-            )
+            weekdayTimePicker.setDate(weekdayTime as! NSDate, animated: true)
         }
         
         if let weekendTime = UserDefaults.objectForKey(UserDefaultKey.WeekendTime) {
-            weekendTimePicker.setDate(
-                weekendTime as! NSDate,
-                animated: true
-            )
+            weekendTimePicker.setDate(weekendTime as! NSDate, animated: true)
         }
         
         let mathysDay = UserDefaults.integerForKey(UserDefaultKey.MathysDay)
@@ -169,10 +163,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         mathysDayPicker.selectRow(mathysDay, inComponent: 0, animated: true)
         
         if let mathysTime = UserDefaults.objectForKey(UserDefaultKey.MathysTime) {
-            mathysTimePicker.setDate(
-                mathysTime as! NSDate,
-                animated: true
-            )
+            mathysTimePicker.setDate(mathysTime as! NSDate, animated: true)
         }
         
         weekdayTimeChanged()

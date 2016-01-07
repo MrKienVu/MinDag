@@ -77,6 +77,15 @@ enum TaskListRow: Int, CustomStringConvertible {
         }
     }
     
+    var subtitle: String {
+        switch self {
+        case .MathysTask:
+            return "MATHYS_SUBTITLE".localized
+        case .SleepSurvey:
+            return "SLEEP_SUBTITLE".localized
+        }
+    }
+    
     // MARK: Properties
     
     /// Returns a new `ORKTask` that the `TaskListRow` enumeration represents.

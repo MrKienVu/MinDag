@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 
-class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     // MARK: Outlets
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var notificationSwitch: UISwitch!
     
@@ -26,6 +27,7 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var mathysTimeLabel: UILabel!
     @IBOutlet weak var mathysTimePicker: UIDatePicker!
         
+    @IBOutlet weak var studyIdTextField: UITextField!
     
     // MARK: Variables and constants
     var weekdayTimePickerHidden = true
@@ -54,6 +56,14 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
     @IBAction func mathysTimeChanged(sender: AnyObject) {
         mathysTimeChanged()
         UserDefaults.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
+    }
+    
+    
+    @IBAction func studyIdChanged(sender: AnyObject) {
+        let text = studyIdTextField.text! as String
+        if text.characters.count >= 8 {
+            doneButton.enabled = true
+        }
     }
     
     
@@ -87,6 +97,7 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         else if indexPath.section == 0 && indexPath.row == 3 { toggleDatepicker(2) } // WeekendTimePicker
         else if indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
         else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
+        else if indexPath.section == 2 && indexPath.row == 0 { studyIdTextField.becomeFirstResponder() }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -103,10 +114,8 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         }
             
             // Hide / Show all rows in first section based on notification switch
-        else if (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 1) ||
-            (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 2) ||
-            (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 3) ||
-            (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 4)
+        else if (!notificationSwitch.on && indexPath.section == 0 &&
+                (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4))
         {
             return 0
         }
@@ -151,21 +160,14 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         mathysDayPicker.dataSource = self
         mathysDayPicker.delegate = self
-        
-        notificationSwitch.on = UserDefaults.boolForKey(UserDefaultKey.NotificationsEnabled)
+        studyIdTextField.delegate = self
         
         if let weekdayTime = UserDefaults.objectForKey(UserDefaultKey.WeekdayTime) {
-            weekdayTimePicker.setDate(
-                weekdayTime as! NSDate,
-                animated: true
-            )
+            weekdayTimePicker.setDate(weekdayTime as! NSDate, animated: true)
         }
         
         if let weekendTime = UserDefaults.objectForKey(UserDefaultKey.WeekendTime) {
-            weekendTimePicker.setDate(
-                weekendTime as! NSDate,
-                animated: true
-            )
+            weekendTimePicker.setDate(weekendTime as! NSDate, animated: true)
         }
         
         let mathysDay = UserDefaults.integerForKey(UserDefaultKey.MathysDay)
@@ -174,10 +176,7 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         mathysDayPicker.selectRow(mathysDay, inComponent: 0, animated: true)
         
         if let mathysTime = UserDefaults.objectForKey(UserDefaultKey.MathysTime) {
-            mathysTimePicker.setDate(
-                mathysTime as! NSDate,
-                animated: true
-            )
+            mathysTimePicker.setDate(mathysTime as! NSDate, animated: true)
         }
         
         weekdayTimeChanged()
@@ -191,36 +190,9 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        scheduleLocalNotification()
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
-    
-    func scheduleLocalNotification() {
-        let localNotification = UILocalNotification()
-        let fireDate = fixNotificationDate(weekdayTimePicker.date)
-        localNotification.fireDate = fireDate
-        localNotification.alertBody = "Du har en ny oppgave å gjøre."
-        localNotification.alertAction = "Vise valg"
-        localNotification.category = "NOTIFICATION_CATEGORY"
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        print("Scheduled local notification at firedate: \(fireDate)")
-    }
-    
-    private func fixNotificationDate(dateToFix: NSDate) -> NSDate {
-        
-        let calendar = NSCalendar.currentCalendar()
-        
-        let currentDate = NSDate()
-        let currentDateComponents = calendar.components([.Year, .Month, .Day], fromDate: currentDate)
-        
-        let otherDateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: dateToFix)
-        otherDateComponents.year = currentDateComponents.year
-        otherDateComponents.month = currentDateComponents.month
-        otherDateComponents.day = currentDateComponents.day
-        
-        let fixedDate = calendar.dateFromComponents(otherDateComponents)
-        
-        return fixedDate!
-    }
 }
