@@ -108,6 +108,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+        stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
+    }
+    
     /*func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
         let currentStepViewController = stepViewController.step?.identifier
         if currentStepViewController == Identifier.MoodQuestionStep.rawValue {

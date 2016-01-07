@@ -21,9 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-Fo-Qx3">
                                 <rect key="frame" x="277" y="550" width="46" height="30"/>
                                 <color key="tintColor" red="1" green="0.68235294117647061" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Konfigurer innstillinger">
-                                    <color key="titleColor" red="1" green="0.68235294117647061" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Konfigurer innstillinger"/>
                                 <connections>
                                     <action selector="configureClicked:" destination="owk-Bu-ERu" eventType="touchUpInside" id="26P-7C-cJE"/>
                                     <segue destination="nDb-B3-iGq" kind="show" id="I3l-4e-wpf"/>
