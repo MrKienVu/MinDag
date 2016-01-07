@@ -20,7 +20,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-Fo-Qx3">
                                 <rect key="frame" x="277" y="550" width="46" height="30"/>
-                                <state key="normal" title="Konfigurer innstillinger"/>
+                                <color key="tintColor" red="1" green="0.68235294117647061" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Konfigurer innstillinger">
+                                    <color key="titleColor" red="1" green="0.68235294117647061" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="configureClicked:" destination="owk-Bu-ERu" eventType="touchUpInside" id="26P-7C-cJE"/>
                                     <segue destination="bwF-AQ-UJZ" kind="show" identifier="segueShowTaskList" id="dAD-9h-77G"/>
@@ -47,7 +50,7 @@
                 <pageViewController storyboardIdentifier="InformationPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6ue-Px-jdr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKN-7X-keT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-444" y="29"/>
+            <point key="canvasLocation" x="-444" y="17"/>
         </scene>
         <!--Information Page Content View Controller-->
         <scene sceneID="FWh-v2-dxo">
@@ -100,8 +103,6 @@
                             <constraint firstItem="sQp-DI-iIf" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="EJW-p0-iDk"/>
                             <constraint firstItem="XqR-Cj-Zey" firstAttribute="top" secondItem="cO2-lw-Yae" secondAttribute="bottom" constant="10" id="Gra-Ef-OgR"/>
                             <constraint firstItem="G3v-jD-QsT" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="H2S-Ai-PhX"/>
-                            <constraint firstItem="cO2-lw-Yae" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="O1N-Qe-MT7"/>
-                            <constraint firstItem="cO2-lw-Yae" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="Q1o-Hg-4R9"/>
                             <constraint firstItem="G3v-jD-QsT" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="TME-MS-S5O"/>
                             <constraint firstItem="tFM-Ca-M26" firstAttribute="top" secondItem="G3v-jD-QsT" secondAttribute="bottom" constant="10" id="WXy-bB-sBz"/>
                             <constraint firstItem="cO2-lw-Yae" firstAttribute="centerX" secondItem="QEC-hg-uVK" secondAttribute="centerX" id="Z5C-5y-oqT"/>
@@ -112,8 +113,6 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="H2S-Ai-PhX"/>
-                                <exclude reference="O1N-Qe-MT7"/>
-                                <exclude reference="Q1o-Hg-4R9"/>
                             </mask>
                         </variation>
                     </view>
@@ -257,7 +256,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Hjem" id="7Pq-dg-DzE">
-                        <barButtonItem key="rightBarButtonItem" title="Innstillinger" id="Cmd-3N-YMP">
+                        <barButtonItem key="rightBarButtonItem" image="gear-icon" id="Cmd-3N-YMP">
                             <connections>
                                 <segue destination="FZi-Mq-C57" kind="show" identifier="segueShowSettings" id="V2H-W4-ZGS"/>
                             </connections>
@@ -291,6 +290,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyE-wd-4SG">
                                                     <rect key="frame" x="543" y="6.5" width="51" height="31"/>
+                                                    <color key="onTintColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="notificationsChanged:" destination="FZi-Mq-C57" eventType="valueChanged" id="Qp0-GS-pwS"/>
                                                     </connections>
@@ -555,5 +555,8 @@
             <point key="canvasLocation" x="1026" y="-464"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <resources>
+        <image name="gear-icon" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
 </document>

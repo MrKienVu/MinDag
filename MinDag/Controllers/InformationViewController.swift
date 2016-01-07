@@ -11,8 +11,8 @@ import UIKit
 class InformationViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    let pageTitles = ["   ", "Datalagring", "Personvern", "Påminnelser"]
-    let pageImages = ["mindag-logo", "security", "privacy", "notification-icon"]
+    let pageTitles = ["Min Dag", "Datalagring", "Personvern", "Påminnelser"]
+    let pageImages = ["mindag-logo", "mindag-security", "mindag-privacy", "mindag-notification"]
     let pageTexts = [
         "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..",
         "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.",

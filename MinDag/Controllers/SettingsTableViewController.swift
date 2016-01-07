@@ -101,10 +101,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         }
         
         // Hide / Show all rows in first section based on notification switch
-        else if (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 1) ||
-                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 2) ||
-                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 3) ||
-                (!notificationSwitch.on && indexPath.section == 0 && indexPath.row == 4)
+        else if (!notificationSwitch.on && indexPath.section == 0 &&
+                (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4))
         {
             return 0
         }
@@ -122,7 +120,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         
         tableView.beginUpdates()
         tableView.endUpdates()
-        
     }
     
     // MARK: - Delegates and data sources
@@ -190,47 +187,16 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     override func viewDidDisappear(animated: Bool) {
-        scheduleLocalNotification()
+        Notification.sharedInstance.DEMO_scheduleLocalNotification(weekdayTimePicker.date)
     }
     
-    
-    func scheduleLocalNotification() {
-        let localNotification = UILocalNotification()
-        let fireDate = fixNotificationDate(weekdayTimePicker.date)
-        localNotification.fireDate = fireDate
-        localNotification.alertBody = "Du har en ny oppgave å gjøre."
-        localNotification.alertAction = "Vise valg"
-        localNotification.category = "NOTIFICATION_CATEGORY"
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        print("Scheduled local notification at firedate: \(fireDate)")
-    }
-    
-    private func fixNotificationDate(dateToFix: NSDate) -> NSDate {
-        
-        let calendar = NSCalendar.currentCalendar()
-        
-        let currentDate = NSDate()
-        let currentDateComponents = calendar.components([.Year, .Month, .Day], fromDate: currentDate)
-        
-        let otherDateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: dateToFix)
-        otherDateComponents.year = currentDateComponents.year
-        otherDateComponents.month = currentDateComponents.month
-        otherDateComponents.day = currentDateComponents.day
-        
-        let fixedDate = calendar.dateFromComponents(otherDateComponents)
-        
-        return fixedDate!
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
+
+
+
+
+
+
+
+
+

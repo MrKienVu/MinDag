@@ -13,6 +13,7 @@
 		329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA71C22A8D5008B0038 /* Identifier.swift */; };
 		329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 329EACAD1C22A97E008B0038 /* Localizable.strings */; };
 		329EACC31C23FFFD008B0038 /* ORKESerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 329EACC21C23FFFD008B0038 /* ORKESerialization.m */; };
+		32AA83C21C3BF6CF004DE1D6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA83C11C3BF6CF004DE1D6 /* Task.swift */; };
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD5E301C29BAF1002CB02A /* InformationViewController.swift */; };
 		32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */; };
@@ -96,6 +97,7 @@
 		329EACBE1C23FFC7008B0038 /* ORKESerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKESerialization.h; sourceTree = "<group>"; };
 		329EACC11C23FFFC008B0038 /* MinDag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinDag-Bridging-Header.h"; sourceTree = "<group>"; };
 		329EACC21C23FFFD008B0038 /* ORKESerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKESerialization.m; sourceTree = "<group>"; };
+		32AA83C11C3BF6CF004DE1D6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32DD5E301C29BAF1002CB02A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPageContentViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				5F6959C91C205B58002568CF /* Tasks */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
+				32AA83C11C3BF6CF004DE1D6 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,
+				32AA83C21C3BF6CF004DE1D6 /* Task.swift in Sources */,
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */,
