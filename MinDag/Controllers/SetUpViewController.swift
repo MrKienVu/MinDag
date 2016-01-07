@@ -40,22 +40,18 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
     @IBAction func notificationsChanged(sender: AnyObject) {
         // TODO: Cancel notifications
         if notificationSwitch.on { Notification.sharedInstance.setupNotificationSettings() }
-        UserDefaults.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
         weekdayTimeChanged()
-        UserDefaults.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
     }
     @IBAction func weekendTimeChanged(sender: AnyObject) {
         weekendTimeChanged()
-        UserDefaults.setObject(weekendTimePicker.date, forKey: UserDefaultKey.WeekendTime)
     }
     @IBAction func mathysTimeChanged(sender: AnyObject) {
         mathysTimeChanged()
-        UserDefaults.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
     }
     
     
@@ -189,6 +185,12 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        UserDefaults.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
+        UserDefaults.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
+        UserDefaults.setObject(weekendTimePicker.date, forKey: UserDefaultKey.WeekendTime)
+        UserDefaults.setObject(studyIdTextField.text!, forKey: UserDefaultKey.StudyID)    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()

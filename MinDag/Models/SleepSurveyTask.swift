@@ -22,15 +22,15 @@ public var SleepSurveyTask: ORKOrderedTask {
     //Array for values in the picker
     var pickerValueChoice = [ORKTextChoice]()
     
-    for (var i = 0; i < 15;i++){
-        var textValue = "\(i)"
-    
-        if(i == 14) {
-            textValue = ">\(i)"
-        }
+    for (var i = 0; i < 16;i++){
+        var textValue = "\(i) timer"
+        
+        if i == 0   { textValue = "Sov ikke" }
+        if i == 1   { textValue = "\(i) time" }
+        if i == 15  { textValue = "mer enn 14 timer" }
         
         pickerValueChoice.append(ORKTextChoice(text: textValue, value: i))
-    }   
+    }
     
     let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
     

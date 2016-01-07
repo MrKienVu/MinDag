@@ -110,9 +110,15 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidspunkt for hverdagspåminnelse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iug-iy-0mw">
-                                                    <rect key="frame" x="16" y="11.5" width="264.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Når vil du ha din påminnelse på hverdager?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-Xe-BXc">
+                                                    <rect key="frame" x="16" y="23.5" width="261" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hverdag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iug-iy-0mw">
+                                                    <rect key="frame" x="16" y="4" width="61.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -122,7 +128,15 @@
                                                 <constraint firstItem="Iug-iy-0mw" firstAttribute="centerY" secondItem="IJ6-N1-Q7M" secondAttribute="centerY" id="Tlw-gi-9Su"/>
                                                 <constraint firstItem="Iug-iy-0mw" firstAttribute="leading" secondItem="IJ6-N1-Q7M" secondAttribute="leadingMargin" constant="8" id="bJC-Sr-nva"/>
                                                 <constraint firstItem="Izk-ck-mZA" firstAttribute="trailing" secondItem="IJ6-N1-Q7M" secondAttribute="trailingMargin" id="jmt-kk-bpS"/>
+                                                <constraint firstItem="Iug-iy-0mw" firstAttribute="top" secondItem="IJ6-N1-Q7M" secondAttribute="topMargin" constant="-4" id="myv-ZR-ldj"/>
+                                                <constraint firstItem="c5F-Xe-BXc" firstAttribute="leading" secondItem="IJ6-N1-Q7M" secondAttribute="leadingMargin" constant="8" id="pIN-5Y-o8G"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="c5F-Xe-BXc" secondAttribute="bottom" constant="-4" id="xkQ-UH-pHs"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Tlw-gi-9Su"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="RqX-la-8Mz">
@@ -141,6 +155,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="473673600.69093698">
                                                         <!--2016-01-05 08:00:00 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="weekdayTimeChanged:" destination="EKy-OS-F7B" eventType="valueChanged" id="33v-Cc-ccV"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -157,9 +174,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidspunkt for helgepåminnelse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-9P-43x">
-                                                    <rect key="frame" x="16" y="11.5" width="236" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-9P-43x">
+                                                    <rect key="frame" x="16" y="4" width="34" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -169,13 +186,31 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Når vil du ha din påminnelse i helgen?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tf-t4-SOe">
+                                                    <rect key="frame" x="16" y="23" width="228.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Tf-t4-SOe" secondAttribute="bottom" constant="-4" id="DQs-Cl-w4m"/>
+                                                <constraint firstItem="6Tf-t4-SOe" firstAttribute="leading" secondItem="T8h-qe-dzs" secondAttribute="leadingMargin" constant="8" id="Hs9-R4-fRL"/>
+                                                <constraint firstItem="IBV-9P-43x" firstAttribute="top" secondItem="T8h-qe-dzs" secondAttribute="topMargin" constant="-4" id="Jd8-lv-NuG"/>
                                                 <constraint firstItem="IBV-9P-43x" firstAttribute="leading" secondItem="T8h-qe-dzs" secondAttribute="leadingMargin" constant="8" id="MRM-Ie-F8K"/>
                                                 <constraint firstItem="uWl-ek-5Sp" firstAttribute="trailing" secondItem="T8h-qe-dzs" secondAttribute="trailingMargin" id="Ou5-y7-Vbk"/>
                                                 <constraint firstItem="IBV-9P-43x" firstAttribute="centerY" secondItem="T8h-qe-dzs" secondAttribute="centerY" id="VSk-cP-px4"/>
+                                                <constraint firstItem="IBV-9P-43x" firstAttribute="top" secondItem="T8h-qe-dzs" secondAttribute="topMargin" constant="-4" id="cHK-bt-5f6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Tf-t4-SOe" secondAttribute="bottom" constant="-4" id="eim-6X-1hv"/>
                                                 <constraint firstItem="uWl-ek-5Sp" firstAttribute="centerY" secondItem="T8h-qe-dzs" secondAttribute="centerY" id="vP5-s3-vVX"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="VSk-cP-px4"/>
+                                                    <exclude reference="cHK-bt-5f6"/>
+                                                    <exclude reference="eim-6X-1hv"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="is6-YF-dXo">
@@ -194,6 +229,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="473673600.69093698">
                                                         <!--2016-01-05 08:00:00 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="weekendTimeChanged:" destination="EKy-OS-F7B" eventType="valueChanged" id="ile-Ye-8qi"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -299,6 +337,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="473706000.31867802">
                                                         <!--2016-01-05 17:00:00 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="mathysTimeChanged:" destination="EKy-OS-F7B" eventType="valueChanged" id="QtP-Tz-PBt"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
