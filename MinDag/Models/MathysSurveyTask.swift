@@ -20,7 +20,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     steps.append(introStep)
     
     func verticalScaleWithHighValue(highValue: String, lowValue: String) -> ORKAnswerFormat {
-        return ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(
+        let answer = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(
             10,
             minimumValue: 1,
             defaultValue: NSIntegerMax,
@@ -29,6 +29,9 @@ public var MathysSurveyTask: ORKOrderedTask {
             maximumValueDescription: highValue,
             minimumValueDescription: lowValue
         )
+        answer.numberFormatter.positiveFormat = "\n"
+        
+        return answer
     }
     
     for i in 1..<21 {
