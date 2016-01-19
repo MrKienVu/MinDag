@@ -93,7 +93,7 @@
 
 "SCALE_COMPLETION_TITLE" = "Well done!";
 "SCALE_COMPLETION_TEXT" = "You are now done with the first half of the survey.";
-"SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next' in the upper right corner.";
+"SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next'.";
 
 "INTRO2_TITLE" = "MAThyS Part 2";
 "INTRO2_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";

@@ -46,7 +46,7 @@ public var MathysSurveyTask: ORKOrderedTask {
         ))
     }
     
-    let scaleCompletionStep = ORKCompletionStep(identifier: String(Identifier.MathysScaleCompletionStep))
+    let scaleCompletionStep = ORKInstructionStep(identifier: String(Identifier.MathysScaleCompletionStep))
     scaleCompletionStep.title = "SCALE_COMPLETION_TITLE".localized
     scaleCompletionStep.text = "SCALE_COMPLETION_TEXT".localized
     scaleCompletionStep.detailText = "SCALE_COMPLETION_DETAIL".localized
