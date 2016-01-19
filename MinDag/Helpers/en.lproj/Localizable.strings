@@ -20,6 +20,10 @@
 "SLEEP_COMPLETION_TITLE" = "Thank you!";
 "SLEEP_COMPLETION_TEXT" = "By submitting this information, you have helped us a lot.";
 
+"SLEEP_QUALITY" = "How was your sleep quality tonight?";
+"SLEEP_QUALITY_GOOD" = "Very good";
+"SLEEP_QUALITY_BAD" = "Very bad";
+
 
 /**************************
  *     Mathys survey      *

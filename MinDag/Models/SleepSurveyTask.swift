@@ -44,6 +44,14 @@ public var SleepSurveyTask: ORKOrderedTask {
     
     steps.append(questionStep)
     
+    let sleepQualityAnswer = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(5, minimumValue: 1, defaultValue: NSIntegerMax, step: 1, vertical: true, maximumValueDescription: "SLEEP_QUALITY_GOOD".localized, minimumValueDescription: "SLEEP_QUALITY_BAD".localized)
+    
+    sleepQualityAnswer.numberFormatter.positiveFormat = "\n"
+    
+    let sleepQualityStep = ORKQuestionStep(identifier: Identifier.SleepQuality.rawValue, title: "SLEEP_QUALITY".localized, text: nil, answer: sleepQualityAnswer)
+    
+    steps.append(sleepQualityStep)
+    
     let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
     sleepCompletionStep.title = "SLEEP_COMPLETION_TITLE".localized
     sleepCompletionStep.text = "SLEEP_COMPLETION_TEXT".localized
