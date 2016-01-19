@@ -37,7 +37,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     for i in 1..<21 {
         steps.append(ORKQuestionStep(
             identifier: String(Identifier.ScaleQuestion) + "\(i)",
-            title: "Question \(i)",
+            title: "Statement \(i)",
             text: nil,
             answer: verticalScaleWithHighValue(
                 "SCALE_QUESTION_\(i)_HIGH".localized,

@@ -28,7 +28,7 @@
 "MATHYS_SUBTITLE" = "Weekly survey";
 
 "INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
-"INTRO_TEXT" = "This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
+"INTRO_TEXT" = "The following scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
 "INTRO_DETAIL" = "More details about the survey can be placed here.";
 
 "SCALE_QUESTION_1_HIGH" = "I am more sensitive to colours than usual";
