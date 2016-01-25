@@ -37,7 +37,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     for i in 1..<21 {
         steps.append(ORKQuestionStep(
             identifier: String(Identifier.ScaleQuestion) + "\(i)",
-            title: "Question \(i)",
+            title: "Statement \(i)",
             text: nil,
             answer: verticalScaleWithHighValue(
                 "SCALE_QUESTION_\(i)_HIGH".localized,
@@ -46,7 +46,7 @@ public var MathysSurveyTask: ORKOrderedTask {
         ))
     }
     
-    let scaleCompletionStep = ORKCompletionStep(identifier: String(Identifier.MathysScaleCompletionStep))
+    let scaleCompletionStep = ORKInstructionStep(identifier: String(Identifier.MathysScaleCompletionStep))
     scaleCompletionStep.title = "SCALE_COMPLETION_TITLE".localized
     scaleCompletionStep.text = "SCALE_COMPLETION_TEXT".localized
     scaleCompletionStep.detailText = "SCALE_COMPLETION_DETAIL".localized

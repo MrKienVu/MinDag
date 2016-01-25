@@ -20,6 +20,10 @@
 "SLEEP_COMPLETION_TITLE" = "Thank you!";
 "SLEEP_COMPLETION_TEXT" = "By submitting this information, you have helped us a lot.";
 
+"SLEEP_QUALITY" = "How was your sleep quality tonight?";
+"SLEEP_QUALITY_GOOD" = "Very good";
+"SLEEP_QUALITY_BAD" = "Very bad";
+
 
 /**************************
  *     Mathys survey      *
@@ -28,7 +32,7 @@
 "MATHYS_SUBTITLE" = "Weekly survey";
 
 "INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
-"INTRO_TEXT" = "This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
+"INTRO_TEXT" = "The following scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
 "INTRO_DETAIL" = "More details about the survey can be placed here.";
 
 "SCALE_QUESTION_1_HIGH" = "I am more sensitive to colours than usual";
@@ -93,7 +97,7 @@
 
 "SCALE_COMPLETION_TITLE" = "Well done!";
 "SCALE_COMPLETION_TEXT" = "You are now done with the first half of the survey.";
-"SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next' in the upper right corner.";
+"SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next'.";
 
 "INTRO2_TITLE" = "MAThyS Part 2";
 "INTRO2_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";

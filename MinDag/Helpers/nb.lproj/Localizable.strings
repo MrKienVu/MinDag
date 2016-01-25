@@ -19,6 +19,8 @@
 "SLEEP_COMPLETION_TITLE" = "Takk!";
 "SLEEP_COMPLETION_TEXT" = "Ved å sende inn denne informasjonen, bidrar du til viktig forskning.";
 
+"SLEEP_QUALITY_GOOD" = "Svært godt";
+"SLEEP_QUALITY_BAD" = "Svært dårlig";
 
 /**************************
  *      MathysSurvey      *
