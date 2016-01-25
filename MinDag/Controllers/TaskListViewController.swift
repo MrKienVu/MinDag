@@ -102,7 +102,48 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         */
         taskResultFinishedCompletionHandler?(taskViewController.result)
         
-        self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)
+        let taskResult = taskViewController.result
+        
+        var list = [String]()
+        list.append("Task: \(taskResult.identifier)")
+        list.append("startDate: \(taskResult.startDate!)")
+        list.append("endDate: \(taskResult.endDate!)")
+        
+        let stepResults = taskResult.results!
+        
+        if let stepResults = taskResult.results as? [ORKStepResult] {
+            for stepResult in stepResults {
+                for result in stepResult.results! {
+                    if let scaleResult = result as? ORKScaleQuestionResult {
+                        if let answer = scaleResult.answer {
+                            list.append("\(scaleResult.identifier): \(answer)")
+                        } else {
+                            list.append("\(scaleResult.identifier): \(scaleResult.answer)")
+                        }
+                    }
+                    if let choiceResult = result as? ORKChoiceQuestionResult {
+                        if let _ = choiceResult.answer {
+                            list.append("\(choiceResult.identifier): \(choiceResult.choiceAnswers![0])")
+                        } else {
+                            list.append("\(choiceResult.identifier): \(choiceResult.answer)")
+                        }
+                    }
+                    if let textResult = result as? ORKTextQuestionResult {
+                        if let answer = textResult.answer {
+                            list.append("\(textResult.identifier): \(answer)")
+                        } else {
+                            list.append("\(textResult.identifier): \(textResult.answer)")
+                        }
+                    }
+                }
+            }
+        }
+        
+        print(list)
+        print("Number of steps completed:  \(getNumberOfStepsCompleted(stepResults))")
+        
+        
+        //self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)
         //self.nettskjema.submit()
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
@@ -127,6 +168,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         UIView.animateWithDuration(duration, animations: {
             settingsView.transform = CGAffineTransformMakeRotation((90.0 * CGFloat(M_PI)) / 90.0)
         })
+    }
+    
+    func getNumberOfStepsCompleted(results: [ORKResult]) -> Int {
+        return results.count
     }
 
     override func didReceiveMemoryWarning() {

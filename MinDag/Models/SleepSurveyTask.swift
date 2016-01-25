@@ -35,7 +35,7 @@ public var SleepSurveyTask: ORKOrderedTask {
     let answerFormat = ORKAnswerFormat.valuePickerAnswerFormatWithTextChoices(pickerValueChoice)
     
     let questionStep = ORKQuestionStep(
-        identifier: Identifier.SleepSurveyStep.rawValue,
+        identifier: Identifier.HoursOfSleepStep.rawValue,
         title: "SLEEP_QUESTION_TITLE".localized,
         answer: answerFormat
     )
@@ -48,7 +48,7 @@ public var SleepSurveyTask: ORKOrderedTask {
     
     sleepQualityAnswer.numberFormatter.positiveFormat = "\n"
     
-    let sleepQualityStep = ORKQuestionStep(identifier: Identifier.SleepQuality.rawValue, title: "SLEEP_QUALITY".localized, text: nil, answer: sleepQualityAnswer)
+    let sleepQualityStep = ORKQuestionStep(identifier: Identifier.SleepQualityStep.rawValue, title: "SLEEP_QUALITY".localized, text: nil, answer: sleepQualityAnswer)
     
     steps.append(sleepQualityStep)
     

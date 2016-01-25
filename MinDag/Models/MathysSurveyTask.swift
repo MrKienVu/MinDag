@@ -46,12 +46,6 @@ public var MathysSurveyTask: ORKOrderedTask {
         ))
     }
     
-    let scaleCompletionStep = ORKInstructionStep(identifier: String(Identifier.MathysScaleCompletionStep))
-    scaleCompletionStep.title = "SCALE_COMPLETION_TITLE".localized
-    scaleCompletionStep.text = "SCALE_COMPLETION_TEXT".localized
-    scaleCompletionStep.detailText = "SCALE_COMPLETION_DETAIL".localized
-    steps.append(scaleCompletionStep)
-    
     let introStep2 = ORKInstructionStep(identifier: String(Identifier.MathysInstructionStep2))
     introStep2.title = "INTRO2_TITLE".localized
     introStep2.text = "INTRO2_TEXT".localized
@@ -60,7 +54,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     
     var textChoices = [ORKTextChoice]()
     for i in 1..<6 {
-        textChoices.append(ORKTextChoice(text: "TEXT_CHOICE_\(i)".localized, value: "\(i)"))
+        textChoices.append(ORKTextChoice(text: "TEXT_CHOICE_\(i)".localized, value: i))
     }
     
     let textChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: textChoices)
