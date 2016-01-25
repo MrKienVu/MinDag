@@ -41,9 +41,9 @@ class NettskjemaHandler {
         //      - There is no guarantee for backward or forward compatibility
         //      - ORKESerializer is only included in Apple's internal test app for new features for the ResearchKit API.
         
-        print("Got result")
+        /*print("Got result")
         let serializedResult = try? ORKESerializer.JSONDataForObject(result)
-        print(NSString(data: serializedResult!, encoding: NSUTF8StringEncoding))
+        print(NSString(data: serializedResult!, encoding: NSUTF8StringEncoding))*/
         //backgroundWebView.stringByEvaluatingJavaScriptFromString("Nettskjema.setExtraField('\(key)', \(serializedResult!));")
     }
     

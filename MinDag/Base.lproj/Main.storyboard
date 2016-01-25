@@ -810,7 +810,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Ukentlig MAThyS-skjema" id="efu-jt-3GZ">
+                            <tableViewSection headerTitle="Ukentlig spørreskjema" id="efu-jt-3GZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Default" textLabel="uYp-a1-VCw" detailTextLabel="lFX-H6-xWR" style="IBUITableViewCellStyleValue1" id="xy0-iK-Y74">
                                         <rect key="frame" x="0.0" y="508" width="600" height="44"/>

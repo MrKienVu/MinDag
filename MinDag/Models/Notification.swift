@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Notification {
     static let sharedInstance = Notification()
