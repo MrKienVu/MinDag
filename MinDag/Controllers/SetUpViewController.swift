@@ -64,36 +64,27 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
     
     
     func weekdayTimeChanged() {
-        weekdayTimeLabel.text = NSDateFormatter.localizedStringFromDate(
-            weekdayTimePicker.date,
-            dateStyle: NSDateFormatterStyle.NoStyle,
-            timeStyle: NSDateFormatterStyle.ShortStyle
-        )
+        weekdayTimeLabel.text = NSDateFormatter.localizedStringFromDate(weekdayTimePicker.date,
+            dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
     }
     
     func weekendTimeChanged() {
-        weekendTimeLabel.text = NSDateFormatter.localizedStringFromDate(
-            weekendTimePicker.date,
-            dateStyle: NSDateFormatterStyle.NoStyle,
-            timeStyle: NSDateFormatterStyle.ShortStyle
-        )
+        weekendTimeLabel.text = NSDateFormatter.localizedStringFromDate(weekendTimePicker.date,
+            dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
     }
     
     func mathysTimeChanged() {
-        mathysTimeLabel.text = NSDateFormatter.localizedStringFromDate(
-            mathysTimePicker.date,
-            dateStyle: NSDateFormatterStyle.NoStyle,
-            timeStyle: NSDateFormatterStyle.ShortStyle
-        )
+        mathysTimeLabel.text = NSDateFormatter.localizedStringFromDate(mathysTimePicker.date,
+            dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if      indexPath.section == 0 && indexPath.row == 1 { toggleDatepicker(1) } // WeekdayTimePicker
-        else if indexPath.section == 0 && indexPath.row == 3 { toggleDatepicker(2) } // WeekendTimePicker
-        else if indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
-        else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
-        else if indexPath.section == 2 && indexPath.row == 0 { studyIdTextField.becomeFirstResponder() }
+        if      indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(1) } // WeekdayTimePicker
+        else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(2) } // WeekendTimePicker
+        else if indexPath.section == 2 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
+        else if indexPath.section == 2 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
+        else if indexPath.section == 3 && indexPath.row == 0 { studyIdTextField.becomeFirstResponder() }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -101,17 +92,17 @@ class SetUpViewController: UITableViewController, UIPickerViewDataSource, UIPick
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         // Hide / Show datepickers
-        if  (weekdayTimePickerHidden && indexPath.section == 0 && indexPath.row == 2) ||
-            (weekendTimePickerHidden && indexPath.section == 0 && indexPath.row == 4) ||
-            (mathysDayPickerHidden && indexPath.section == 1 && indexPath.row == 1) ||
-            (mathysTimePickerHidden && indexPath.section == 1 && indexPath.row == 3)
+        if  (weekdayTimePickerHidden && indexPath.section == 1 && indexPath.row == 1) ||
+            (weekendTimePickerHidden && indexPath.section == 1 && indexPath.row == 3) ||
+            (mathysDayPickerHidden && indexPath.section == 2 && indexPath.row == 1) ||
+            (mathysTimePickerHidden && indexPath.section == 2 && indexPath.row == 3)
         {
             return 0
         }
             
             // Hide / Show all rows in first section based on notification switch
-        else if (!notificationSwitch.on && indexPath.section == 0 &&
-                (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4))
+        else if (!notificationSwitch.on && indexPath.section == 1 &&
+                (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3))
         {
             return 0
         }
