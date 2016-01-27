@@ -28,9 +28,9 @@ public class CSVProcesser {
     }
     
     func appendMetadata(taskResult: ORKTaskResult) -> String {
-        return "\(rid)," +
+        return "\(taskResult.identifier)," +
+               "\(rid)," +
                "\(sid)," +
-               "\(taskResult.identifier)," +
                "\(taskResult.startDate!)," +
                "\(taskResult.endDate!)," +
                "\(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)),"
