@@ -151,18 +151,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+        let identifier = stepViewController.step?.identifier
+        
         stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
-    }
-    
-    /*func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
-        let currentStepViewController = stepViewController.step?.identifier
-        if currentStepViewController == Identifier.MoodQuestionStep.rawValue {
-            // Set ORKScaleValueLabel to hidden
-            let scaleValueLabel = stepViewController.view.subviews[0].subviews[0].subviews[1].subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[1].subviews[0].subviews[0].subviews[0].subviews[0].subviews[5].subviews[0].subviews[1].subviews[1] as! UILabel;
-            print(scaleValueLabel.text);
-            scaleValueLabel.hidden = true
+        
+        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
+            stepViewController.continueButtonTitle = "Send inn"
         }
-    } */
+    }
     
     func animateSettingsIconWithDuration(duration: Double) {
         let settingsView: UIView = settingsIcon.valueForKey("view") as! UIView

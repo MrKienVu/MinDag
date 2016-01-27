@@ -81,10 +81,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if      indexPath.section == 0 && indexPath.row == 1 { toggleDatepicker(1) } // WeekdayTimePicker
-        else if indexPath.section == 0 && indexPath.row == 3 { toggleDatepicker(2) } // WeekendTimePicker
-        else if indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
-        else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
+        if      indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(1) } // WeekdayTimePicker
+        else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(2) } // WeekendTimePicker
+        else if indexPath.section == 2 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
+        else if indexPath.section == 2 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -92,20 +92,20 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         // Hide / Show datepickers
-        if  (weekdayTimePickerHidden && indexPath.section == 0 && indexPath.row == 2) ||
-            (weekendTimePickerHidden && indexPath.section == 0 && indexPath.row == 4) ||
-            (mathysDayPickerHidden && indexPath.section == 1 && indexPath.row == 1) ||
-            (mathysTimePickerHidden && indexPath.section == 1 && indexPath.row == 3)
+        if  (weekdayTimePickerHidden && indexPath.section == 1 && indexPath.row == 1) ||
+            (weekendTimePickerHidden && indexPath.section == 1 && indexPath.row == 3) ||
+            (mathysDayPickerHidden && indexPath.section == 2 && indexPath.row == 1) ||
+            (mathysTimePickerHidden && indexPath.section == 2 && indexPath.row == 3)
         {
             return 0
         }
         
-        // Hide / Show all rows in first section based on notification switch
+        /*// Hide / Show all rows in first section based on notification switch
         else if (!notificationSwitch.on && indexPath.section == 0 &&
                 (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4))
         {
             return 0
-        }
+        }*/
         
         else {
             return super.tableView(tableView, heightForRowAtIndexPath: indexPath)

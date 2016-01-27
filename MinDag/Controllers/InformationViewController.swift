@@ -11,13 +11,18 @@ import UIKit
 class InformationViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    let pageTitles = ["Min Dag", "Datalagring", "Personvern", "Påminnelser"]
+    let pageTitles = [
+        "MINDAG_TITLE".localized,
+        "DATA_TITLE".localized,
+        "PRIVACY_TITLE".localized,
+        "NOTIFICATIONS_TITLE".localized
+    ]
     let pageImages = ["mindag-logo", "mindag-security", "mindag-privacy", "mindag-notification"]
     let pageTexts = [
-        "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..",
-        "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.",
-        "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla.",
-        "Denne applikasjonen baserer seg på å gi deg påminnelser når du har ting du må gjøre i appen, som å fylle ut et kort spørreskjema. Det er derfor viktig at du tillater appen å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser."
+        "MINDAG_TEXT".localized,
+        "DATA_TEXT".localized,
+        "PRIVACY_TEXT".localized,
+        "NOTIFICATIONS_TEXT".localized
     ]
 
     @IBOutlet weak var configureButton: UIButton!
