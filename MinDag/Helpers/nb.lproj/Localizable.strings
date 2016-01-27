@@ -18,7 +18,7 @@
 "DATA_TEXT" = "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.";
 
 "PRIVACY_TITLE" = "Personvern";
-"PRIVACY_TEXT" = "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Dette er viktig fordi blabla.";
+"PRIVACY_TEXT" = "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Vi vil opprette en unik ID for deg, og du må opprette en respondent ID, men dette vil ikke kunne knyttes direkte til deg.";
 
 "NOTIFICATIONS_TITLE" = "Påminnelser";
 "NOTIFICATIONS_TEXT" = "Denne applikasjonen baserer seg på å gi deg påminnelser når du har ting du må gjøre i appen, som å fylle ut et kort spørreskjema. Det er derfor viktig at du tillater appen å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser.";

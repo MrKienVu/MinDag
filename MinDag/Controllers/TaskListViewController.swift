@@ -144,6 +144,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         print(list)
         print("Number of steps completed:  \(getNumberOfStepsCompleted(stepResults))")
+        let csv = CSVProcesser(taskResult: taskResult)
+        print(csv.csv)
         
         
         //self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)

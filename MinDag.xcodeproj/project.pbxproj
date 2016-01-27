@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3207354D1C59536C005D083C /* AboutProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207354C1C59536C005D083C /* AboutProjectViewController.swift */; };
+		320735511C597591005D083C /* CSVProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320735501C597591005D083C /* CSVProcesser.swift */; };
 		325CD4911C329FD60062C0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325CD4901C329FD60062C0B3 /* Assets.xcassets */; };
 		325CD4971C3353B90062C0B3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CD4961C3353B90062C0B3 /* Notification.swift */; };
 		329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		3207354C1C59536C005D083C /* AboutProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutProjectViewController.swift; sourceTree = "<group>"; };
+		320735501C597591005D083C /* CSVProcesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVProcesser.swift; sourceTree = "<group>"; };
 		325CD4901C329FD60062C0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325CD4961C3353B90062C0B3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NettskjemaHandler.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				5F6959C91C205B58002568CF /* Tasks */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
 				32AA83C11C3BF6CF004DE1D6 /* Task.swift */,
+				320735501C597591005D083C /* CSVProcesser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,
+				320735511C597591005D083C /* CSVProcesser.swift in Sources */,
 				3207354D1C59536C005D083C /* AboutProjectViewController.swift in Sources */,
 				32AA83C21C3BF6CF004DE1D6 /* Task.swift in Sources */,
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
