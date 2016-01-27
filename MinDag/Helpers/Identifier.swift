@@ -19,20 +19,6 @@ import Foundation
 
 enum Identifier: String {
     
-    // Survey Task
-    case SurveyTask =                                   "SurveyTask"
-    case IntroStep =                                    "IntroStep"
-    
-    // Sliders Example Task
-    case FormTask =                                     "FormTask"
-    case FormStep =                                     "FormStep"
-    case TestStep1 =                                    "TestStep1"
-    case TestStep2 =                                    "TestStep2"
-    case DiscreteScaleQuestionStep =                    "DiscreteScaleQuestionStep"
-    case DiscreteVerticalScaleQuestionStep =            "DiscreteVerticalScaleQuestionStep"
-    case TextVerticalScaleQuestionStep =                "TVSQS"
-    case TextHorizontalScaleQuestionStep =              "THSQS"
-    
     // Sleep Survey Task
     case SleepSurveyTask =                              "SleepSurveyTask"
     case SleepInstructionStep =                         "SleepInstructionStep"
@@ -44,9 +30,8 @@ enum Identifier: String {
     case MathysTask =                                   "MathysTask"
     case MathysInstructionStep =                        "MathysInstructionStep"
     case ScaleQuestion =                                "ScaleQuestion"
-    case MathysScaleCompletionStep =                    "MathysScaleCompletionStep"
-    case MathysInstructionStep2 =                       "MathysInstructionStep2"
+    case MathysIntermediateStep =                       "MathysIntermediateStep"
     case TextChoiceQuestion =                           "TextChoiceQuestion"
-    case TestQuestionStep =                             "TextQuestionStep"
-    case MathysTextChoiceCompletionStep =               "MathysTextChoiceCompletionStep"
+    case TextQuestionStep =                             "TextQuestionStep"
+    case MathysCompletionStep =                         "MathysCompletionStep"
 }

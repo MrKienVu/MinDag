@@ -108,6 +108,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         list.append("Task: \(taskResult.identifier)")
         list.append("startDate: \(taskResult.startDate!)")
         list.append("endDate: \(taskResult.endDate!)")
+        list.append("Total time: \(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)) seconds")
         
         let stepResults = taskResult.results!
         

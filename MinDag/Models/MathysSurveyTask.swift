@@ -13,11 +13,11 @@ public var MathysSurveyTask: ORKOrderedTask {
     
     var steps = [ORKStep]()
     
-    let introStep = ORKInstructionStep(identifier: String(Identifier.MathysInstructionStep))
-    introStep.title = "INTRO_TITLE".localized
-    introStep.text = "INTRO_TEXT".localized
-    introStep.detailText = "INTRO_DETAIL".localized
-    steps.append(introStep)
+    let instructionStep = ORKInstructionStep(identifier: Identifier.MathysInstructionStep.rawValue)
+    instructionStep.title = "INTRO_TITLE".localized
+    instructionStep.text = "INTRO_TEXT".localized
+    instructionStep.detailText = "INTRO_DETAIL".localized
+    steps.append(instructionStep)
     
     func verticalScaleWithHighValue(highValue: String, lowValue: String) -> ORKAnswerFormat {
         let answer = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(
@@ -36,7 +36,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     
     for i in 1..<21 {
         steps.append(ORKQuestionStep(
-            identifier: String(Identifier.ScaleQuestion) + "\(i)",
+            identifier: Identifier.ScaleQuestion.rawValue + "\(i)",
             title: "Statement \(i)",
             text: nil,
             answer: verticalScaleWithHighValue(
@@ -46,10 +46,10 @@ public var MathysSurveyTask: ORKOrderedTask {
         ))
     }
     
-    let introStep2 = ORKInstructionStep(identifier: String(Identifier.MathysInstructionStep2))
-    introStep2.title = "INTRO2_TITLE".localized
-    introStep2.text = "INTRO2_TEXT".localized
-    steps.append(introStep2)
+    let intermediateStep = ORKInstructionStep(identifier: Identifier.MathysIntermediateStep.rawValue)
+    intermediateStep.title = "INTERMEDIATE_TITLE".localized
+    intermediateStep.text = "INTERMEDIATE_TEXT".localized
+    steps.append(intermediateStep)
     
     
     var textChoices = [ORKTextChoice]()
@@ -61,7 +61,7 @@ public var MathysSurveyTask: ORKOrderedTask {
 
     for i in 1..<8 {
         steps.append(ORKQuestionStep(
-            identifier: String(Identifier.TextChoiceQuestion) + "\(i)",
+            identifier: Identifier.TextChoiceQuestion.rawValue + "\(i)",
             title: "TEXT_CHOICE_\(i)_TITLE".localized,
             answer: textChoiceAnswerFormat
             )
@@ -69,17 +69,17 @@ public var MathysSurveyTask: ORKOrderedTask {
     }
     
     let textQuestionStep = ORKQuestionStep(
-        identifier: String(Identifier.TestQuestionStep),
+        identifier: Identifier.TextQuestionStep.rawValue,
         title: "TEXT_QUESTION_TITLE".localized,
         answer: ORKAnswerFormat.textAnswerFormat()
     )
     
     steps.append(textQuestionStep)
     
-    let textChoiceCompletionStep = ORKCompletionStep(identifier: String(Identifier.MathysTextChoiceCompletionStep))
-    textChoiceCompletionStep.title = "TEXTCHOICE_COMPLETION_TITLE".localized
-    textChoiceCompletionStep.text = "TEXTCHOICE_COMPLETION_TEXT".localized
-    steps.append(textChoiceCompletionStep)
+    let completionStep = ORKCompletionStep(identifier: Identifier.MathysCompletionStep.rawValue)
+    completionStep.title = "MATHYS_COMPLETION_TITLE".localized
+    completionStep.text = "MATHYS_COMPLETION_TEXT".localized
+    steps.append(completionStep)
     
-    return ORKOrderedTask(identifier: String(Identifier.MathysTask), steps: steps)
+    return ORKOrderedTask(identifier: Identifier.MathysTask.rawValue, steps: steps)
 }

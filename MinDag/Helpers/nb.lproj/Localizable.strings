@@ -98,8 +98,8 @@
 "SCALE_COMPLETION_TEXT" = "You are now done with the first half of the survey.";
 "SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next' in the upper right corner.";
 
-"INTRO2_TITLE" = "MAThyS Part 2";
-"INTRO2_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";
+"INTERMEDIATE_TITLE" = "MAThyS Part 2";
+"INTERMEDIATE_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";
 
 "TEXT_CHOICE_1_TITLE" = "I have experienced sadness...";
 "TEXT_CHOICE_2_TITLE" = "I have experienced joy...";
@@ -117,5 +117,5 @@
 
 "TEXT_QUESTION_TITLE" = "If you have felt other emotions, please specify them below";
 
-"TEXTCHOICE_COMPLETION_TITLE" = "Congratulations!";
-"TEXTCHOICE_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
+"MATHYS_COMPLETION_TITLE" = "Congratulations!";
+"MATHYS_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
