@@ -33,7 +33,7 @@ public class CSVProcesser {
                "\(sid)," +
                "\(taskResult.startDate!)," +
                "\(taskResult.endDate!)," +
-               "\(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)),"
+               "\(NSInteger(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!))),"
     }
     
     func appendResultData(taskResult: ORKTaskResult) -> String {
