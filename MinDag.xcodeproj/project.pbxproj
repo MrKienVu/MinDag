@@ -22,7 +22,6 @@
 		5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */; };
 		5F4542E91C2059DE00A408A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E81C2059DE00A408A1 /* .gitignore */; };
 		5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FC1C202523007B0B93 /* AppDelegate.swift */; };
-		5F7F06FF1C202523007B0B93 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */; };
 		5F7F07021C202523007B0B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07001C202523007B0B93 /* Main.storyboard */; };
 		5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */; };
 		5F7F07121C202523007B0B93 /* MinDagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07111C202523007B0B93 /* MinDagTests.swift */; };
@@ -106,7 +105,6 @@
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5F7F06F91C202523007B0B93 /* MinDag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F06FC1C202523007B0B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5F7F07011C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F7F07061C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F7F07081C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 		5F7F073D1C202610007B0B93 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5F7F06FE1C202523007B0B93 /* WelcomeViewController.swift */,
 				32CEB6B91C20B7580021A363 /* TaskListViewController.swift */,
 				32DD5E301C29BAF1002CB02A /* InformationViewController.swift */,
 				32DD5E341C29BB12002CB02A /* InformationPageContentViewController.swift */,
@@ -436,7 +433,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */,
-				5F7F06FF1C202523007B0B93 /* WelcomeViewController.swift in Sources */,
 				5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */,
 				5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */,
 				329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */,

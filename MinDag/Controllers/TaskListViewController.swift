@@ -106,6 +106,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         var list = [String]()
         list.append("Task: \(taskResult.identifier)")
+        list.append("Respondent Study ID: \(UserDefaults.objectForKey(UserDefaultKey.StudyID)!)")
+        list.append("Respondent UUID: \(UserDefaults.objectForKey(UserDefaultKey.UUID)!)")
         list.append("startDate: \(taskResult.startDate!)")
         list.append("endDate: \(taskResult.endDate!)")
         list.append("Total time: \(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)) seconds")

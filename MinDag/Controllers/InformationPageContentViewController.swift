@@ -13,18 +13,18 @@ class InformationPageContentViewController: UIViewController {
     var pageIndex: Int!
     var titleIndex: String!
     var imageFile: String!
-    var textViewText: String!
+    var textLabelText: String!
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var permissionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: self.imageFile)
         titleLabel.text = titleIndex
-        textView.text = textViewText
+        textLabel.text = textLabelText
     }
     
     override func viewDidLayoutSubviews() {

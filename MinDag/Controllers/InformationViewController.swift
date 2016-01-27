@@ -58,7 +58,7 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         
         vc.imageFile = self.pageImages[index]
         vc.titleIndex = self.pageTitles[index]
-        vc.textViewText = self.pageTexts[index]
+        vc.textLabelText = self.pageTexts[index]
         vc.pageIndex = index
         
         return vc
