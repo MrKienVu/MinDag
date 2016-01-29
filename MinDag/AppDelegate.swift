@@ -49,11 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         
-        if identifier == "editList" {
-            NSNotificationCenter.defaultCenter().postNotificationName("modifyListNotification", object: nil)
-        }
-        else if identifier == "trashAction" {
-            NSNotificationCenter.defaultCenter().postNotificationName("deleteListNotification", object: nil)
+        if identifier == "GO_ACTION" {
+            NSNotificationCenter.defaultCenter().postNotificationName("presentSleepSurvey", object: nil)
         }
         
         completionHandler()
