@@ -12,16 +12,16 @@
  **************************/
 
 "MINDAG_TITLE" = "Min Dag";
-"MINDAG_TEXT" = "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin, Universitetet i Oslo. På de neste sidene vil du kunne lese litt mer om hvordan vi håndterer datalagring osv..";
+"MINDAG_TEXT" = "Velkommen til mobilappen Min Dag! Data som samles inn bruke til forskning på NORMENT: Norsk senter for forskning på metale lidelser ved Medisinsk fakultetet, Universitetet i Oslo. ";
 
 "DATA_TITLE" = "Datalagring";
-"DATA_TEXT" = "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.";
+"DATA_TEXT" = "All data du genererer vil bli lagret i Tjenester for Sensitive Data (TSD). Ingen data vil bli lagret lokalt på din enhet eller bli utlevert til en tredjepart.";
 
 "PRIVACY_TITLE" = "Personvern";
-"PRIVACY_TEXT" = "For å ivareta ditt personvern, vil vi ikke samle inn noe informasjon som kan identifisere deg som person. Vi vil opprette en unik ID for deg, og du må opprette en respondent ID, men dette vil ikke kunne knyttes direkte til deg.";
+"PRIVACY_TEXT" = "Vi vil opprette en unik ID for deg i appen, og du må legge inn en respondent ID. Koblingsnøkkel vil kun forskere i prosjektet ha tilgang til.";
 
 "NOTIFICATIONS_TITLE" = "Påminnelser";
-"NOTIFICATIONS_TEXT" = "Denne applikasjonen baserer seg på å gi deg påminnelser når du har ting du må gjøre i appen, som å fylle ut et kort spørreskjema. Det er derfor viktig at du tillater appen å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser.";
+"NOTIFICATIONS_TEXT" = "Denne appen trenger tilgang til å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser.";
 
 
 
