@@ -15,6 +15,8 @@
 		329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */; };
 		329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA71C22A8D5008B0038 /* Identifier.swift */; };
 		329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 329EACAD1C22A97E008B0038 /* Localizable.strings */; };
+		32A994E91C5EA2630044157C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A994E81C5EA2630044157C /* TaskTableViewCell.swift */; };
+		32A994ED1C5EB3790044157C /* TaskTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A994EC1C5EB3790044157C /* TaskTableViewCellView.xib */; };
 		32AA83C21C3BF6CF004DE1D6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA83C11C3BF6CF004DE1D6 /* Task.swift */; };
 		32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CEB6B91C20B7580021A363 /* TaskListViewController.swift */; };
 		32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD5E301C29BAF1002CB02A /* InformationViewController.swift */; };
@@ -99,6 +101,8 @@
 		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329EACAF1C22A985008B0038 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329EACB01C22A9D1008B0038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		32A994E81C5EA2630044157C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		32A994EC1C5EB3790044157C /* TaskTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCellView.xib; sourceTree = "<group>"; };
 		32AA83C11C3BF6CF004DE1D6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32DD5E301C29BAF1002CB02A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				32EB40121C31B03D0077328C /* SettingsTableViewController.swift */,
 				5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */,
 				3207354C1C59536C005D083C /* AboutProjectViewController.swift */,
+				32A994E81C5EA2630044157C /* TaskTableViewCell.swift */,
+				32A994EC1C5EB3790044157C /* TaskTableViewCellView.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			files = (
 				329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */,
 				5F4542E91C2059DE00A408A1 /* .gitignore in Resources */,
+				32A994ED1C5EB3790044157C /* TaskTableViewCellView.xib in Resources */,
 				3253D3FF1C5BD2D100B5CF0B /* ss-gizmo.otf in Resources */,
 				5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */,
 				5F7F07021C202523007B0B93 /* Main.storyboard in Resources */,
@@ -441,6 +448,7 @@
 			files = (
 				5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */,
 				5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */,
+				32A994E91C5EA2630044157C /* TaskTableViewCell.swift in Sources */,
 				5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */,
 				329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */,
 				5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */,

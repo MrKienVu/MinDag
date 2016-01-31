@@ -12,6 +12,7 @@ import ResearchKit
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ORKTaskViewControllerDelegate {
     
     let nettskjema = NettskjemaHandler(scheme: .Mathys)
+    let logos = ["copier", "crescentmoon"]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
@@ -41,7 +42,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentSleepSurvey", name: "presentSleepSurvey", object: nil)
         
-        // Do any additional setup after loading the view.
+        // Register custom cell
+        let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "Default")
     }
     
     
@@ -51,14 +54,23 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier.Default.rawValue, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier.Default.rawValue, forIndexPath: indexPath) as! TaskTableViewCell
         
         let taskListRow = taskListRows[indexPath.row]
         
-        cell.textLabel!.text = "\(taskListRow)"
-        cell.detailTextLabel!.text = taskListRow.subtitle
+        let logoFont = UIFont(name: "SSGizmo", size: 60)
+        
+        cell.titleLabel.text = "\(taskListRow)"
+        cell.subtitleLabel.text = taskListRow.subtitle
+        cell.iconLabel.font = logoFont
+        cell.iconLabel.text = logos[indexPath.row]
+        cell.iconLabel.textColor = Color.primaryColor
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
     
     // MARK: UITableViewDelegate
