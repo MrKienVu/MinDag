@@ -135,6 +135,6 @@
 
 "TEXT_QUESTION_TITLE" = "If you have felt other emotions, please specify them below";
 
-"TEXTCHOICE_COMPLETION_TITLE" = "Congratulations!";
-"TEXTCHOICE_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
+"MATHYS_COMPLETION_TITLE" = "Congratulations!";
+"MATHYS_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
 

@@ -39,6 +39,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         animateSettingsIconWithDuration(1.7)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentSleepSurvey", name: "presentSleepSurvey", object: nil)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -162,6 +164,13 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
             stepViewController.continueButtonTitle = "Send inn"
         }
+    }
+    
+    func presentSleepSurvey() {
+        let taskListRow = taskListRows[1]
+        let task = taskListRow.representedTask
+        let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
+        presentViewController(taskViewController, animated: false, completion: nil)
     }
     
     func animateSettingsIconWithDuration(duration: Double) {

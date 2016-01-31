@@ -588,6 +588,30 @@
             </objects>
             <point key="canvasLocation" x="1838" y="407"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XLK-4M-6tE">
+            <objects>
+                <viewController id="Ew6-7i-uTn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMg-zH-NRy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jdi-6w-fex"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gGo-Rw-hdK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-jq-hQj">
+                                <rect key="frame" x="180" y="138" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akk-2q-2jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1322" y="890"/>
+        </scene>
         <!--Innstillinger-->
         <scene sceneID="s9Z-qa-QYg">
             <objects>
