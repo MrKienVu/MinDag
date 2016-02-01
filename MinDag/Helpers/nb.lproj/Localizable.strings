@@ -12,13 +12,13 @@
  **************************/
 
 "MINDAG_TITLE" = "Min Dag";
-"MINDAG_TEXT" = "Velkommen til mobilappen Min Dag! Data som samles inn bruke til forskning på NORMENT: Norsk senter for forskning på metale lidelser ved Medisinsk fakultetet, Universitetet i Oslo. ";
+"MINDAG_TEXT" = "Velkommen til mobilappen Min Dag! Data som samles inn brukes til forskning på NORMENT: Norsk senter for forskning på metale lidelser ved Medisinsk fakultetet, Universitetet i Oslo. ";
 
 "DATA_TITLE" = "Datalagring";
 "DATA_TEXT" = "All data du genererer vil bli lagret i Tjenester for Sensitive Data (TSD). Ingen data vil bli lagret lokalt på din enhet eller bli utlevert til en tredjepart.";
 
 "PRIVACY_TITLE" = "Personvern";
-"PRIVACY_TEXT" = "Vi vil opprette en unik ID for deg i appen, og du må legge inn en respondent ID. Koblingsnøkkel vil kun forskere i prosjektet ha tilgang til.";
+"PRIVACY_TEXT" = "Appen oppretter en unik ID ved installasjon som sendes med hver levering, og du må legge inn en respondent ID. Koblingsnøkkel vil kun forskere i prosjektet ha tilgang til og appen viser ingen IDer.";
 
 "NOTIFICATIONS_TITLE" = "Påminnelser";
 "NOTIFICATIONS_TEXT" = "Denne appen trenger tilgang til å gi deg påminnelser. Klikk på knappen nedenfor for å tillate påminnelser.";
