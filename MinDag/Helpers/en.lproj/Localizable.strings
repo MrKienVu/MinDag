@@ -12,7 +12,7 @@
  **************************/
 
 "MINDAG_TITLE" = "Min Dag";
-"MINDAG_TEXT" = "Velkommen til Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin. På de neste sidene kan du lese mer om hvordan vi håndterer datalagring osv..";
+"MINDAG_TEXT" = "Velkommen til mobilappen Min Dag! Dette forskningsprosjektet er i regi av NORMENT-senteret ved fakultetet for medisin. På de neste sidene kan du lese mer om hvordan vi håndterer datalagring osv..";
 
 "DATA_TITLE" = "Datalagring";
 "DATA_TEXT" = "All data du genererer vil bli lagret på Universitetet i Oslo sine sikre servere, og ingen andre enn forskere tilkoblet dette prosjektetet vil ha tilgang til dataene. Ingen data vil bli lagret lokalt på din enhet.";

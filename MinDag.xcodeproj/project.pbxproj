@@ -98,7 +98,7 @@
 		325CD4961C3353B90062C0B3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NettskjemaHandler.swift; sourceTree = "<group>"; };
 		329EACA71C22A8D5008B0038 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
-		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		329EACAF1C22A985008B0038 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		329EACB01C22A9D1008B0038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32A994E81C5EA2630044157C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -625,7 +625,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MinDag;
+				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.mindag;
 				PRODUCT_NAME = MinDag;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -640,7 +640,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.MinDag;
+				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.mindag;
 				PRODUCT_NAME = MinDag;
 			};
 			name = Release;
