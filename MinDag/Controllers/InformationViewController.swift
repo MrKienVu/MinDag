@@ -40,7 +40,7 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         
         self.pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 80)
+        self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 100)
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
@@ -88,6 +88,7 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
         index++
         if (index == self.pageTitles.count) {
             configureButton.enabled = true
+            configureButton.setTitle("Kom i gang", forState: .Normal)
             vc.permissionButton.enabled = true
             vc.permissionButton.hidden = false
             return nil

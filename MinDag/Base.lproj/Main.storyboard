@@ -19,12 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-Fo-Qx3">
-                                <rect key="frame" x="223" y="550" width="154" height="30"/>
+                                <rect key="frame" x="200" y="540" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0pB-C9-z8A"/>
+                                    <constraint firstAttribute="width" constant="200" id="tfl-lS-sdO"/>
                                     <constraint firstAttribute="height" constant="50" id="xdf-5Y-VQ8"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="tintColor" red="1" green="0.68235294117647061" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Konfigurer innstillinger"/>
+                                <state key="normal" title="Neste">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="xdf-5Y-VQ8"/>
@@ -40,7 +52,13 @@
                         <constraints>
                             <constraint firstItem="MPq-Om-7ts" firstAttribute="top" secondItem="0LC-Fo-Qx3" secondAttribute="bottom" constant="20" id="6mV-IK-P85"/>
                             <constraint firstItem="0LC-Fo-Qx3" firstAttribute="centerX" secondItem="xDL-t2-Bgx" secondAttribute="centerX" id="ZfR-Q9-brP"/>
+                            <constraint firstItem="0LC-Fo-Qx3" firstAttribute="centerX" secondItem="xDL-t2-Bgx" secondAttribute="centerX" id="qdL-kS-gUL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZfR-Q9-brP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="configureButton" destination="0LC-Fo-Qx3" id="DK0-lm-nrn"/>
@@ -446,16 +464,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Dag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-jD-QsT">
-                                <rect key="frame" x="231" y="40" width="140" height="48"/>
+                                <rect key="frame" x="230.5" y="40" width="139.5" height="47.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFM-Ca-M26">
-                                <rect key="frame" x="200" y="97" width="200" height="200"/>
+                                <rect key="frame" x="215" y="97.5" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Sgu-Ml-3TV"/>
-                                    <constraint firstAttribute="height" constant="200" id="uPN-7n-a0P"/>
+                                    <constraint firstAttribute="width" constant="170" id="Sgu-Ml-3TV"/>
+                                    <constraint firstAttribute="height" constant="170" id="uPN-7n-a0P"/>
                                 </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO2-lw-Yae">

@@ -13,58 +13,84 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Default" rowHeight="156" id="bRB-Pn-s1i" customClass="TaskTableViewCell" customModule="MinDag" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Default" rowHeight="170" id="bRB-Pn-s1i" customClass="TaskTableViewCell" customModule="MinDag" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bRB-Pn-s1i" id="29w-5S-F67">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="photocopy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-3x-fe2">
-                        <rect key="frame" x="8" y="9" width="60" height="82.5"/>
-                        <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="60"/>
-                        <color key="textColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAThyS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-n2-V86">
-                        <rect key="frame" x="86" y="23" width="68" height="22.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                        <rect key="frame" x="120" y="94" width="79" height="26"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjM-ZB-78I">
-                        <rect key="frame" x="0.0" y="89" width="320" height="10"/>
+                        <rect key="frame" x="0.0" y="159" width="320" height="10"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="BaN-cv-cbE"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ukentlig skjema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWA-jc-2cT">
-                        <rect key="frame" x="86" y="47.5" width="95" height="17"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <rect key="frame" x="103" y="120.5" width="115.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="photocopy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-3x-fe2">
+                        <rect key="frame" x="125" y="8" width="70" height="96.5"/>
+                        <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="70"/>
+                        <color key="textColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pjM-ZB-78I" firstAttribute="leading" secondItem="29w-5S-F67" secondAttribute="leading" id="2Wq-hb-JZA"/>
+                    <constraint firstItem="xrS-n2-V86" firstAttribute="top" secondItem="zHG-3x-fe2" secondAttribute="bottom" constant="-10" id="2Z8-tc-xxv"/>
+                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="3ai-21-RCE"/>
                     <constraint firstItem="xWA-jc-2cT" firstAttribute="top" secondItem="xrS-n2-V86" secondAttribute="bottom" constant="2" id="4Zl-rE-Mx7"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="top" secondItem="29w-5S-F67" secondAttribute="topMargin" constant="15" id="6rx-Ef-Q8h"/>
+                    <constraint firstItem="zHG-3x-fe2" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="7LY-df-bMA"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="centerY" secondItem="29w-5S-F67" secondAttribute="centerY" id="837-4y-jot"/>
                     <constraint firstAttribute="trailing" secondItem="pjM-ZB-78I" secondAttribute="trailing" id="8q4-hf-OHD"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="centerY" secondItem="29w-5S-F67" secondAttribute="centerY" id="BWs-Bb-GKq"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="centerY" secondItem="29w-5S-F67" secondAttribute="centerY" id="FbY-A2-4fu"/>
+                    <constraint firstItem="zHG-3x-fe2" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="Gov-HP-QoL"/>
+                    <constraint firstItem="zHG-3x-fe2" firstAttribute="top" secondItem="29w-5S-F67" secondAttribute="topMargin" id="KGw-Fl-jg2"/>
+                    <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="QE9-7x-Ivu"/>
                     <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="VNF-Ts-sR7"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="leading" secondItem="29w-5S-F67" secondAttribute="leadingMargin" id="VnP-5t-2pr"/>
+                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="bNb-na-KhX"/>
+                    <constraint firstItem="xWA-jc-2cT" firstAttribute="top" secondItem="xrS-n2-V86" secondAttribute="bottom" id="bYN-kF-ITb"/>
+                    <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="dsJ-hl-WRE"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="18" id="dyY-2U-5Io"/>
                     <constraint firstItem="xWA-jc-2cT" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="18" id="hvq-YB-xpW"/>
                     <constraint firstItem="xWA-jc-2cT" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="19" id="lGO-j2-g2S"/>
+                    <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="lwN-w4-W9E"/>
+                    <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="rZL-dx-Hz7"/>
+                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="xDH-b3-C3e"/>
+                    <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="xP6-1D-lhZ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="7LY-df-bMA"/>
+                        <exclude reference="837-4y-jot"/>
                         <exclude reference="BWs-Bb-GKq"/>
                         <exclude reference="FbY-A2-4fu"/>
+                        <exclude reference="VnP-5t-2pr"/>
+                        <exclude reference="6rx-Ef-Q8h"/>
+                        <exclude reference="QE9-7x-Ivu"/>
+                        <exclude reference="dyY-2U-5Io"/>
+                        <exclude reference="xP6-1D-lhZ"/>
+                        <exclude reference="4Zl-rE-Mx7"/>
+                        <exclude reference="bNb-na-KhX"/>
+                        <exclude reference="hvq-YB-xpW"/>
                         <exclude reference="lGO-j2-g2S"/>
+                        <exclude reference="xDH-b3-C3e"/>
+                        <exclude reference="VNF-Ts-sR7"/>
+                        <exclude reference="dsJ-hl-WRE"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -73,7 +99,7 @@
                 <outlet property="subtitleLabel" destination="xWA-jc-2cT" id="LeN-G1-cPS"/>
                 <outlet property="titleLabel" destination="xrS-n2-V86" id="jVc-fe-I9t"/>
             </connections>
-            <point key="canvasLocation" x="387" y="240"/>
+            <point key="canvasLocation" x="387" y="265"/>
         </tableViewCell>
     </objects>
 </document>

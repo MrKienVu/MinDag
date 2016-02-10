@@ -58,19 +58,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let taskListRow = taskListRows[indexPath.row]
         
-        let logoFont = UIFont(name: "SSGizmo", size: 60)
-        
         cell.titleLabel.text = "\(taskListRow)"
         cell.subtitleLabel.text = taskListRow.subtitle
-        cell.iconLabel.font = logoFont
         cell.iconLabel.text = logos[indexPath.row]
-        cell.iconLabel.textColor = Color.primaryColor
         
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 170
     }
     
     // MARK: UITableViewDelegate
