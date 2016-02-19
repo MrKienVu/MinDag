@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window?.tintColor = Color.primaryColor
         
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.window?.rootViewController = vc
+        
+        
         let hasLaunchedBefore = UserDefaults.boolForKey(UserDefaultKey.hasLaunchedBefore)
         if !hasLaunchedBefore  {
             print("First launch, storing UUID and hasLaunched-flag in UserDefaults")

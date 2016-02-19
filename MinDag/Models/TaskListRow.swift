@@ -67,7 +67,6 @@ enum TaskListRow: Int, CustomStringConvertible {
     }
     
     // MARK: Printable
-    
     var description: String {
         switch self {
         case .MathysTask:

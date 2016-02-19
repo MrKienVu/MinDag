@@ -47,11 +47,20 @@
                                     <segue destination="nDb-B3-iGq" kind="show" id="I3l-4e-wpf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcO-9x-U7z">
+                                <rect key="frame" x="277" y="506" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tmpClicked:" destination="owk-Bu-ERu" eventType="touchUpInside" id="wPA-em-F5u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MPq-Om-7ts" firstAttribute="top" secondItem="0LC-Fo-Qx3" secondAttribute="bottom" constant="20" id="6mV-IK-P85"/>
                             <constraint firstItem="0LC-Fo-Qx3" firstAttribute="centerX" secondItem="xDL-t2-Bgx" secondAttribute="centerX" id="ZfR-Q9-brP"/>
+                            <constraint firstItem="HcO-9x-U7z" firstAttribute="centerX" secondItem="xDL-t2-Bgx" secondAttribute="centerX" id="ezx-C1-Y2J"/>
+                            <constraint firstItem="0LC-Fo-Qx3" firstAttribute="top" secondItem="HcO-9x-U7z" secondAttribute="bottom" constant="4" id="ieK-fU-MSz"/>
                             <constraint firstItem="0LC-Fo-Qx3" firstAttribute="centerX" secondItem="xDL-t2-Bgx" secondAttribute="centerX" id="qdL-kS-gUL"/>
                         </constraints>
                         <variation key="default">
