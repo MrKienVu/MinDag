@@ -13,10 +13,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--StudyID View Controller-->
         <scene sceneID="po6-af-B3N">
             <objects>
-                <viewController storyboardIdentifier="studyIDVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CMB-al-D6A" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="studyIDVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CMB-al-D6A" customClass="StudyIDViewController" customModule="MinDag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jhT-tR-Hn3"/>
                         <viewControllerLayoutGuide type="bottom" id="hIj-Mh-Oow"/>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="8" y="458"/>
         </scene>
-        <!--View Controller-->
+        <!--Notifications View Controller-->
         <scene sceneID="qH7-IH-4s3">
             <objects>
-                <viewController id="KeI-pq-D3T" sceneMemberID="viewController">
+                <viewController id="KeI-pq-D3T" customClass="NotificationsViewController" customModule="MinDag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yPG-YZ-Vru"/>
                         <viewControllerLayoutGuide type="bottom" id="TA9-W0-fSF"/>
@@ -236,9 +236,12 @@
                                     <constraint firstAttribute="height" constant="50" id="uMD-x1-kg0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Neste">
+                                <state key="normal" title="Kom i gang">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getStartedClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="ztl-0E-AIk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -26,13 +26,8 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
     ]
 
     @IBOutlet weak var configureButton: UIButton!
-    @IBOutlet weak var tmp: UIButton!
     
-    @IBAction func tmpClicked(sender: AnyObject) {
-        let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
-        var controller = onboarding.instantiateViewControllerWithIdentifier("studyIDVC") as UIViewController
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
