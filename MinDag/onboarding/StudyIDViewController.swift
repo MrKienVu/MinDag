@@ -17,6 +17,8 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        idTextField.delegate = self
+        repeatIdTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -72,7 +74,12 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if textField == idTextField { repeatIdTextField.becomeFirstResponder() }
         return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     

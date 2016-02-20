@@ -10,6 +10,10 @@ import UIKit
 
 class NotificationsViewController: UIViewController {
 
+    @IBOutlet weak var givePermissionButton: UIButton!
+    @IBOutlet weak var notNowButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,26 @@ class NotificationsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func givePermissionClicked(sender: AnyObject) {
+        Notification.sharedInstance.setupNotificationSettings()
+        
+        UIView.animateWithDuration(0.8, animations: {
+            self.nextButton.alpha = 1
+            self.notNowButton.alpha = 0
+            self.givePermissionButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0), forState: .Normal)
+        })
+        
+        nextButton.enabled = true
+        nextButton.hidden = false
+        notNowButton.enabled = false
+        notNowButton.hidden = true
+        givePermissionButton.enabled = false
     }
-    */
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if Notification.sharedInstance.isNotificationsEnabled() {
+            UserDefaults.setBool(true, forKey: UserDefaultKey.NotificationsEnabled)
+        }
+    }
 
 }
