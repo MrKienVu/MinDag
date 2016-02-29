@@ -35,7 +35,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     // MARK: On Value Changed
     @IBAction func notificationsChanged(sender: AnyObject) {
         // TODO: Cancel notifications
-        if notificationSwitch.on { Notification.sharedInstance.setupNotificationSettings() }
+        if notificationSwitch.on {
+            Notification.sharedInstance.setupNotificationSettings()
+            scheduleNotifications()
+        } else {
+            Notification.sharedInstance.cancelAllNotifications()
+        }
         UserDefaults.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -44,14 +49,17 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
         weekdayTimeChanged()
         UserDefaults.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
+        scheduleNotifications()
     }
     @IBAction func weekendTimeChanged(sender: AnyObject) {
         weekendTimeChanged()
         UserDefaults.setObject(weekendTimePicker.date, forKey: UserDefaultKey.WeekendTime)
+        scheduleNotifications()
     }
     @IBAction func mathysTimeChanged(sender: AnyObject) {
         mathysTimeChanged()
         UserDefaults.setObject(mathysTimePicker.date, forKey: UserDefaultKey.MathysTime)
+        scheduleNotifications()
     }
     
     
@@ -139,6 +147,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         mathysDayLabel.text = Days[row]
         UserDefaults.setInteger(row, forKey: UserDefaultKey.MathysDay)
+        scheduleNotifications()
     }
     
 
@@ -177,8 +186,17 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
+    func scheduleNotifications() {
+        Notification.sharedInstance.scheduleNotifications(
+            weekdayTimePicker.date,
+            weekendTime: weekendTimePicker.date,
+            weeklyDay: mathysDayPicker.selectedRowInComponent(0) + 1,
+            weeklyTime: mathysTimePicker.date
+        )
+    }
+    
     override func viewDidDisappear(animated: Bool) {
-        Notification.sharedInstance.DEMO_scheduleLocalNotification(weekdayTimePicker.date)
+        scheduleNotifications()
     }
     
 }

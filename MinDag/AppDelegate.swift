@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         self.window?.tintColor = Color.primaryColor
+        application.applicationIconBadgeNumber = 0
         
         let completedOnboarding = UserDefaults.boolForKey(UserDefaultKey.CompletedOnboarding)
         
@@ -77,6 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        application.applicationIconBadgeNumber = 0
         
         if identifier == "GO_ACTION" {
             NSNotificationCenter.defaultCenter().postNotificationName("presentSleepSurvey", object: nil)
