@@ -40,7 +40,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         animateSettingsIconWithDuration(1.7)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentSleepSurvey", name: "presentSleepSurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentDailySurvey", name: "presentDailySurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentWeeklySurvey", name: "presentWeeklySurvey", object: nil)
         
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
@@ -63,7 +64,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let taskListRow = taskListRows[indexPath.row]
         
         cell.titleLabel.text = "\(taskListRow)"
-        cell.subtitleLabel.text = taskListRow.subtitle
         cell.iconLabel.text = logos[indexPath.row]
         
         return cell
@@ -157,7 +157,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         print(list)
-        print("Number of steps completed:  \(getNumberOfStepsCompleted(stepResults))")
+        print("Number of steps completed:  \(stepResults.count)")
         let csv = CSVProcesser(taskResult: taskResult)
         print(csv.csv)
         
@@ -178,7 +178,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func presentSleepSurvey() {
+    func presentWeeklySurvey() {
+        let taskListRow = taskListRows[0]
+        let task = taskListRow.representedTask
+        let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
+        presentViewController(taskViewController, animated: false, completion: nil)
+    }
+    
+    func presentDailySurvey() {
         let taskListRow = taskListRows[1]
         let task = taskListRow.representedTask
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
@@ -190,10 +197,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         UIView.animateWithDuration(duration, animations: {
             settingsView.transform = CGAffineTransformMakeRotation((90.0 * CGFloat(M_PI)) / 90.0)
         })
-    }
-    
-    func getNumberOfStepsCompleted(results: [ORKResult]) -> Int {
-        return results.count
     }
 
     override func didReceiveMemoryWarning() {

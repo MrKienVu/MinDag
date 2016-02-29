@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAThyS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-n2-V86">
-                        <rect key="frame" x="120" y="94" width="79" height="26"/>
+                        <rect key="frame" x="120" y="99.5" width="79" height="26"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -33,12 +33,6 @@
                             <constraint firstAttribute="height" constant="10" id="BaN-cv-cbE"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ukentlig skjema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWA-jc-2cT">
-                        <rect key="frame" x="103" y="120.5" width="115.5" height="20.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="photocopy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-3x-fe2">
                         <rect key="frame" x="125" y="8" width="70" height="96.5"/>
                         <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="70"/>
@@ -48,9 +42,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="pjM-ZB-78I" firstAttribute="leading" secondItem="29w-5S-F67" secondAttribute="leading" id="2Wq-hb-JZA"/>
-                    <constraint firstItem="xrS-n2-V86" firstAttribute="top" secondItem="zHG-3x-fe2" secondAttribute="bottom" constant="-10" id="2Z8-tc-xxv"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="3ai-21-RCE"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="top" secondItem="xrS-n2-V86" secondAttribute="bottom" constant="2" id="4Zl-rE-Mx7"/>
+                    <constraint firstItem="xrS-n2-V86" firstAttribute="top" secondItem="zHG-3x-fe2" secondAttribute="bottom" constant="-5" id="2Z8-tc-xxv"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="top" secondItem="29w-5S-F67" secondAttribute="topMargin" constant="15" id="6rx-Ef-Q8h"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="7LY-df-bMA"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="centerY" secondItem="29w-5S-F67" secondAttribute="centerY" id="837-4y-jot"/>
@@ -62,15 +54,10 @@
                     <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="QE9-7x-Ivu"/>
                     <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="VNF-Ts-sR7"/>
                     <constraint firstItem="zHG-3x-fe2" firstAttribute="leading" secondItem="29w-5S-F67" secondAttribute="leadingMargin" id="VnP-5t-2pr"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="bNb-na-KhX"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="top" secondItem="xrS-n2-V86" secondAttribute="bottom" id="bYN-kF-ITb"/>
                     <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="dsJ-hl-WRE"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="18" id="dyY-2U-5Io"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="18" id="hvq-YB-xpW"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="leading" secondItem="zHG-3x-fe2" secondAttribute="trailing" constant="19" id="lGO-j2-g2S"/>
                     <constraint firstAttribute="bottom" secondItem="pjM-ZB-78I" secondAttribute="bottom" id="lwN-w4-W9E"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="rZL-dx-Hz7"/>
-                    <constraint firstItem="xWA-jc-2cT" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="xDH-b3-C3e"/>
                     <constraint firstItem="xrS-n2-V86" firstAttribute="centerX" secondItem="29w-5S-F67" secondAttribute="centerX" id="xP6-1D-lhZ"/>
                 </constraints>
                 <variation key="default">
@@ -84,11 +71,6 @@
                         <exclude reference="QE9-7x-Ivu"/>
                         <exclude reference="dyY-2U-5Io"/>
                         <exclude reference="xP6-1D-lhZ"/>
-                        <exclude reference="4Zl-rE-Mx7"/>
-                        <exclude reference="bNb-na-KhX"/>
-                        <exclude reference="hvq-YB-xpW"/>
-                        <exclude reference="lGO-j2-g2S"/>
-                        <exclude reference="xDH-b3-C3e"/>
                         <exclude reference="VNF-Ts-sR7"/>
                         <exclude reference="dsJ-hl-WRE"/>
                     </mask>
@@ -96,7 +78,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconLabel" destination="zHG-3x-fe2" id="QlG-eu-CGZ"/>
-                <outlet property="subtitleLabel" destination="xWA-jc-2cT" id="LeN-G1-cPS"/>
                 <outlet property="titleLabel" destination="xrS-n2-V86" id="jVc-fe-I9t"/>
             </connections>
             <point key="canvasLocation" x="387" y="265"/>

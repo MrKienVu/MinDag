@@ -28,8 +28,7 @@
  *      SleepSurvey       *
  **************************/
 
-"SLEEP_DESCRIPTION" = "Sleep";
-"SLEEP_SUBTITLE" = "Daily survey";
+"SLEEP_DESCRIPTION" = "Daily survey";
 "SLEEP_INTRO_TITLE" = "Sleep survey";
 "SLEEP_INTRO_TEXT" = "How long you've slept is important to us in order to conduct great research.";
 "SLEEP_QUESTION_TITLE" = "Hours of sleep";
@@ -45,8 +44,7 @@
 /**************************
  *     Mathys survey      *
  **************************/
-"MATHYS_DESCRIPTION" = "MAThyS";
-"MATHYS_SUBTITLE" = "Weekly survey";
+"MATHYS_DESCRIPTION" = "Weekly survey";
 
 "INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
 "INTRO_TEXT" = "The following scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";

@@ -29,8 +29,7 @@
  *      SleepSurvey       *
  **************************/
 
-"SLEEP_DESCRIPTION" = "Søvn";
-"SLEEP_SUBTITLE" = "Daglig skjema";
+"SLEEP_DESCRIPTION" = "Daglig skjema";
 "SLEEP_INTRO_TITLE" = "Søvnskjema";
 "SLEEP_INTRO_TEXT" = "Det er viktig for oss å vite hvor mange timer du sov i natt. Det gjør at vår forskning blir mer presis.";
 "SLEEP_QUESTION_TITLE" = "Timer med søvn";
@@ -49,8 +48,7 @@
  *      MathysSurvey      *
  **************************/
 
-"MATHYS_DESCRIPTION" = "MAThyS";
-"MATHYS_SUBTITLE" = "Ukentlig skjema";
+"MATHYS_DESCRIPTION" = "Ukentlig skjema";
 
 "INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
 "INTRO_TEXT" = "This scale aims to evaluate your mood during the last week. For each item, indicate how you  usually feel by dragging the slider for each statement.";
