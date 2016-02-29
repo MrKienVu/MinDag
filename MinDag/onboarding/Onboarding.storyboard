@@ -10,6 +10,7 @@
             <string>SSGizmo</string>
             <string>SSGizmo</string>
             <string>SSGizmo</string>
+            <string>SSGizmo</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -258,7 +259,7 @@
                                 <color key="textColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw8-NA-tS2">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw8-NA-tS2">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -272,18 +273,88 @@
                                     <action selector="getStartedClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="ztl-0E-AIk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojd-IK-tP7">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T23-cm-NBY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Opprett app kode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAppCodeClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="3id-1E-vO7"/>
+                                    <action selector="getStartedClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="uCo-zA-PtM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3L-H6-YOw">
+                                <rect key="frame" x="226" y="512" width="148" height="30"/>
+                                <state key="normal" title="Ønsker ikke app kode">
+                                    <color key="titleColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="notNowClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="z6z-vO-rBf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem pisum dolor siti me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZs-ph-5BE">
+                                <rect key="frame" x="205" y="238" width="190" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-Ut-SHU">
+                                <rect key="frame" x="280" y="440" width="40" height="55"/>
+                                <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="40"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App kode opprettet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9i4-15-Dw2">
+                                <rect key="frame" x="229" y="489" width="143" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="X3L-H6-YOw" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="1Aj-aQ-spJ"/>
+                            <constraint firstItem="Xkd-Ut-SHU" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="5FS-DU-58o"/>
+                            <constraint firstItem="Ojd-IK-tP7" firstAttribute="leading" secondItem="YAV-Gd-DC1" secondAttribute="leading" id="BRe-WE-9Nh"/>
+                            <constraint firstItem="dZs-ph-5BE" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="CWf-EZ-w7y"/>
+                            <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" constant="8" id="OKR-Hc-Gxr"/>
+                            <constraint firstItem="dZs-ph-5BE" firstAttribute="top" secondItem="O96-7l-WAn" secondAttribute="bottom" constant="-10" id="OjI-CJ-FQX"/>
+                            <constraint firstAttribute="trailing" secondItem="Ojd-IK-tP7" secondAttribute="trailing" id="PsN-ps-TJ6"/>
                             <constraint firstItem="O96-7l-WAn" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="Qk7-N2-BrW"/>
+                            <constraint firstItem="E1p-nr-qDE" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" id="R6R-HX-KRb"/>
                             <constraint firstItem="O96-7l-WAn" firstAttribute="top" secondItem="GBD-fk-reE" secondAttribute="bottom" constant="10" id="TaG-Ec-eoH"/>
+                            <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="9i4-15-Dw2" secondAttribute="bottom" constant="40" id="U1a-tb-fp2"/>
                             <constraint firstAttribute="trailing" secondItem="qw8-NA-tS2" secondAttribute="trailing" id="WEf-bD-sfx"/>
                             <constraint firstItem="GBD-fk-reE" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="Y0b-Xv-uWL"/>
+                            <constraint firstItem="9i4-15-Dw2" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="aCm-pg-ayM"/>
+                            <constraint firstItem="E1p-nr-qDE" firstAttribute="top" secondItem="Ojd-IK-tP7" secondAttribute="bottom" id="lPN-Ry-Tm6"/>
+                            <constraint firstItem="9i4-15-Dw2" firstAttribute="top" secondItem="Xkd-Ut-SHU" secondAttribute="bottom" constant="-6" id="lof-Y2-kTw"/>
+                            <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="X3L-H6-YOw" secondAttribute="bottom" constant="8" id="mRd-th-5ui"/>
                             <constraint firstItem="E1p-nr-qDE" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" id="mku-Lw-EmU"/>
+                            <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" constant="8" id="ow7-Hx-wpr"/>
                             <constraint firstItem="qw8-NA-tS2" firstAttribute="leading" secondItem="YAV-Gd-DC1" secondAttribute="leading" id="x0b-xM-Q3k"/>
                             <constraint firstItem="GBD-fk-reE" firstAttribute="top" secondItem="Azs-4K-vBe" secondAttribute="bottom" constant="8" id="yMe-dR-GBV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OKR-Hc-Gxr"/>
+                                <exclude reference="ow7-Hx-wpr"/>
+                                <exclude reference="mku-Lw-EmU"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="checkmarkLabel" destination="Xkd-Ut-SHU" id="s4h-av-5tf"/>
+                        <outlet property="codeCreatedLabel" destination="9i4-15-Dw2" id="Ye6-DC-5sb"/>
+                        <outlet property="createCodeButton" destination="Ojd-IK-tP7" id="QIb-0C-ah9"/>
+                        <outlet property="getStartedButton" destination="qw8-NA-tS2" id="aE0-sB-1je"/>
+                        <outlet property="notNowButton" destination="X3L-H6-YOw" id="BxQ-JC-Wdl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcW-l3-Lu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

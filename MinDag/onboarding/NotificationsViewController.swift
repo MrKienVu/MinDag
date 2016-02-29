@@ -16,8 +16,13 @@ class NotificationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if Notification.sharedInstance.isNotificationsEnabled() {
+            enableNextButton()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,11 +39,21 @@ class NotificationsViewController: UIViewController {
             self.givePermissionButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0), forState: .Normal)
         })
         
+        enableNextButton()
+    }
+    
+    func enableNextButton() {
+        // Show next button
         nextButton.enabled = true
+        nextButton.alpha = 1
         nextButton.hidden = false
+        
+        // Hide 'Not Now'-button and 'Give Permissions'-button
         notNowButton.enabled = false
         notNowButton.hidden = true
+        
         givePermissionButton.enabled = false
+        givePermissionButton.hidden = true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

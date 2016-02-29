@@ -25,6 +25,7 @@ struct UserDefaultKey {
     static let UUID = "UUID"
     static let StudyID = "StudyID"
     static let NotificationsEnabled = "NotificationsEnabled"
+    static let CompletedOnboarding = "CompletedOnboarding"
 }
 
 let Days: [Int: String] = [

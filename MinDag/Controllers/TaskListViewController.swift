@@ -47,6 +47,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.registerNib(nib, forCellReuseIdentifier: "Default")
     }
     
+    override func viewWillAppear(animated: Bool) {
+        UserDefaults.setBool(true, forKey: UserDefaultKey.CompletedOnboarding)
+        print("Completed onboarding")
+    }
+    
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

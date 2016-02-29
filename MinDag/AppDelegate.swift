@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ResearchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,21 +19,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window?.tintColor = Color.primaryColor
         
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController()
-        self.window?.rootViewController = vc
+        let completedOnboarding = UserDefaults.boolForKey(UserDefaultKey.CompletedOnboarding)
         
+        let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
+        let onboardingVC = onboarding.instantiateInitialViewController()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = main.instantiateInitialViewController()
+        
+        window?.rootViewController = completedOnboarding ? mainVC : onboardingVC
         
         let hasLaunchedBefore = UserDefaults.boolForKey(UserDefaultKey.hasLaunchedBefore)
         if !hasLaunchedBefore  {
-            print("First launch, storing UUID and hasLaunched-flag in UserDefaults")
             let uuid = NSUUID().UUIDString
-            
             UserDefaults.setObject(uuid, forKey: UserDefaultKey.UUID)
-            UserDefaults.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
             print("Stored user ID \(uuid) in UserDefaults")
+            
+            ORKPasscodeViewController.removePasscodeFromKeychain()
+            print("Removed passcode from Keychain")
+            
+            UserDefaults.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
+            print("HasLaunched flag enabled in UserDefaults")
+            
         }
+        
+        
+        lock()
+        
         return true
+    }
+    
+    func reset() {
+        UserDefaults.setBool(false, forKey: UserDefaultKey.hasLaunchedBefore)
+    }
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        return true
+    }
+    
+    func lock() {
+        guard ORKPasscodeViewController.isPasscodeStoredInKeychain()
+            && !(window?.rootViewController?.presentedViewController is ORKPasscodeViewController)
+            && UserDefaults.boolForKey(UserDefaultKey.CompletedOnboarding)
+            else { return }
+        
+        window?.makeKeyAndVisible()
+        
+        let passcodeVC = ORKPasscodeViewController.passcodeAuthenticationViewControllerWithText("Velkommen tilbake til Min Dag.", delegate: self) as! ORKPasscodeViewController
+        window?.rootViewController?.presentViewController(passcodeVC, animated: false, completion: nil)
     }
     
     
@@ -68,6 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -77,6 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        lock()
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -88,5 +123,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate: ORKPasscodeDelegate {
+    func passcodeViewControllerDidFinishWithSuccess(viewController: UIViewController) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func passcodeViewControllerDidFailAuthentication(viewController: UIViewController) {
+        // Todo
+    }
 }
 
