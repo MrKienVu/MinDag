@@ -26,6 +26,8 @@ class PasscodeViewController: UIViewController, ORKTaskViewControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         if ORKPasscodeViewController.isPasscodeStoredInKeychain() {
             enableNextButton()
+            checkmarkLabel.hidden = false
+            codeCreatedLabel.hidden = false
         }
     }
 

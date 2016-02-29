@@ -122,6 +122,7 @@
                         <outlet property="checkmark" destination="sgu-59-3GA" id="gRT-Y2-ouQ"/>
                         <outlet property="idTextField" destination="jzc-sP-gXD" id="dw8-xT-oJc"/>
                         <outlet property="nextButton" destination="sHr-Vm-9IC" id="LQd-Lo-xc6"/>
+                        <outlet property="nextButtonBottomConstraint" destination="aDD-QN-22k" id="DEQ-uO-IAo"/>
                         <outlet property="repeatIdTextField" destination="zH1-i1-36z" id="VRg-it-TbQ"/>
                     </connections>
                 </viewController>

@@ -52,7 +52,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Completed onboarding")
     }
     
-    
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskListRows.count
