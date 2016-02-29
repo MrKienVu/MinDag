@@ -149,7 +149,7 @@ class Notification {
         return weekends
     }
     
-    func createDefaultDates() -> [NSDate] {
+    func getDefaultDates() -> [NSDate] {
         let calendar = NSCalendar.currentCalendar()
         let today = NSDate()
         

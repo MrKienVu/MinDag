@@ -108,13 +108,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             return 0
         }
         
-        /*// Hide / Show all rows in first section based on notification switch
-        else if (!notificationSwitch.on && indexPath.section == 0 &&
-                (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4))
-        {
-            return 0
-        }*/
-        
         else {
             return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         }
@@ -193,10 +186,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             weeklyDay: mathysDayPicker.selectedRowInComponent(0) + 1,
             weeklyTime: mathysTimePicker.date
         )
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        scheduleNotifications()
     }
     
 }

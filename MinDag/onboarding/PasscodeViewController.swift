@@ -96,14 +96,11 @@ class PasscodeViewController: UIViewController, ORKTaskViewControllerDelegate {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let defaultDates = Notification.sharedInstance.getDefaultDates()
+        Notification.sharedInstance.scheduleNotifications(defaultDates[0], weekendTime: defaultDates[1], weeklyDay: 1, weeklyTime: defaultDates[2])
     }
-    */
+    
 
 }
