@@ -16,6 +16,7 @@ class PasscodeViewController: UIViewController, ORKTaskViewControllerDelegate {
     @IBOutlet weak var notNowButton: UIButton!
     @IBOutlet weak var checkmarkLabel: UILabel!
     @IBOutlet weak var codeCreatedLabel: UILabel!
+    @IBOutlet weak var passcodeText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

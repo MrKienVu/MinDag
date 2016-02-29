@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn studie ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-sP-gXD">
-                                <rect key="frame" x="200" y="302" width="200" height="30"/>
+                                <rect key="frame" x="200" y="342" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eGZ-9A-13F"/>
                                 </constraints>
@@ -59,7 +59,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gjenta studie ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zH1-i1-36z">
-                                <rect key="frame" x="200" y="340" width="200" height="30"/>
+                                <rect key="frame" x="200" y="380.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Xeg-rJ-Ydm"/>
                                 </constraints>
@@ -75,13 +75,16 @@
                                 <color key="textColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem pisum dolor siti me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJX-1E-FNy">
-                                <rect key="frame" x="205" y="242" width="190" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyll inn din studie ID i feltene nedenfor. Du kan ikke gå videre før feltene er samstemte." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJX-1E-FNy">
+                                <rect key="frame" x="150" y="242" width="300" height="60.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="xLc-CP-lff"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgu-59-3GA">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgu-59-3GA">
                                 <rect key="frame" x="380" y="345" width="17" height="23.5"/>
                                 <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.1555452387" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +106,9 @@
                             <constraint firstItem="jzc-sP-gXD" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="eDX-3r-vSm"/>
                             <constraint firstItem="Q8C-mg-hi0" firstAttribute="top" secondItem="MsP-mG-3o8" secondAttribute="bottom" constant="16.5" id="gAq-YW-DlQ"/>
                             <constraint firstItem="sHr-Vm-9IC" firstAttribute="leading" secondItem="co9-s0-ge3" secondAttribute="leading" id="hgm-ZT-9Mq"/>
+                            <constraint firstItem="jzc-sP-gXD" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="hnx-Fq-b9m"/>
                             <constraint firstItem="sgu-59-3GA" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="13" id="iQ0-ao-68B"/>
+                            <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="j04-8N-E44"/>
                             <constraint firstItem="IJX-1E-FNy" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="lyZ-ST-V5n"/>
                             <constraint firstItem="Q8C-mg-hi0" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="o04-Uk-d7B"/>
                             <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="yMS-fi-sgs"/>
@@ -114,6 +119,8 @@
                                 <exclude reference="Phd-ua-fxb"/>
                                 <exclude reference="lyZ-ST-V5n"/>
                                 <exclude reference="3fQ-y7-E9Z"/>
+                                <exclude reference="yMS-fi-sgs"/>
+                                <exclude reference="eDX-3r-vSm"/>
                             </mask>
                         </variation>
                     </view>
@@ -124,6 +131,7 @@
                         <outlet property="nextButton" destination="sHr-Vm-9IC" id="LQd-Lo-xc6"/>
                         <outlet property="nextButtonBottomConstraint" destination="aDD-QN-22k" id="DEQ-uO-IAo"/>
                         <outlet property="repeatIdTextField" destination="zH1-i1-36z" id="VRg-it-TbQ"/>
+                        <outlet property="studyIDText" destination="IJX-1E-FNy" id="rF6-yl-5eb"/>
                         <outlet property="studyIdTopConstraint" destination="Aei-kw-UGw" id="2QG-Kt-gBS"/>
                     </connections>
                 </viewController>
@@ -155,8 +163,11 @@
                                 <color key="textColor" red="1" green="0.68235294120000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem pisum dolor siti me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-0j-MvV">
-                                <rect key="frame" x="205" y="238" width="190" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denne applikasjonen baserer seg på å gi deg påminnelser når du har ting du må gjøre i appen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-0j-MvV">
+                                <rect key="frame" x="150" y="238" width="300" height="60.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="lxk-1z-whg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -202,7 +213,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIX-Tu-elC">
-                                <rect key="frame" x="280" y="440.5" width="40" height="55"/>
+                                <rect key="frame" x="280" y="440" width="40" height="55"/>
                                 <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="40"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -221,10 +232,12 @@
                             <constraint firstItem="Dmz-zJ-o8O" firstAttribute="top" secondItem="baO-Lc-bcb" secondAttribute="bottom" constant="10" id="BKH-09-Prf"/>
                             <constraint firstItem="L8b-A7-lo9" firstAttribute="top" secondItem="OIX-Tu-elC" secondAttribute="bottom" constant="-6" id="Fah-cx-CEq"/>
                             <constraint firstItem="U66-f6-5mz" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="GrJ-I6-EzK"/>
+                            <constraint firstItem="Dmz-zJ-o8O" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="QTj-cf-qGg"/>
                             <constraint firstAttribute="trailing" secondItem="5IL-JX-cQl" secondAttribute="trailing" id="Rt7-K8-XGo"/>
                             <constraint firstItem="sqn-0j-MvV" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="UwV-dv-AFX"/>
                             <constraint firstAttribute="trailing" secondItem="JZd-dL-fyx" secondAttribute="trailing" id="aGg-vw-Uer"/>
                             <constraint firstItem="baO-Lc-bcb" firstAttribute="top" secondItem="yPG-YZ-Vru" secondAttribute="bottom" constant="8" id="aRJ-Nv-CY8"/>
+                            <constraint firstItem="sqn-0j-MvV" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="eYb-a6-M6y"/>
                             <constraint firstItem="L8b-A7-lo9" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="irb-L7-bSi"/>
                             <constraint firstItem="TA9-W0-fSF" firstAttribute="top" secondItem="JZd-dL-fyx" secondAttribute="bottom" id="m5S-aK-05d"/>
                             <constraint firstItem="5IL-JX-cQl" firstAttribute="top" secondItem="U66-f6-5mz" secondAttribute="bottom" constant="8" id="pJc-VI-wci"/>
@@ -239,6 +252,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="w9X-aQ-Fkf"/>
+                                <exclude reference="UwV-dv-AFX"/>
                                 <exclude reference="4Vw-9n-2lr"/>
                                 <exclude reference="1QF-cH-Fnu"/>
                             </mask>
@@ -250,6 +265,7 @@
                         <outlet property="nextButton" destination="JZd-dL-fyx" id="Uxm-eb-j4D"/>
                         <outlet property="notNowButton" destination="U66-f6-5mz" id="naa-Zd-yWH"/>
                         <outlet property="notificationsEnabledLabel" destination="L8b-A7-lo9" id="ZHa-GC-vQu"/>
+                        <outlet property="notificationsText" destination="sqn-0j-MvV" id="jID-e4-Ivn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJA-j0-MXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,8 +334,12 @@
                                     <action selector="notNowClicked:" destination="Xrl-Iu-A3x" eventType="touchUpInside" id="z6z-vO-rBf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem pisum dolor siti me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZs-ph-5BE">
-                                <rect key="frame" x="205" y="238" width="190" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZs-ph-5BE">
+                                <rect key="frame" x="150" y="238" width="300" height="80.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="23W-Wx-bIU"/>
+                                </constraints>
+                                <string key="text">Ved å opprette en personlig kode kan du sikre at kun du har tilgang til appen, enten gjennom en PIN-kode eller med fingeravtrykk.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -345,6 +365,7 @@
                             <constraint firstItem="dZs-ph-5BE" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="CWf-EZ-w7y"/>
                             <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" constant="8" id="OKR-Hc-Gxr"/>
                             <constraint firstItem="dZs-ph-5BE" firstAttribute="top" secondItem="O96-7l-WAn" secondAttribute="bottom" constant="-10" id="OjI-CJ-FQX"/>
+                            <constraint firstItem="dZs-ph-5BE" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="P2h-fT-7I6"/>
                             <constraint firstAttribute="trailing" secondItem="Ojd-IK-tP7" secondAttribute="trailing" id="PsN-ps-TJ6"/>
                             <constraint firstItem="O96-7l-WAn" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="Qk7-N2-BrW"/>
                             <constraint firstItem="E1p-nr-qDE" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" id="R6R-HX-KRb"/>
@@ -357,12 +378,15 @@
                             <constraint firstItem="9i4-15-Dw2" firstAttribute="top" secondItem="Xkd-Ut-SHU" secondAttribute="bottom" constant="-6" id="lof-Y2-kTw"/>
                             <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="X3L-H6-YOw" secondAttribute="bottom" constant="8" id="mRd-th-5ui"/>
                             <constraint firstItem="E1p-nr-qDE" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" id="mku-Lw-EmU"/>
+                            <constraint firstItem="O96-7l-WAn" firstAttribute="centerX" secondItem="YAV-Gd-DC1" secondAttribute="centerX" id="nVM-sG-LTb"/>
                             <constraint firstItem="Ojd-IK-tP7" firstAttribute="top" secondItem="qw8-NA-tS2" secondAttribute="bottom" constant="8" id="ow7-Hx-wpr"/>
                             <constraint firstItem="qw8-NA-tS2" firstAttribute="leading" secondItem="YAV-Gd-DC1" secondAttribute="leading" id="x0b-xM-Q3k"/>
                             <constraint firstItem="GBD-fk-reE" firstAttribute="top" secondItem="Azs-4K-vBe" secondAttribute="bottom" constant="8" id="yMe-dR-GBV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Qk7-N2-BrW"/>
+                                <exclude reference="CWf-EZ-w7y"/>
                                 <exclude reference="OKR-Hc-Gxr"/>
                                 <exclude reference="ow7-Hx-wpr"/>
                                 <exclude reference="mku-Lw-EmU"/>
@@ -375,6 +399,7 @@
                         <outlet property="createCodeButton" destination="Ojd-IK-tP7" id="QIb-0C-ah9"/>
                         <outlet property="getStartedButton" destination="qw8-NA-tS2" id="aE0-sB-1je"/>
                         <outlet property="notNowButton" destination="X3L-H6-YOw" id="BxQ-JC-Wdl"/>
+                        <outlet property="passcodeText" destination="dZs-ph-5BE" id="5YV-l1-aSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcW-l3-Lu6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,7 @@ class NotificationsViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var checkmarkLabel: UILabel!
     @IBOutlet weak var notificationsEnabledLabel: UILabel!
+    @IBOutlet weak var notificationsText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,6 +16,7 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var studyIdTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var studyIDText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
