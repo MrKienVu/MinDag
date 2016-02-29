@@ -124,6 +124,7 @@
                         <outlet property="nextButton" destination="sHr-Vm-9IC" id="LQd-Lo-xc6"/>
                         <outlet property="nextButtonBottomConstraint" destination="aDD-QN-22k" id="DEQ-uO-IAo"/>
                         <outlet property="repeatIdTextField" destination="zH1-i1-36z" id="VRg-it-TbQ"/>
+                        <outlet property="studyIdTopConstraint" destination="Aei-kw-UGw" id="2QG-Kt-gBS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhI-hi-xjy" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,7 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var checkmark: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var studyIdTopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,13 +90,15 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
         
         if keyboardSize.height == offset.height {
             if nextButtonBottomConstraint.constant == 0 {
-                self.nextButtonBottomConstraint.constant += keyboardSize.height
+                nextButtonBottomConstraint.constant += keyboardSize.height
+                studyIdTopConstraint.constant -= 120
                 UIView.animateWithDuration(0.1, animations: { () -> Void in
                     self.view.layoutIfNeeded()
                 })
             }
         } else {
-            self.nextButtonBottomConstraint.constant -= keyboardSize.height + offset.height
+            nextButtonBottomConstraint.constant -= keyboardSize.height + offset.height
+            studyIdTopConstraint.constant -= 120
             UIView.animateWithDuration(0.1, animations: { () -> Void in
                 self.view.layoutIfNeeded()
             })
@@ -103,7 +106,8 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        self.nextButtonBottomConstraint.constant = 0
+        nextButtonBottomConstraint.constant = 0
+        studyIdTopConstraint.constant = 8
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             self.view.layoutIfNeeded()
             
