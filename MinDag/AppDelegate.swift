@@ -42,17 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        
         lock()
         
-        return true
-    }
-    
-    func reset() {
-        UserDefaults.setBool(false, forKey: UserDefaultKey.hasLaunchedBefore)
-    }
-    
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         return true
     }
     

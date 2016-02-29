@@ -13,6 +13,8 @@ class NotificationsViewController: UIViewController {
     @IBOutlet weak var givePermissionButton: UIButton!
     @IBOutlet weak var notNowButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var checkmarkLabel: UILabel!
+    @IBOutlet weak var notificationsEnabledLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,13 @@ class NotificationsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         if Notification.sharedInstance.isNotificationsEnabled() {
             enableNextButton()
+            showEnabledLabels()
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "animateEnabledLabels", name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +48,17 @@ class NotificationsViewController: UIViewController {
         })
         
         enableNextButton()
+    }
+    
+    func animateEnabledLabels() {
+        UIView.animateWithDuration(0.8, animations: {
+            self.showEnabledLabels()
+        })
+    }
+    
+    func showEnabledLabels() {
+        checkmarkLabel.alpha = 1
+        notificationsEnabledLabel.alpha = 1
     }
     
     func enableNextButton() {

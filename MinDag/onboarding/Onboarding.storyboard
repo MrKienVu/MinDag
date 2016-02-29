@@ -11,6 +11,7 @@
             <string>SSGizmo</string>
             <string>SSGizmo</string>
             <string>SSGizmo</string>
+            <string>SSGizmo</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -198,24 +199,40 @@
                                     <segue destination="Xrl-Iu-A3x" kind="show" id="ZgU-bM-CeH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIX-Tu-elC">
+                                <rect key="frame" x="280" y="440.5" width="40" height="55"/>
+                                <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="40"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Påminnelser er på" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-A7-lo9">
+                                <rect key="frame" x="234" y="489" width="132" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TA9-W0-fSF" firstAttribute="top" secondItem="5IL-JX-cQl" secondAttribute="bottom" id="1QF-cH-Fnu"/>
                             <constraint firstItem="5IL-JX-cQl" firstAttribute="leading" secondItem="ZHv-dK-k1b" secondAttribute="leading" id="4Vw-9n-2lr"/>
                             <constraint firstItem="Dmz-zJ-o8O" firstAttribute="top" secondItem="baO-Lc-bcb" secondAttribute="bottom" constant="10" id="BKH-09-Prf"/>
+                            <constraint firstItem="L8b-A7-lo9" firstAttribute="top" secondItem="OIX-Tu-elC" secondAttribute="bottom" constant="-6" id="Fah-cx-CEq"/>
                             <constraint firstItem="U66-f6-5mz" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="GrJ-I6-EzK"/>
                             <constraint firstAttribute="trailing" secondItem="5IL-JX-cQl" secondAttribute="trailing" id="Rt7-K8-XGo"/>
                             <constraint firstItem="sqn-0j-MvV" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="UwV-dv-AFX"/>
                             <constraint firstAttribute="trailing" secondItem="JZd-dL-fyx" secondAttribute="trailing" id="aGg-vw-Uer"/>
                             <constraint firstItem="baO-Lc-bcb" firstAttribute="top" secondItem="yPG-YZ-Vru" secondAttribute="bottom" constant="8" id="aRJ-Nv-CY8"/>
+                            <constraint firstItem="L8b-A7-lo9" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="irb-L7-bSi"/>
                             <constraint firstItem="TA9-W0-fSF" firstAttribute="top" secondItem="JZd-dL-fyx" secondAttribute="bottom" id="m5S-aK-05d"/>
                             <constraint firstItem="5IL-JX-cQl" firstAttribute="top" secondItem="U66-f6-5mz" secondAttribute="bottom" constant="8" id="pJc-VI-wci"/>
                             <constraint firstItem="5IL-JX-cQl" firstAttribute="leading" secondItem="ZHv-dK-k1b" secondAttribute="leading" id="rNc-6D-z59"/>
                             <constraint firstItem="sqn-0j-MvV" firstAttribute="top" secondItem="Dmz-zJ-o8O" secondAttribute="bottom" constant="-10" id="rxI-sC-icG"/>
                             <constraint firstItem="baO-Lc-bcb" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="uRe-VU-BRe"/>
                             <constraint firstItem="JZd-dL-fyx" firstAttribute="leading" secondItem="ZHv-dK-k1b" secondAttribute="leading" id="uus-kS-mAC"/>
+                            <constraint firstItem="OIX-Tu-elC" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="vTs-Lc-TNK"/>
                             <constraint firstItem="Dmz-zJ-o8O" firstAttribute="centerX" secondItem="ZHv-dK-k1b" secondAttribute="centerX" id="w9X-aQ-Fkf"/>
+                            <constraint firstItem="JZd-dL-fyx" firstAttribute="top" secondItem="L8b-A7-lo9" secondAttribute="bottom" constant="40" id="wXg-0v-Rux"/>
                             <constraint firstItem="TA9-W0-fSF" firstAttribute="top" secondItem="5IL-JX-cQl" secondAttribute="bottom" id="xcp-0I-Cg7"/>
                         </constraints>
                         <variation key="default">
@@ -226,9 +243,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="checkmarkLabel" destination="OIX-Tu-elC" id="URa-84-mND"/>
                         <outlet property="givePermissionButton" destination="5IL-JX-cQl" id="jHt-RN-MM4"/>
                         <outlet property="nextButton" destination="JZd-dL-fyx" id="Uxm-eb-j4D"/>
                         <outlet property="notNowButton" destination="U66-f6-5mz" id="naa-Zd-yWH"/>
+                        <outlet property="notificationsEnabledLabel" destination="L8b-A7-lo9" id="ZHa-GC-vQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJA-j0-MXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
