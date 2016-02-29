@@ -86,6 +86,7 @@ class Notification {
             localNotification.applicationIconBadgeNumber += 1
             localNotification.userInfo = ["type": "dailySurvey"]
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            NSLog("Scheduled weekday notifications: \n \(localNotification)")
         }
         
         // Schedule weekend notifications
@@ -99,6 +100,7 @@ class Notification {
             localNotification.applicationIconBadgeNumber += 1
             localNotification.userInfo = ["type": "dailySurvey"]
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            NSLog("Scheduled weekend notifications: \n \(localNotification)")
         }
         
         // Schedule weekly notifications
@@ -111,6 +113,7 @@ class Notification {
         localNotification.applicationIconBadgeNumber += 1
         localNotification.userInfo = ["type": "weeklySurvey"]
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        NSLog("Scheduled weekly notifications: \n \(localNotification)")
     }
     
     func createWeeklyDate(time: NSDate, day: Int) -> NSDate {
@@ -146,77 +149,14 @@ class Notification {
         return weekends
     }
     
-    /*func scheduleLocalNotification(date: NSDate) {
+    func createDefaultDates() -> [NSDate] {
         let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components([.Hour, .Minute, .Second], fromDate: date)
-        let currentComponents = calendar.components([.Year, .Weekday], fromDate: NSDate())
+        let today = NSDate()
         
-        for i in 2...6 {
-            currentComponents.hour = dateComponents.hour
-            currentComponents.minute = dateComponents.minute
-            currentComponents.second = 0
-            currentComponents.weekday = i
-            
-            let notification = UILocalNotification()
-            
-            notification.repeatInterval = NSCalendarUnit.Minute
-            let test = calendar.dateFromComponents(currentComponents)
-            print(calendar.components([.Weekday], fromDate: test!).weekday)
-            notification.fireDate = calendar.dateFromComponents(currentComponents)
-            notification.alertBody = "Du har en ny oppgave å gjøre."
-            notification.alertAction = "Vise valg"
-            notification.category = "NOTIFICATION_CATEGORY"
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            print("\(notification) \n\n\n\n")
-            
-        }
+        let weekday = calendar.dateBySettingHour(8, minute: 0, second: 0, ofDate: today, options: NSCalendarOptions())!
+        let weekend = calendar.dateBySettingHour(9, minute: 0, second: 0, ofDate: today, options: NSCalendarOptions())!
+        let weekly = calendar.dateBySettingHour(18, minute: 0, second: 0, ofDate: today, options: NSCalendarOptions())!
         
+        return [weekday, weekend, weekly]
     }
-    
-    func createWeeklyDate(dateToModify: NSDate, weekday: Int) -> NSDate {
-        let calendar = NSCalendar.currentCalendar()
-        
-        let currentDate = calendar.components([.Year, .Month, .Weekday], fromDate: NSDate())
-        
-        let currentComponents = calendar.components([.Hour, .Minute], fromDate: dateToModify)
-        let fixedComponents = NSDateComponents()
-        fixedComponents.year = currentDate.year
-        fixedComponents.month = currentDate.month
-        fixedComponents.weekday = weekday
-        fixedComponents.hour = currentComponents.hour
-        fixedComponents.minute = currentComponents.minute
-        
-        print(calendar.components([.Weekday], fromDate: NSDate()).weekday)
-        
-        return calendar.dateFromComponents(fixedComponents)!
-    }
-    
-    func DEMO_scheduleLocalNotification(date: NSDate) {
-        createWeekdays(date)
-        let localNotification = UILocalNotification()
-        let fireDate = DEMO_fixNotificationDate(date)
-        localNotification.fireDate = fireDate
-        localNotification.alertBody = "Du har en ny oppgave å gjøre."
-        localNotification.category = "NOTIFICATION_CATEGORY"
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        print("Scheduled local notification at firedate: \(fireDate)")
-    }
-    
-    private func DEMO_fixNotificationDate(dateToFix: NSDate) -> NSDate {
-        
-        let calendar = NSCalendar.currentCalendar()
-        
-        let currentDate = NSDate()
-        let currentDateComponents = calendar.components([.Year, .Month, .Day], fromDate: currentDate)
-        
-        let otherDateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: dateToFix)
-        otherDateComponents.year = currentDateComponents.year
-        otherDateComponents.month = currentDateComponents.month
-        otherDateComponents.day = currentDateComponents.day
-        
-        let fixedDate = calendar.dateFromComponents(otherDateComponents)
-        
-        return fixedDate!
-    }*/
 }

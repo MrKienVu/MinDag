@@ -703,8 +703,8 @@
                                                         <constraint firstAttribute="height" constant="110" id="5OJ-W6-aIj"/>
                                                         <constraint firstAttribute="width" constant="600" id="eVv-JV-bZq"/>
                                                     </constraints>
-                                                    <date key="date" timeIntervalSinceReferenceDate="472982400.95218199">
-                                                        <!--2015-12-28 08:00:00 +0000-->
+                                                    <date key="date" timeIntervalSinceReferenceDate="472978800.95218199">
+                                                        <!--2015-12-28 07:00:00 +0000-->
                                                     </date>
                                                     <connections>
                                                         <action selector="weekdayTimeChanged:" destination="FZi-Mq-C57" eventType="valueChanged" id="8z4-Hi-RCa"/>
