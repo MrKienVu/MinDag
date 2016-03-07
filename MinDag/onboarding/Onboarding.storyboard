@@ -118,9 +118,9 @@
                             <mask key="constraints">
                                 <exclude reference="Phd-ua-fxb"/>
                                 <exclude reference="lyZ-ST-V5n"/>
+                                <exclude reference="eDX-3r-vSm"/>
                                 <exclude reference="3fQ-y7-E9Z"/>
                                 <exclude reference="yMS-fi-sgs"/>
-                                <exclude reference="eDX-3r-vSm"/>
                             </mask>
                         </variation>
                     </view>

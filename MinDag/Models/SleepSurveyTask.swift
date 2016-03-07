@@ -16,7 +16,7 @@ public var SleepSurveyTask: ORKOrderedTask {
     let introStep = ORKInstructionStep(identifier: Identifier.SleepInstructionStep.rawValue)
     introStep.title = "SLEEP_INTRO_TITLE".localized
     introStep.text = "SLEEP_INTRO_TEXT".localized
-    introStep.image = UIImage(named: "sleep-icon")
+    introStep.image = UIImage(named: "daily-icon")
     steps.append(introStep)
     
     //Array for values in the picker

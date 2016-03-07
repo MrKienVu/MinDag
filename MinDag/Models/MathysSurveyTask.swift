@@ -16,7 +16,6 @@ public var MathysSurveyTask: ORKOrderedTask {
     let instructionStep = ORKInstructionStep(identifier: Identifier.MathysInstructionStep.rawValue)
     instructionStep.title = "INTRO_TITLE".localized
     instructionStep.text = "INTRO_TEXT".localized
-    instructionStep.detailText = "INTRO_DETAIL".localized
     steps.append(instructionStep)
     
     func verticalScaleWithHighValue(highValue: String, lowValue: String) -> ORKAnswerFormat {
