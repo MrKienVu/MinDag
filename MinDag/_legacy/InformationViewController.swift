@@ -74,7 +74,7 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
             return nil
         }
         
-        index--
+        index -= 1
         return self.viewControllerAtIndex(index)
     }
     
@@ -86,7 +86,7 @@ class InformationViewController: UIViewController, UIPageViewControllerDataSourc
             return nil
         }
         
-        index++
+        index += 1
         if (index == self.pageTitles.count) {
             configureButton.enabled = true
             configureButton.setTitle("Kom i gang", forState: .Normal)

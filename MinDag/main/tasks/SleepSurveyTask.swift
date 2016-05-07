@@ -22,7 +22,7 @@ public var SleepSurveyTask: ORKOrderedTask {
     //Array for values in the picker
     var pickerValueChoice = [ORKTextChoice]()
     
-    for (var i = 0; i < 16;i++){
+    for i in 0 ..< 16{
         var textValue = "\(i) timer"
         
         if i == 0   { textValue = "Sov ikke" }
@@ -52,10 +52,16 @@ public var SleepSurveyTask: ORKOrderedTask {
     
     steps.append(sleepQualityStep)
     
-    let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
+    /*let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
     sleepCompletionStep.title = "SLEEP_COMPLETION_TITLE".localized
     sleepCompletionStep.text = "SLEEP_COMPLETION_TEXT".localized
-    steps.append(sleepCompletionStep)
+    steps.append(sleepCompletionStep)*/
+    
+    let waitStepIndeterminate = ORKWaitStep(identifier: Identifier.WaitCompletionStep.rawValue)
+    waitStepIndeterminate.title = "Ferdig"
+    waitStepIndeterminate.text = "Laster opp..."
+    waitStepIndeterminate.indicatorType = ORKProgressIndicatorType.Indeterminate
+    steps.append(waitStepIndeterminate)
     
     return ORKOrderedTask(identifier: Identifier.SleepSurveyTask.rawValue, steps: steps)
 }

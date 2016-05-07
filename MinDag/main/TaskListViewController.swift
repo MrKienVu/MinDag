@@ -40,8 +40,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         animateSettingsIconWithDuration(1.7)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentDailySurvey", name: "presentDailySurvey", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentWeeklySurvey", name: "presentWeeklySurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentDailySurvey), name: "presentDailySurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentWeeklySurvey), name: "presentWeeklySurvey", object: nil)
         
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
@@ -101,6 +101,36 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         the task view controller is presented.
         */
         presentViewController(taskViewController, animated: true, completion: nil)
+    }
+    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+        
+        
+        let identifier = stepViewController.step?.identifier
+        
+        stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
+        
+        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
+            stepViewController.continueButtonTitle = "Send inn"
+        }
+        
+        //stepViewController.continueButtonTitle = "Registrer"
+        
+        if identifier == Identifier.WaitCompletionStep.rawValue {
+            stepViewController.cancelButtonItem = nil
+            delay(2.0, closure: { () -> () in
+                if let stepViewController = stepViewController as? ORKWaitStepViewController {
+                    stepViewController.goForward()
+                }
+            })
+        }
+    }
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
     
     // MARK: ORKTaskViewControllerDelegate
@@ -168,7 +198,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+   /* func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
         let identifier = stepViewController.step?.identifier
         
         stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
@@ -176,7 +206,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
             stepViewController.continueButtonTitle = "Send inn"
         }
-    }
+    }*/
     
     func presentWeeklySurvey() {
         let taskListRow = taskListRows[0]

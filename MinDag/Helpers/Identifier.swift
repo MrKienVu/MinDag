@@ -34,4 +34,5 @@ enum Identifier: String {
     case TextChoiceQuestion =                           "TextChoiceQuestion"
     case TextQuestionStep =                             "TextQuestionStep"
     case MathysCompletionStep =                         "MathysCompletionStep"
+    case WaitCompletionStep =                           "WaitCompletionStep"
 }
