@@ -50,7 +50,8 @@ enum TaskListRow: Int, CustomStringConvertible {
     
     
     /// Returns an array of all the task list row enum cases.
-    static var allCases: [TaskListRow] {
+    
+    /*static var allCases: [TaskListRow] {
         /*
         Create a generator that creates a `TaskListRow` at a specific index.
         When `TaskListRow`'s `rawValue` initializer returns `nil`, the generator
@@ -64,7 +65,8 @@ enum TaskListRow: Int, CustomStringConvertible {
         let caseSequence = AnySequence(caseGenerator)
         
         return Array(caseSequence)
-    }
+    }*/
+    static let allCases = [MathysTask, SleepSurvey]
     
     // MARK: Printable
     var description: String {

@@ -43,27 +43,36 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studie ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsP-mG-3o8">
                                 <rect key="frame" x="229" y="28" width="142" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Oa9-ab-6Ib"/>
+                                    <constraint firstAttribute="width" constant="142" id="XXI-Zl-b29"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn studie ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-sP-gXD">
-                                <rect key="frame" x="200" y="343" width="200" height="30"/>
+                                <rect key="frame" x="175" y="343" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="eGZ-9A-13F"/>
+                                    <constraint firstAttribute="width" constant="250" id="3zb-wN-sHU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="74f-wR-6wB"/>
+                                    <constraint firstAttribute="height" constant="50" id="X7y-TS-sPh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="IdChanged:" destination="CMB-al-D6A" eventType="editingChanged" id="W7V-Zu-Xv2"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gjenta studie ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zH1-i1-36z">
-                                <rect key="frame" x="200" y="381" width="200" height="30"/>
+                                <rect key="frame" x="175" y="401" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Xeg-rJ-Ydm"/>
+                                    <constraint firstAttribute="height" constant="50" id="5cj-br-WNU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="7I9-47-A6R"/>
+                                    <constraint firstAttribute="width" constant="250" id="BDk-3k-ynP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RRi-gD-8kz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="repeatIdChanged:" destination="CMB-al-D6A" eventType="editingChanged" id="GRM-2M-rDz"/>
@@ -78,55 +87,52 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fyll inn din studie ID i feltene nedenfor. Du kan ikke gå videre før feltene er samstemte." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJX-1E-FNy">
                                 <rect key="frame" x="150" y="242" width="300" height="61"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="mGT-7W-kix"/>
                                     <constraint firstAttribute="width" constant="300" id="xLc-CP-lff"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgu-59-3GA">
-                                <rect key="frame" x="380" y="386" width="17" height="24"/>
-                                <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fl-vK-9fM">
+                                <rect key="frame" x="396" y="409" width="24" height="33"/>
+                                <fontDescription key="fontDescription" name="SSGizmo" family="SS Gizmo" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.1555452387" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zH1-i1-36z" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="8" id="36u-cq-z2Y"/>
-                            <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="3fQ-y7-E9Z"/>
+                            <constraint firstItem="jzc-sP-gXD" firstAttribute="top" secondItem="IJX-1E-FNy" secondAttribute="bottom" constant="40" id="2ld-CC-Yzr"/>
+                            <constraint firstItem="zH1-i1-36z" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="8" id="3ki-KP-9T4"/>
+                            <constraint firstItem="IJX-1E-FNy" firstAttribute="top" secondItem="Q8C-mg-hi0" secondAttribute="bottom" constant="-10" id="4V0-CB-ZWi"/>
                             <constraint firstItem="MsP-mG-3o8" firstAttribute="top" secondItem="jhT-tR-Hn3" secondAttribute="bottom" constant="8" id="Aei-kw-UGw"/>
                             <constraint firstItem="IJX-1E-FNy" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="F7E-9C-1Ac"/>
-                            <constraint firstItem="Q8C-mg-hi0" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="Phd-ua-fxb"/>
+                            <constraint firstItem="IJX-1E-FNy" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="Ijv-Ml-dbF"/>
                             <constraint firstAttribute="trailing" secondItem="sHr-Vm-9IC" secondAttribute="trailing" id="R0k-xm-IYX"/>
-                            <constraint firstItem="jzc-sP-gXD" firstAttribute="top" secondItem="IJX-1E-FNy" secondAttribute="bottom" constant="40" id="RNp-CG-niL"/>
                             <constraint firstItem="hIj-Mh-Oow" firstAttribute="top" secondItem="sHr-Vm-9IC" secondAttribute="bottom" id="aDD-QN-22k"/>
-                            <constraint firstItem="sgu-59-3GA" firstAttribute="leading" secondItem="zH1-i1-36z" secondAttribute="trailing" constant="-20" id="cTU-mc-aKD"/>
+                            <constraint firstItem="jzc-sP-gXD" firstAttribute="top" secondItem="IJX-1E-FNy" secondAttribute="bottom" constant="40" id="aYG-51-D0L"/>
                             <constraint firstItem="MsP-mG-3o8" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="dDd-yF-u4X"/>
-                            <constraint firstItem="jzc-sP-gXD" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="eDX-3r-vSm"/>
+                            <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="ftO-us-DxG"/>
                             <constraint firstItem="Q8C-mg-hi0" firstAttribute="top" secondItem="MsP-mG-3o8" secondAttribute="bottom" constant="16.5" id="gAq-YW-DlQ"/>
                             <constraint firstItem="sHr-Vm-9IC" firstAttribute="leading" secondItem="co9-s0-ge3" secondAttribute="leading" id="hgm-ZT-9Mq"/>
-                            <constraint firstItem="jzc-sP-gXD" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="hnx-Fq-b9m"/>
-                            <constraint firstItem="sgu-59-3GA" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="13" id="iQ0-ao-68B"/>
-                            <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="j04-8N-E44"/>
+                            <constraint firstItem="sHr-Vm-9IC" firstAttribute="top" secondItem="zH1-i1-36z" secondAttribute="bottom" constant="99" id="jja-j4-zLx"/>
+                            <constraint firstItem="jzc-sP-gXD" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="kVl-l1-I4j"/>
+                            <constraint firstItem="zH1-i1-36z" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="8" id="kb9-Nz-3LB"/>
                             <constraint firstItem="IJX-1E-FNy" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="lyZ-ST-V5n"/>
                             <constraint firstItem="Q8C-mg-hi0" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="o04-Uk-d7B"/>
-                            <constraint firstItem="zH1-i1-36z" firstAttribute="centerX" secondItem="co9-s0-ge3" secondAttribute="centerX" id="yMS-fi-sgs"/>
+                            <constraint firstItem="zH1-i1-36z" firstAttribute="top" secondItem="jzc-sP-gXD" secondAttribute="bottom" constant="8" id="wpb-cg-7jF"/>
                             <constraint firstItem="IJX-1E-FNy" firstAttribute="top" secondItem="Q8C-mg-hi0" secondAttribute="bottom" constant="-10" id="zBp-f8-WQO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Phd-ua-fxb"/>
                                 <exclude reference="lyZ-ST-V5n"/>
-                                <exclude reference="eDX-3r-vSm"/>
-                                <exclude reference="3fQ-y7-E9Z"/>
-                                <exclude reference="yMS-fi-sgs"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="S6F-2Y-RNL"/>
                     <connections>
-                        <outlet property="checkmark" destination="sgu-59-3GA" id="gRT-Y2-ouQ"/>
+                        <outlet property="checkmark" destination="2fl-vK-9fM" id="UFb-SH-OgK"/>
                         <outlet property="idTextField" destination="jzc-sP-gXD" id="dw8-xT-oJc"/>
                         <outlet property="nextButton" destination="sHr-Vm-9IC" id="LQd-Lo-xc6"/>
                         <outlet property="nextButtonBottomConstraint" destination="aDD-QN-22k" id="DEQ-uO-IAo"/>

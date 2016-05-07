@@ -46,7 +46,7 @@
  **************************/
 "MATHYS_DESCRIPTION" = "Weekly survey";
 
-"INTRO_TITLE" = "MAThyS (Multidimensional Assessment of Thymic States) survey";
+"INTRO_TITLE" = "Weekly survey";
 "INTRO_TEXT" = "The following survey aims to evaluate your mood during the last week. For each statement, indicate how you usually feel by dragging the slider.";
 "INTRO_DETAIL" = "More details about the survey can be placed here.";
 
@@ -114,16 +114,16 @@
 "SCALE_COMPLETION_TEXT" = "You are now done with the first half of the survey.";
 "SCALE_COMPLETION_DETAIL" = "When you are ready to continue, click 'Next'.";
 
-"INTERMEDIATE_TITLE" = "MAThyS Part 2";
-"INTERMEDIATE_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";
+"INTERMEDIATE_TITLE" = "";
+"INTERMEDIATE_TEXT" = "Over the course of this period, indicate the types of emotion you have experienced, and how often you have experienced them";
 
-"TEXT_CHOICE_1_TITLE" = "I have experienced sadness...";
-"TEXT_CHOICE_2_TITLE" = "I have experienced joy...";
-"TEXT_CHOICE_3_TITLE" = "I have experienced irritability...";
-"TEXT_CHOICE_4_TITLE" = "I have experienced panic...";
-"TEXT_CHOICE_5_TITLE" = "I have experienced anxiety...";
-"TEXT_CHOICE_6_TITLE" = "I have experienced anger...";
-"TEXT_CHOICE_7_TITLE" = "I have experienced euphoria...";
+"TEXT_CHOICE_1_TITLE" = "Sadness...";
+"TEXT_CHOICE_2_TITLE" = "Joy...";
+"TEXT_CHOICE_3_TITLE" = "Irritability...";
+"TEXT_CHOICE_4_TITLE" = "Panic...";
+"TEXT_CHOICE_5_TITLE" = "Anxiety...";
+"TEXT_CHOICE_6_TITLE" = "Anger...";
+"TEXT_CHOICE_7_TITLE" = "Euphoria...";
 
 "TEXT_CHOICE_1" = "Never";
 "TEXT_CHOICE_2" = "Occasionally";
