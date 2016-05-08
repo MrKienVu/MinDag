@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
 
     
     // MARK: Outlets
@@ -31,6 +32,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     var mathysDayPickerHidden = true
     var mathysTimePickerHidden = true
     
+    @IBOutlet weak var contactUsCell: UITableViewCell!
+
+    
+
     
     // MARK: On Value Changed
     @IBAction func notificationsChanged(sender: AnyObject) {
@@ -44,6 +49,24 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         UserDefaults.setBool(notificationSwitch.on, forKey: UserDefaultKey.NotificationsEnabled)
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+    
+    func sendEmail() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["t.v.lagerberg@medisin.uio.no"])
+            mail.setSubject("MinDag")
+            
+            presentViewController(mail, animated: true, completion: nil)
+        } else {
+            // show failure alert
+        }
+        
+    }
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
@@ -93,6 +116,10 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(2) } // WeekendTimePicker
         else if indexPath.section == 2 && indexPath.row == 0 { toggleDatepicker(3) } // MathysDayPicker
         else if indexPath.section == 2 && indexPath.row == 2 { toggleDatepicker(4) } // MathysTimePicker
+        else if indexPath.section == 3 {
+            sendEmail()
+            
+        }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

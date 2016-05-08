@@ -27,6 +27,7 @@
 		5F1017681CDDE86500BED402 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1017671CDDE86500BED402 /* NotificationsViewController.swift */; };
 		5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */; };
 		5F4542E91C2059DE00A408A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E81C2059DE00A408A1 /* .gitignore */; };
+		5F6871D71CDF4A34004469B2 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6871D61CDF4A34004469B2 /* ContactTableViewController.swift */; };
 		5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F06FC1C202523007B0B93 /* AppDelegate.swift */; };
 		5F7F07021C202523007B0B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07001C202523007B0B93 /* Main.storyboard */; };
 		5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */; };
@@ -115,6 +116,7 @@
 		5F1017671CDDE86500BED402 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5F6871D61CDF4A34004469B2 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		5F7F06F91C202523007B0B93 /* MinDag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinDag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F06FC1C202523007B0B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7F07011C202523007B0B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				32EB40121C31B03D0077328C /* SettingsTableViewController.swift */,
 				32A994E81C5EA2630044157C /* TaskTableViewCell.swift */,
 				32A994EC1C5EB3790044157C /* TaskTableViewCellView.xib */,
+				5F6871D61CDF4A34004469B2 /* ContactTableViewController.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				320735511C597591005D083C /* CSVProcesser.swift in Sources */,
 				32193C601C7754580029C789 /* StudyIDViewController.swift in Sources */,
 				32193C641C7754740029C789 /* PasscodeViewController.swift in Sources */,
+				5F6871D71CDF4A34004469B2 /* ContactTableViewController.swift in Sources */,
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */,
