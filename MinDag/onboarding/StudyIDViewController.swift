@@ -12,7 +12,6 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var repeatIdTextField: UITextField!
-    //@IBOutlet weak var checkmark: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var studyIdTopConstraint: NSLayoutConstraint!
