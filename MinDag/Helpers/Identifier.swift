@@ -35,4 +35,6 @@ enum Identifier: String {
     case TextQuestionStep =                             "TextQuestionStep"
     case MathysCompletionStep =                         "MathysCompletionStep"
     case WaitCompletionStep =                           "WaitCompletionStep"
+    
+    case noInternetStep =                               "NoInternetStep"
 }

@@ -45,23 +45,23 @@ public class CSVProcesser {
                 for result in stepResult.results! {
                     if let scaleResult = result as? ORKScaleQuestionResult {
                         if let answer = scaleResult.answer {
-                            fields.append(answer as! String)
+                            fields.append("\(answer)")
                         } else {
-                            fields.append(scaleResult.answer as! String)
+                            fields.append("\(scaleResult.answer)")
                         }
                     }
                     if let choiceResult = result as? ORKChoiceQuestionResult {
                         if let _ = choiceResult.answer {
-                           fields.append(choiceResult.choiceAnswers![0] as! String)
+                           fields.append("\(choiceResult.choiceAnswers![0])")
                         } else {
-                            fields.append(choiceResult.answer as! String)
+                            fields.append("\(choiceResult.answer)")
                         }
                     }
                     if let textResult = result as? ORKTextQuestionResult {
                         if let answer = textResult.answer {
-                            fields.append(answer as! String)
+                            fields.append("\(answer)")
                         } else {
-                            fields.append(textResult.answer as! String)
+                            fields.append("\(textResult.answer)")
                         }
                     }
                 }

@@ -136,3 +136,7 @@
 "MATHYS_COMPLETION_TITLE" = "Congratulations!";
 "MATHYS_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
 
+"INTERNET_UNAVAILABLE_TITLE" = "No Internet Connection";
+"INTERNET_UNAVAILABLE_TEXT" = "Make sure your device is connected to the internet to continue";
+"INTERNET_UNAVAILABLE_STEP_TEXT" = "Make sure your device is connected to the internet to send in the results";
+

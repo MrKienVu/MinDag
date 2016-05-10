@@ -139,3 +139,7 @@
 
 "MATHYS_COMPLETION_TITLE" = "Congratulations!";
 "MATHYS_COMPLETION_TEXT" = "You're done with this weeks MAThyS survey.";
+
+"INTERNET_UNAVAILABLE_TITLE" = "Ingen internett tilkobling";
+"INTERNET_UNAVAILABLE_TEXT" = "Sørg for at enheten din er koblet til internett for å fortsette";
+"INTERNET_UNAVAILABLE_STEP_TEXT" = "Sørg for at enheten din er koblet til internett for å sende inn resultatene";

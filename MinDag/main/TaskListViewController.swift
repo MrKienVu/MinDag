@@ -53,18 +53,28 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Completed onboarding")
     }
     
+    @IBAction func showAlert(){
+        let alertController = UIAlertController (title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskListRows.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier.Default.rawValue, forIndexPath: indexPath) as! TaskTableViewCell
         
         let taskListRow = taskListRows[indexPath.row]
         
         cell.titleLabel.text = "\(taskListRow)"
         cell.iconLabel.text = logos[indexPath.row]
+        
         
         return cell
     }
@@ -77,6 +87,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+       if(!Reachability.isConnected()){
+            showAlert()
+        }
+        else {
         
         // Present the task view controller that the user asked for.
         let taskListRow = taskListRows[indexPath.row]
@@ -101,6 +116,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         the task view controller is presented.
         */
         presentViewController(taskViewController, animated: true, completion: nil)
+        }
     }
     func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
         
@@ -112,8 +128,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
             stepViewController.continueButtonTitle = "Send inn"
         }
-        
-        //stepViewController.continueButtonTitle = "Registrer"
         
         if identifier == Identifier.WaitCompletionStep.rawValue {
             stepViewController.cancelButtonItem = nil
@@ -233,5 +247,44 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //This function will disable the task and add overlay image
+    //boolean taskShouldBeDisable must be implemented
+    
+    func addDisableOverlay(cell: UITableViewCell, indexPath: Int){
+    
+     let navigationBarHeight = self.navigationController?.navigationBar.frame.height
+     
+     let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+     
+     let yPos = cell.bounds.minY + navigationBarHeight! + statusBarHeight
+     
+     let point = CGPoint(x:cell.bounds.minX , y: yPos)
+     
+     let size = CGSize(width: cell.bounds.width, height: cell.bounds.height)
+     
+     let rect = CGRect(origin: point, size: size)
+     
+     let disableImage = UIImageView(frame: rect)
+     disableImage.backgroundColor = UIColor.grayColor()
+     disableImage.alpha = 0.5
+     
+     //if(taskShouldBeDisabled) {
+     
+     //for disable the task
+     //cell.userInteractionEnabled = false
+     
+     //adding overlay
+     self.navigationController?.view.addSubview(disableImage)
+     
+     //else if(!taskShouldBeDisabled) {
+     //cell.userInteractionEnabled = true
+     //self.navigationController?.view.willRemoveSubview(disableImage)
+
+     
+     
+     cell.userInteractionEnabled = true
+     //self.navigationController?.view.willRemoveSubview(disableImage)
+     }
 
 }

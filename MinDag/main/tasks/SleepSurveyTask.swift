@@ -52,16 +52,26 @@ public var SleepSurveyTask: ORKOrderedTask {
     
     steps.append(sleepQualityStep)
     
-    /*let sleepCompletionStep = ORKCompletionStep(identifier: Identifier.SleepCompletionStep.rawValue)
-    sleepCompletionStep.title = "SLEEP_COMPLETION_TITLE".localized
-    sleepCompletionStep.text = "SLEEP_COMPLETION_TEXT".localized
-    steps.append(sleepCompletionStep)*/
+    let noInternetStep = ORKCompletionStep(identifier: Identifier.noInternetStep.rawValue)
+    noInternetStep.title = "INTERNET_UNAVAILABLE_TITLE".localized
+    noInternetStep.text = "INTERNET_UNAVAILABLE_STEP_TEXT".localized
     
+    /*let noStep = NoInternetConnectionStep(identifier: "NoInternetStep")
+    noStep.title = "yolo"
+    noStep.text = "besj" */
+
     let waitStepIndeterminate = ORKWaitStep(identifier: Identifier.WaitCompletionStep.rawValue)
     waitStepIndeterminate.title = "Ferdig"
     waitStepIndeterminate.text = "Laster opp..."
     waitStepIndeterminate.indicatorType = ORKProgressIndicatorType.Indeterminate
-    steps.append(waitStepIndeterminate)
+    
+    if (!Reachability.isConnected()){
+        steps.append(noInternetStep)
+        
+    }
+    else {
+        steps.append(waitStepIndeterminate)
+    }
     
     return ORKOrderedTask(identifier: Identifier.SleepSurveyTask.rawValue, steps: steps)
 }

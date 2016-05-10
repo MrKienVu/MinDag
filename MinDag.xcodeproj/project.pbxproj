@@ -25,6 +25,9 @@
 		32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB40121C31B03D0077328C /* SettingsTableViewController.swift */; };
 		32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */; };
 		5F1017681CDDE86500BED402 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1017671CDDE86500BED402 /* NotificationsViewController.swift */; };
+		5F2F24481CE1F91100BBA362 /* NoInternetConnectionStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F24471CE1F91100BBA362 /* NoInternetConnectionStep.swift */; };
+		5F2F244C1CE1F92E00BBA362 /* NoInternetConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F244B1CE1F92E00BBA362 /* NoInternetConnectionView.swift */; };
+		5F2F244E1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F244D1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift */; };
 		5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */; };
 		5F4542E91C2059DE00A408A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5F4542E81C2059DE00A408A1 /* .gitignore */; };
 		5F6871D71CDF4A34004469B2 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6871D61CDF4A34004469B2 /* ContactTableViewController.swift */; };
@@ -37,6 +40,7 @@
 		5F7F07351C202578007B0B93 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7F07411C202672007B0B93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07401C202672007B0B93 /* Constants.swift */; };
 		5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */; };
+		5FADEE151CE1A8F700391278 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADEE141CE1A8F700391278 /* Reachability.swift */; };
 		5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */; };
 		5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +118,9 @@
 		32EB40121C31B03D0077328C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		5F1017671CDDE86500BED402 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		5F2F24471CE1F91100BBA362 /* NoInternetConnectionStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionStep.swift; sourceTree = "<group>"; };
+		5F2F244B1CE1F92E00BBA362 /* NoInternetConnectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionView.swift; sourceTree = "<group>"; };
+		5F2F244D1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionViewController.swift; sourceTree = "<group>"; };
 		5F37F9D11C2406C5000ABF26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5F4542E81C2059DE00A408A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5F6871D61CDF4A34004469B2 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +138,7 @@
 		5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		5F7F07401C202672007B0B93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		5FADEE141CE1A8F700391278 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathysSurveyTask.swift; sourceTree = "<group>"; };
 		5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepSurveyTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +200,9 @@
 				5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */,
 				5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */,
 				32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */,
+				5F2F24471CE1F91100BBA362 /* NoInternetConnectionStep.swift */,
+				5F2F244B1CE1F92E00BBA362 /* NoInternetConnectionView.swift */,
+				5F2F244D1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift */,
 			);
 			path = tasks;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
 				320735501C597591005D083C /* CSVProcesser.swift */,
+				5FADEE141CE1A8F700391278 /* Reachability.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -465,11 +477,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F1017681CDDE86500BED402 /* NotificationsViewController.swift in Sources */,
+				5F2F24481CE1F91100BBA362 /* NoInternetConnectionStep.swift in Sources */,
 				5F37F9D21C2406C5000ABF26 /* StringExtensions.swift in Sources */,
+				5F2F244C1CE1F92E00BBA362 /* NoInternetConnectionView.swift in Sources */,
 				5F7F06FD1C202523007B0B93 /* AppDelegate.swift in Sources */,
 				32A994E91C5EA2630044157C /* TaskTableViewCell.swift in Sources */,
 				5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */,
 				329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */,
+				5F2F244E1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift in Sources */,
 				5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,
@@ -478,6 +493,7 @@
 				32193C641C7754740029C789 /* PasscodeViewController.swift in Sources */,
 				5F6871D71CDF4A34004469B2 /* ContactTableViewController.swift in Sources */,
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
+				5FADEE151CE1A8F700391278 /* Reachability.swift in Sources */,
 				5F7F07411C202672007B0B93 /* Constants.swift in Sources */,
 				32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */,
 				325CD4971C3353B90062C0B3 /* Notification.swift in Sources */,

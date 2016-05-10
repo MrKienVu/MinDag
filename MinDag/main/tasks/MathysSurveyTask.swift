@@ -88,3 +88,4 @@ public var MathysSurveyTask: ORKOrderedTask {
     
     return ORKOrderedTask(identifier: Identifier.MathysTask.rawValue, steps: steps)
 }
+

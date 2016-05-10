@@ -6,11 +6,11 @@
 //  Copyright © 2015 Universitetet i Oslo. All rights reserved.
 //
 
-/*
+
 import Foundation
 import UIKit
 import ResearchKit
-import Alamofire
+/*import Alamofire
 
 class NettskjemaHandler {
     private let pingUrl = "https://nettskjema.uio.no/ping.html"
@@ -68,7 +68,7 @@ class NettskjemaHandler {
     }
 }*/
 
-/*class NettskjemaHandler {
+class NettskjemaHandler {
     
     let request: NSURLRequest
     let backgroundWebView: UIWebView
@@ -105,7 +105,7 @@ class NettskjemaHandler {
         //backgroundWebView.stringByEvaluatingJavaScriptFromString("Nettskjema.setExtraField('\(key)', \(serializedResult!));")
     }
     
-}*/
+}
 
 
 
