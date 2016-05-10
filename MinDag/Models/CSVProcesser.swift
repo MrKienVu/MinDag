@@ -38,37 +38,38 @@ public class CSVProcesser {
     
     func appendResultData(taskResult: ORKTaskResult) -> String {
         
-        var resultString = ""
+        var fields: [String] = []
         
         if let stepResults = taskResult.results as? [ORKStepResult] {
             for stepResult in stepResults {
                 for result in stepResult.results! {
                     if let scaleResult = result as? ORKScaleQuestionResult {
                         if let answer = scaleResult.answer {
-                            resultString += "\(answer),"
+                            fields.append(answer as! String)
                         } else {
-                            resultString += "\(scaleResult.answer),"
+                            fields.append(scaleResult.answer as! String)
                         }
                     }
                     if let choiceResult = result as? ORKChoiceQuestionResult {
                         if let _ = choiceResult.answer {
-                            resultString += "\(choiceResult.choiceAnswers![0]),"
+                           fields.append(choiceResult.choiceAnswers![0] as! String)
                         } else {
-                            resultString += "\(choiceResult.answer),"
+                            fields.append(choiceResult.answer as! String)
                         }
                     }
                     if let textResult = result as? ORKTextQuestionResult {
                         if let answer = textResult.answer {
-                            resultString += "\(answer)"
+                            fields.append(answer as! String)
                         } else {
-                            resultString += "\(textResult.answer)"
+                            fields.append(textResult.answer as! String)
                         }
                     }
                 }
             }
         }
         
-        return resultString
+        return fields.joinWithSeparator(",")
+
     }
     
 }

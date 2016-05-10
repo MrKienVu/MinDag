@@ -58,7 +58,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             mail.mailComposeDelegate = self
             mail.setToRecipients(["t.v.lagerberg@medisin.uio.no"])
             mail.setSubject("MinDag")
-            
+                        
             presentViewController(mail, animated: true, completion: nil)
         } else {
             // show failure alert
