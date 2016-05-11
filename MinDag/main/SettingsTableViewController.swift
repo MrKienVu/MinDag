@@ -51,24 +51,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         tableView.endUpdates()
     }
     
-    func sendEmail() {
-        
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["t.v.lagerberg@medisin.uio.no"])
-            mail.setSubject("MinDag")
-                        
-            presentViewController(mail, animated: true, completion: nil)
-        } else {
-            // show failure alert
-        }
-        
-    }
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func weekdayTimeChanged(sender: AnyObject) {
         weekdayTimeChanged()
         UserDefaults.setObject(weekdayTimePicker.date, forKey: UserDefaultKey.WeekdayTime)
@@ -168,6 +150,28 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         mathysDayLabel.text = Days[row]
         UserDefaults.setInteger(row, forKey: UserDefaultKey.MathysDay)
         scheduleNotifications()
+    }
+    
+    func sendEmail() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["t.v.lagerberg@medisin.uio.no"])
+            mail.setSubject("MinDag")
+            
+            presentViewController(mail, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "MAIL_FAILED_TITLE".localized, message: "MAIL_FAILED_TEXT".localized, preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
 

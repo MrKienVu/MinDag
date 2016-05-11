@@ -143,3 +143,6 @@
 "INTERNET_UNAVAILABLE_TITLE" = "Ingen internett tilkobling";
 "INTERNET_UNAVAILABLE_TEXT" = "Sørg for at enheten din er koblet til internett for å fortsette";
 "INTERNET_UNAVAILABLE_STEP_TEXT" = "Sørg for at enheten din er koblet til internett for å sende inn resultatene";
+
+"MAIL_FAILED_TITLE" = "E-post feilet";
+"MAIL_FAILED_TEXT" = "E-post applikasjonen kunne ikke åpnes. Vennligst prøv igjen senere.";

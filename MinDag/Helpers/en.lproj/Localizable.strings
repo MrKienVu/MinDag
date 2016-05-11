@@ -140,3 +140,6 @@
 "INTERNET_UNAVAILABLE_TEXT" = "Make sure your device is connected to the internet to continue";
 "INTERNET_UNAVAILABLE_STEP_TEXT" = "Make sure your device is connected to the internet to send in the results";
 
+"MAIL_FAILED_TITLE" = "Mail Failed";
+"MAIL_FAILED_TEXT" = "Mail composer could not open. Please try again later.";
+
