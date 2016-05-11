@@ -244,6 +244,7 @@
 		5F7F07391C20258F007B0B93 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5FADEE141CE1A8F700391278 /* Reachability.swift */,
 				5F7F07401C202672007B0B93 /* Constants.swift */,
 				329EACA71C22A8D5008B0038 /* Identifier.swift */,
 				329EACAD1C22A97E008B0038 /* Localizable.strings */,
@@ -266,7 +267,6 @@
 				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
 				320735501C597591005D083C /* CSVProcesser.swift */,
-				5FADEE141CE1A8F700391278 /* Reachability.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
