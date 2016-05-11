@@ -36,13 +36,12 @@
 		5F7F07071C202523007B0B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F07051C202523007B0B93 /* LaunchScreen.storyboard */; };
 		5F7F07121C202523007B0B93 /* MinDagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07111C202523007B0B93 /* MinDagTests.swift */; };
 		5F7F071D1C202523007B0B93 /* MinDagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F071C1C202523007B0B93 /* MinDagUITests.swift */; };
-		5F7F07341C202578007B0B93 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; };
-		5F7F07351C202578007B0B93 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F07311C202562007B0B93 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7F07411C202672007B0B93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07401C202672007B0B93 /* Constants.swift */; };
 		5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */; };
 		5FADEE151CE1A8F700391278 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADEE141CE1A8F700391278 /* Reachability.swift */; };
 		5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */; };
 		5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */; };
+		D329CA6C999704D157B4462D /* Pods_MinDag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EADAE853CF17B3A2084E57 /* Pods_MinDag.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,42 +59,7 @@
 			remoteGlobalIDString = 5F7F06F81C202523007B0B93;
 			remoteInfo = Mathys;
 		};
-		5F7F07301C202562007B0B93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		5F7F07321C202562007B0B93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
-		5F7F07361C202578007B0B93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5F7F07381C202578007B0B93 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5F7F07351C202578007B0B93 /* ResearchKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		320735501C597591005D083C /* CSVProcesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVProcesser.swift; sourceTree = "<group>"; };
@@ -135,12 +99,14 @@
 		5F7F07181C202523007B0B93 /* MinDag.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinDag.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F071C1C202523007B0B93 /* MinDagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinDagUITests.swift; sourceTree = "<group>"; };
 		5F7F071E1C202523007B0B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		5F7F07401C202672007B0B93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		5FADEE141CE1A8F700391278 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		5FC613E05E954674ABB81B05 /* Pods-MinDag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDag.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinDag/Pods-MinDag.release.xcconfig"; sourceTree = "<group>"; };
 		5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathysSurveyTask.swift; sourceTree = "<group>"; };
 		5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepSurveyTask.swift; sourceTree = "<group>"; };
+		92EADAE853CF17B3A2084E57 /* Pods_MinDag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBECB177CACF0075800FBF9E /* Pods-MinDag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinDag/Pods-MinDag.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7F07341C202578007B0B93 /* ResearchKit.framework in Frameworks */,
+				D329CA6C999704D157B4462D /* Pods_MinDag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,11 +187,12 @@
 			isa = PBXGroup;
 			children = (
 				5F4542E81C2059DE00A408A1 /* .gitignore */,
-				5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */,
 				5F7F06FB1C202523007B0B93 /* MinDag */,
 				5F7F07101C202523007B0B93 /* MinDagTests */,
 				5F7F071B1C202523007B0B93 /* MinDagUITests */,
 				5F7F06FA1C202523007B0B93 /* Products */,
+				AC70FAD2651E398A8E27C568 /* Pods */,
+				DBE626DCAD519E506199657D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,15 +241,6 @@
 			path = MinDagUITests;
 			sourceTree = "<group>";
 		};
-		5F7F072B1C202562007B0B93 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5F7F07311C202562007B0B93 /* ResearchKit.framework */,
-				5F7F07331C202562007B0B93 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5F7F07391C20258F007B0B93 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +271,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AC70FAD2651E398A8E27C568 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBECB177CACF0075800FBF9E /* Pods-MinDag.debug.xcconfig */,
+				5FC613E05E954674ABB81B05 /* Pods-MinDag.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DBE626DCAD519E506199657D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92EADAE853CF17B3A2084E57 /* Pods_MinDag.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,15 +295,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F7F07211C202523007B0B93 /* Build configuration list for PBXNativeTarget "MinDag" */;
 			buildPhases = (
+				0779546AC96686F6A548D995 /* Check Pods Manifest.lock */,
 				5F7F06F51C202523007B0B93 /* Sources */,
 				5F7F06F61C202523007B0B93 /* Frameworks */,
 				5F7F06F71C202523007B0B93 /* Resources */,
-				5F7F07381C202578007B0B93 /* Embed Frameworks */,
+				25841DF00A218236770D9E0C /* Embed Pods Frameworks */,
+				DBBE0196F63BCAE64850A14B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5F7F07371C202578007B0B93 /* PBXTargetDependency */,
 			);
 			name = MinDag;
 			productName = Mathys;
@@ -407,12 +383,6 @@
 			mainGroup = 5F7F06F01C202523007B0B93;
 			productRefGroup = 5F7F06FA1C202523007B0B93 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5F7F072B1C202562007B0B93 /* Products */;
-					ProjectRef = 5F7F072A1C202562007B0B93 /* ResearchKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5F7F06F81C202523007B0B93 /* MinDag */,
@@ -421,23 +391,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5F7F07311C202562007B0B93 /* ResearchKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ResearchKit.framework;
-			remoteRef = 5F7F07301C202562007B0B93 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5F7F07331C202562007B0B93 /* ResearchKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ResearchKitTests.xctest;
-			remoteRef = 5F7F07321C202562007B0B93 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5F7F06F71C202523007B0B93 /* Resources */ = {
@@ -470,6 +423,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0779546AC96686F6A548D995 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		25841DF00A218236770D9E0C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinDag/Pods-MinDag-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBBE0196F63BCAE64850A14B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinDag/Pods-MinDag-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F7F06F51C202523007B0B93 /* Sources */ = {
@@ -531,11 +532,6 @@
 			isa = PBXTargetDependency;
 			target = 5F7F06F81C202523007B0B93 /* MinDag */;
 			targetProxy = 5F7F07191C202523007B0B93 /* PBXContainerItemProxy */;
-		};
-		5F7F07371C202578007B0B93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ResearchKit;
-			targetProxy = 5F7F07361C202578007B0B93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -655,11 +651,11 @@
 		};
 		5F7F07221C202523007B0B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBECB177CACF0075800FBF9E /* Pods-MinDag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.mindag;
@@ -670,11 +666,11 @@
 		};
 		5F7F07231C202523007B0B93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FC613E05E954674ABB81B05 /* Pods-MinDag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MinDag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.uio.usit.mindag;
