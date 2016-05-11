@@ -11,7 +11,6 @@ import ResearchKit
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ORKTaskViewControllerDelegate {
     
-    let nettskjema = NettskjemaHandler(scheme: .Mathys)
     let logos = ["copier", "crescentmoon"]
 
     @IBOutlet weak var tableView: UITableView!
@@ -50,10 +49,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(animated: Bool) {
         UserDefaults.setBool(true, forKey: UserDefaultKey.CompletedOnboarding)
-        print("Completed onboarding")
+        NSLog("Completed onboarding")
     }
     
-    @IBAction func showAlert(){
+    func showAlert(){
         let alertController = UIAlertController (title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(defaultAction)
@@ -88,10 +87,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-       if(!Reachability.isConnected()){
-            showAlert()
-        }
-        else {
+        if !Reachability.isConnected() { showAlert() }
         
         // Present the task view controller that the user asked for.
         let taskListRow = taskListRows[indexPath.row]
@@ -116,7 +112,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         the task view controller is presented.
         */
         presentViewController(taskViewController, animated: true, completion: nil)
-        }
     }
     func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
         
@@ -138,6 +133,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             })
         }
     }
+    
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -170,7 +166,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         list.append("endDate: \(taskResult.endDate!)")
         list.append("Total time: \(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)) seconds")
         
-        let stepResults = taskResult.results!
         
         if let stepResults = taskResult.results as? [ORKStepResult] {
             for stepResult in stepResults {
@@ -201,26 +196,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         print(list)
-        print("Number of steps completed:  \(stepResults.count)")
         let csv = CSVProcesser(taskResult: taskResult)
-        print(csv.csv)
+        let csvData = csv.csv.dataUsingEncoding(NSUTF8StringEncoding)
+        if csvData != nil {
+            Nettskjema.upload(csvData!)
+        }
         
-        
-        //self.nettskjema.setExtraField("\(taskViewController.result.identifier)", result: taskViewController.result)
-        //self.nettskjema.submit()
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-   /* func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
-        let identifier = stepViewController.step?.identifier
-        
-        stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
-        
-        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
-            stepViewController.continueButtonTitle = "Send inn"
-        }
-    }*/
     
     func presentWeeklySurvey() {
         let taskListRow = taskListRows[0]
