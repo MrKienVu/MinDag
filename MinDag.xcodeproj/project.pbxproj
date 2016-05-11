@@ -15,7 +15,7 @@
 		325CD4911C329FD60062C0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325CD4901C329FD60062C0B3 /* Assets.xcassets */; };
 		325CD4971C3353B90062C0B3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CD4961C3353B90062C0B3 /* Notification.swift */; };
 		32792D5B1CE37E34002BD711 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32792D5A1CE37E34002BD711 /* DateExtensions.swift */; };
-		329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */; };
+		329EACA41C21B0D8008B0038 /* Nettskjema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA31C21B0D8008B0038 /* Nettskjema.swift */; };
 		329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EACA71C22A8D5008B0038 /* Identifier.swift */; };
 		329EACAB1C22A97E008B0038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 329EACAD1C22A97E008B0038 /* Localizable.strings */; };
 		32A994E91C5EA2630044157C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A994E81C5EA2630044157C /* TaskTableViewCell.swift */; };
@@ -71,7 +71,7 @@
 		325CD4901C329FD60062C0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325CD4961C3353B90062C0B3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		32792D5A1CE37E34002BD711 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NettskjemaHandler.swift; sourceTree = "<group>"; };
+		329EACA31C21B0D8008B0038 /* Nettskjema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nettskjema.swift; sourceTree = "<group>"; };
 		329EACA71C22A8D5008B0038 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		329EACAF1C22A985008B0038 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		5F7F073F1C20263C007B0B93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				329EACA31C21B0D8008B0038 /* NettskjemaHandler.swift */,
+				329EACA31C21B0D8008B0038 /* Nettskjema.swift */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
 				320735501C597591005D083C /* ResultHandler.swift */,
 			);
@@ -503,7 +503,7 @@
 				32EB40131C31B03D0077328C /* SettingsTableViewController.swift in Sources */,
 				325CD4971C3353B90062C0B3 /* Notification.swift in Sources */,
 				32CEB6BA1C20B7580021A363 /* TaskListViewController.swift in Sources */,
-				329EACA41C21B0D8008B0038 /* NettskjemaHandler.swift in Sources */,
+				329EACA41C21B0D8008B0038 /* Nettskjema.swift in Sources */,
 				32FEEE701C215D7E0027F894 /* TaskListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
