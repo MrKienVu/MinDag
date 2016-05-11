@@ -158,50 +158,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let taskResult = taskViewController.result
         
-        var list = [String]()
-        list.append("Task: \(taskResult.identifier)")
-        list.append("Respondent Study ID: \(UserDefaults.objectForKey(UserDefaultKey.StudyID)!)")
-        list.append("Respondent UUID: \(UserDefaults.objectForKey(UserDefaultKey.UUID)!)")
-        list.append("startDate: \(taskResult.startDate!)")
-        list.append("endDate: \(taskResult.endDate!)")
-        list.append("Total time: \(taskResult.endDate!.timeIntervalSinceDate(taskResult.startDate!)) seconds")
-        
-        
-        if let stepResults = taskResult.results as? [ORKStepResult] {
-            for stepResult in stepResults {
-                for result in stepResult.results! {
-                    if let scaleResult = result as? ORKScaleQuestionResult {
-                        if let answer = scaleResult.answer {
-                            list.append("\(scaleResult.identifier): \(answer)")
-                        } else {
-                            list.append("\(scaleResult.identifier): \(scaleResult.answer)")
-                        }
-                    }
-                    if let choiceResult = result as? ORKChoiceQuestionResult {
-                        if let _ = choiceResult.answer {
-                            list.append("\(choiceResult.identifier): \(choiceResult.choiceAnswers![0])")
-                        } else {
-                            list.append("\(choiceResult.identifier): \(choiceResult.answer)")
-                        }
-                    }
-                    if let textResult = result as? ORKTextQuestionResult {
-                        if let answer = textResult.answer {
-                            list.append("\(textResult.identifier): \(answer)")
-                        } else {
-                            list.append("\(textResult.identifier): \(textResult.answer)")
-                        }
-                    }
-                }
+        switch reason {
+        case .Completed:
+            if let csv = ResultHandler.createCSVFromResult(taskResult) {
+                Nettskjema.upload(csv)
+            } else {
+                NSLog("Failed to encode task result as NSData")
             }
+        case .Failed, .Discarded, .Saved:
+            break
         }
-        
-        print(list)
-        let csv = CSVProcesser(taskResult: taskResult)
-        let csvData = csv.csv.dataUsingEncoding(NSUTF8StringEncoding)
-        if csvData != nil {
-            Nettskjema.upload(csvData!)
-        }
-        
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
