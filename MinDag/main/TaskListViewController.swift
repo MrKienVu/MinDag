@@ -47,11 +47,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.registerNib(nib, forCellReuseIdentifier: "Default")
     }
     
-    override func viewWillAppear(animated: Bool) {
-        UserDefaults.setBool(true, forKey: UserDefaultKey.CompletedOnboarding)
-        NSLog("Completed onboarding")
-    }
-    
     func showAlert(){
         let alertController = UIAlertController (title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
