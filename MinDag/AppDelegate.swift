@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let type = notification.userInfo!["type"] as! String
         
         application.applicationIconBadgeNumber = 0
-        
+
         if identifier == "GO_ACTION" {
             if      type == "dailySurvey"   { NSNotificationCenter.defaultCenter().postNotificationName("presentDailySurvey", object: nil) }
             else if type == "weeklySurvey"  { NSNotificationCenter.defaultCenter().postNotificationName("presentWeeklySurvey", object: nil) }

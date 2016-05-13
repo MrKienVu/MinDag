@@ -9,18 +9,10 @@
 import UIKit
 import ResearchKit
 
-class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ORKTaskViewControllerDelegate {
-    
-    let logos = ["copier", "crescentmoon"]
+class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
-    
-    enum TableViewCellIdentifier: String {
-        case Default = "Default"
-    }
-    
-    // MARK: Properties
     
     /**
     When a task is completed, the `TaskListViewController` calls this closure
@@ -29,6 +21,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     var taskResultFinishedCompletionHandler: (ORKResult -> Void)?
     
     let taskListRows = TaskListRow.allCases
+    let taskIcons = ["copier", "crescentmoon"]
 
     
     override func viewDidLoad() {
@@ -62,13 +55,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifier.Default.rawValue, forIndexPath: indexPath) as! TaskTableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Default", forIndexPath: indexPath) as! TaskTableViewCell
         let taskListRow = taskListRows[indexPath.row]
         
         cell.titleLabel.text = "\(taskListRow)"
-        cell.iconLabel.text = logos[indexPath.row]
-        
+        cell.iconLabel.text = taskIcons[indexPath.row]
         
         return cell
     }
@@ -78,7 +69,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: UITableViewDelegate
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -98,73 +88,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Make sure we receive events from `taskViewController`.
         taskViewController.delegate = self
-        taskViewController.outputDirectory = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)[0] as NSURL
         
-        
-        /*
-        We present the task directly, but it is also possible to use segues.
-        The task property of the task view controller can be set any time before
-        the task view controller is presented.
-        */
         presentViewController(taskViewController, animated: true, completion: nil)
-    }
-    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
-        
-        
-        let identifier = stepViewController.step?.identifier
-        
-        stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
-        
-        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
-            stepViewController.continueButtonTitle = "Send inn"
-        }
-        
-        if identifier == Identifier.WaitCompletionStep.rawValue {
-            stepViewController.cancelButtonItem = nil
-            delay(2.0, closure: { () -> () in
-                if let stepViewController = stepViewController as? ORKWaitStepViewController {
-                    stepViewController.goForward()
-                }
-            })
-        }
-    }
-    
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
-    
-    // MARK: ORKTaskViewControllerDelegate
-    
-    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
-        /*
-        The `reason` passed to this method indicates why the task view
-        controller finished: Did the user cancel, save, or actually complete
-        the task; or was there an error?
-        
-        The actual result of the task is on the `result` property of the task
-        view controller.
-        */
-        taskResultFinishedCompletionHandler?(taskViewController.result)
-        
-        let taskResult = taskViewController.result
-        
-        switch reason {
-        case .Completed:
-            if let csv = ResultHandler.createCSVFromResult(taskResult) {
-                Nettskjema.upload(csv)
-            } else {
-                NSLog("Failed to encode task result as NSData")
-            }
-        case .Failed, .Discarded, .Saved:
-            break
-        }
-        
-        taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func presentWeeklySurvey() {
@@ -197,39 +122,95 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     //boolean taskShouldBeDisable must be implemented
     
     func addDisableOverlay(cell: UITableViewCell, indexPath: Int){
+        let navigationBarHeight = self.navigationController?.navigationBar.frame.height
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+        
+        let yPos = cell.bounds.minY + navigationBarHeight! + statusBarHeight
+        let point = CGPoint(x:cell.bounds.minX , y: yPos)
+        let size = CGSize(width: cell.bounds.width, height: cell.bounds.height)
+        let rect = CGRect(origin: point, size: size)
+        
+        let disableImage = UIImageView(frame: rect)
+        disableImage.backgroundColor = UIColor.grayColor()
+        disableImage.alpha = 0.5
+        
+        //if(taskShouldBeDisabled) {
+        
+        //for disable the task
+        //cell.userInteractionEnabled = false
+        
+        //adding overlay
+        self.navigationController?.view.addSubview(disableImage)
+        
+        //else if(!taskShouldBeDisabled) {
+        //cell.userInteractionEnabled = true
+        //self.navigationController?.view.willRemoveSubview(disableImage)
+        
+        cell.userInteractionEnabled = true
+        //self.navigationController?.view.willRemoveSubview(disableImage)
+    }
+
+}
+
+
+
+extension TaskListViewController: ORKTaskViewControllerDelegate {
+    // ORKTaskViewControllerDelegate methods are handled here.
     
-     let navigationBarHeight = self.navigationController?.navigationBar.frame.height
-     
-     let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-     
-     let yPos = cell.bounds.minY + navigationBarHeight! + statusBarHeight
-     
-     let point = CGPoint(x:cell.bounds.minX , y: yPos)
-     
-     let size = CGSize(width: cell.bounds.width, height: cell.bounds.height)
-     
-     let rect = CGRect(origin: point, size: size)
-     
-     let disableImage = UIImageView(frame: rect)
-     disableImage.backgroundColor = UIColor.grayColor()
-     disableImage.alpha = 0.5
-     
-     //if(taskShouldBeDisabled) {
-     
-     //for disable the task
-     //cell.userInteractionEnabled = false
-     
-     //adding overlay
-     self.navigationController?.view.addSubview(disableImage)
-     
-     //else if(!taskShouldBeDisabled) {
-     //cell.userInteractionEnabled = true
-     //self.navigationController?.view.willRemoveSubview(disableImage)
-
-     
-     
-     cell.userInteractionEnabled = true
-     //self.navigationController?.view.willRemoveSubview(disableImage)
-     }
-
+    
+    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+        let identifier = stepViewController.step?.identifier
+        
+        stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
+        
+        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
+            stepViewController.continueButtonTitle = "Send inn"
+        }
+        
+        if identifier == Identifier.WaitCompletionStep.rawValue {
+            stepViewController.cancelButtonItem = nil
+            delay(2.0, closure: { () -> () in
+                if let stepViewController = stepViewController as? ORKWaitStepViewController {
+                    stepViewController.goForward()
+                }
+            })
+        }
+    }
+    
+    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
+        /*
+         The `reason` passed to this method indicates why the task view
+         controller finished: Did the user cancel, save, or actually complete
+         the task; or was there an error?
+         
+         The actual result of the task is on the `result` property of the task
+         view controller.
+         */
+        taskResultFinishedCompletionHandler?(taskViewController.result)
+        
+        let taskResult = taskViewController.result
+        
+        switch reason {
+        case .Completed:
+            if let csv = ResultHandler.createCSVFromResult(taskResult) {
+                Nettskjema.upload(csv)
+            } else {
+                NSLog("Failed to encode task result as NSData")
+            }
+        case .Failed, .Discarded, .Saved:
+            break
+        }
+        
+        taskViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
 }

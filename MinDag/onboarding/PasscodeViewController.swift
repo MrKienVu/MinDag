@@ -9,7 +9,7 @@
 import UIKit
 import ResearchKit
 
-class PasscodeViewController: UIViewController, ORKTaskViewControllerDelegate {
+class PasscodeViewController: UIViewController {
 
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var createCodeButton: UIButton!
@@ -86,27 +86,29 @@ class PasscodeViewController: UIViewController, ORKTaskViewControllerDelegate {
         createCodeButton.hidden = true
     }
     
-    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
-        switch reason {
-            case .Completed:
-                UserDefaults.setBool(true, forKey: UserDefaultKey.CompletedOnboarding)
-                NSLog("Completed onboarding")
-                
-                checkmarkLabel.hidden = false
-                codeCreatedLabel.hidden = false
-                enableNextButton()
-                taskViewController.dismissViewControllerAnimated(true, completion: nil)
-            
-            case .Failed, .Discarded, .Saved:
-                taskViewController.dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
-
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let defaultDates = Notification.sharedInstance.getDefaultDates()
         Notification.sharedInstance.scheduleNotifications(defaultDates[0], weekendTime: defaultDates[1], weeklyDay: 1, weeklyTime: defaultDates[2])
     }
-    
+}
 
+extension PasscodeViewController: ORKTaskViewControllerDelegate {
+    
+    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
+        switch reason {
+        case .Completed:
+            UserDefaults.setBool(true, forKey: UserDefaultKey.CompletedOnboarding)
+            NSLog("Completed onboarding")
+            
+            checkmarkLabel.hidden = false
+            codeCreatedLabel.hidden = false
+            enableNextButton()
+            
+        case .Failed, .Discarded, .Saved:
+            break
+        }
+        
+        taskViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
