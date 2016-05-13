@@ -32,6 +32,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Default")
+        
     }
     
     func showAlert(){

@@ -33,9 +33,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     var mathysTimePickerHidden = true
     
     @IBOutlet weak var contactUsCell: UITableViewCell!
-
-    
-
     
     // MARK: On Value Changed
     @IBAction func notificationsChanged(sender: AnyObject) {
