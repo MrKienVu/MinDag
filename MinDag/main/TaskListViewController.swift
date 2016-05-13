@@ -14,12 +14,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
     
-    /**
-    When a task is completed, the `TaskListViewController` calls this closure
-    with the created task.
-    */
-    var taskResultFinishedCompletionHandler: (ORKResult -> Void)?
-    
     let taskListRows = TaskListRow.allCases
     let taskIcons = ["copier", "crescentmoon"]
 
@@ -186,7 +180,6 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
          The actual result of the task is on the `result` property of the task
          view controller.
          */
-        taskResultFinishedCompletionHandler?(taskViewController.result)
         
         let taskResult = taskViewController.result
         

@@ -15,7 +15,7 @@ private class CSV {
     private var fields = [String]()
     
     private func addHeader(header: String) {
-        headers.append(header)
+        self.headers.append(header)
     }
     
     private func addHeaders(headers: [String]) {
@@ -23,7 +23,7 @@ private class CSV {
     }
     
     private func addField(field: String) {
-        fields.append(field)
+        self.fields.append(field)
     }
     
     private func addFields(fields: [String]) {
@@ -43,6 +43,7 @@ public class ResultHandler {
         let headers = (metaCSV.headers + resultCSV.headers).joinWithSeparator(",")
         let fields = (metaCSV.fields + resultCSV.fields).joinWithSeparator(",")
         
+        NSLog("Result processed \n--------------\n Headers: \(headers) \n Fields: \(fields)")
         return "\(headers)\n\(fields)".dataUsingEncoding(NSUTF8StringEncoding)
     }
 

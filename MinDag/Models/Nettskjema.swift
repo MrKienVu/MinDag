@@ -49,7 +49,7 @@ class Nettskjema {
                 switch encodingResult {
                 case .Success(let upload, _, _):
                     upload.responseString { response in
-                        NSLog("Upload success: \(response.response)")
+                        NSLog("Upload success. Status code: \(response.response?.statusCode)")
                     }
                 case .Failure(let encodingError):
                     NSLog("Upload failed. Error: \(encodingError)")
