@@ -23,11 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let completedOnboarding = UserDefaults.boolForKey(UserDefaultKey.CompletedOnboarding)
         
         let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
-        let onboardingVC = onboarding.instantiateInitialViewController()
         let main = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = main.instantiateInitialViewController()
-        
-        window?.rootViewController = completedOnboarding ? mainVC : onboardingVC
+        window?.rootViewController = completedOnboarding ? main.instantiateInitialViewController() : onboarding.instantiateInitialViewController()
         
         let hasLaunchedBefore = UserDefaults.boolForKey(UserDefaultKey.hasLaunchedBefore)
         if !hasLaunchedBefore  {
@@ -40,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             UserDefaults.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
             print("HasLaunched flag enabled in UserDefaults")
-            
         }
         
         lock()
@@ -83,8 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
 
         if identifier == "GO_ACTION" {
-            if      type == "dailySurvey"   { NSNotificationCenter.defaultCenter().postNotificationName("presentDailySurvey", object: nil) }
-            else if type == "weeklySurvey"  { NSNotificationCenter.defaultCenter().postNotificationName("presentWeeklySurvey", object: nil) }
+            if      type == "dailySurvey"   { NSNotificationCenter.defaultCenter().postNotificationName("dailySurvey", object: nil) }
+            else if type == "weeklySurvey"  { NSNotificationCenter.defaultCenter().postNotificationName("weeklySurvey", object: nil) }
         }
         
         completionHandler()
@@ -110,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        lock()
+        //lock()
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

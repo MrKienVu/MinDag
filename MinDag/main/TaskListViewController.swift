@@ -17,7 +17,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     let taskListRows = TaskListRow.allCases
     let taskIcons = ["copier", "crescentmoon"]
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +25,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         animateSettingsIconWithDuration(1.7)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentDailySurvey), name: "presentDailySurvey", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentWeeklySurvey), name: "presentWeeklySurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentDailySurvey), name: "dailySurvey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentWeeklySurvey), name: "weeklySurvey", object: nil)
         
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
@@ -36,7 +35,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func showAlert(){
-        let alertController = UIAlertController (title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(defaultAction)
         
@@ -91,14 +90,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let taskListRow = taskListRows[0]
         let task = taskListRow.representedTask
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
-        presentViewController(taskViewController, animated: false, completion: nil)
+        taskViewController.delegate = self
+        navigationController?.topViewController?.presentViewController(taskViewController, animated: false, completion: nil)
     }
     
     func presentDailySurvey() {
         let taskListRow = taskListRows[1]
         let task = taskListRow.representedTask
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
-        presentViewController(taskViewController, animated: false, completion: nil)
+        taskViewController.delegate = self
+        navigationController?.topViewController?.presentViewController(taskViewController, animated: false, completion: nil)
     }
     
     func animateSettingsIconWithDuration(duration: Double) {
@@ -116,7 +117,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     //This function will disable the task and add overlay image
     //boolean taskShouldBeDisable must be implemented
     
-    func addDisableOverlay(cell: UITableViewCell, indexPath: Int){
+    func addDisableOverlay(cell: UITableViewCell, indexPath: Int) {
         let navigationBarHeight = self.navigationController?.navigationBar.frame.height
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
         
