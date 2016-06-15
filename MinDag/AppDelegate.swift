@@ -11,12 +11,11 @@ import ResearchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         self.window?.tintColor = Color.primaryColor
         application.applicationIconBadgeNumber = 0
         
@@ -38,10 +37,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.setBool(true, forKey: UserDefaultKey.hasLaunchedBefore)
             print("HasLaunched flag enabled in UserDefaults")
         }
-        
         lock()
         
+        if let options = launchOptions,
+            notification = options[UIApplicationLaunchOptionsLocalNotificationKey] as? UILocalNotification,
+            userInfo = notification.userInfo
+        {
+            handleNotificationTap(userInfo);
+        }
+        
         return true
+    }
+    
+    func handleNotificationTap(userInfo: [NSObject: AnyObject]) {
+        let type = userInfo["type"] as! String
+        if      type == "dailySurvey"   { NSNotificationCenter.defaultCenter().postNotificationName("dailySurvey", object: nil) }
+        else if type == "weeklySurvey"  { NSNotificationCenter.defaultCenter().postNotificationName("weeklySurvey", object: nil) }
     }
     
     func lock() {
@@ -56,68 +67,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController?.presentViewController(passcodeVC, animated: false, completion: nil)
     }
     
-    
-    
-    // MARK: Notification delegates
-    
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        // This method is called when the app is launched (either normally or due to a local notification’s action)
-        // This method can become useful in cases you need to check the existing settings and act depending on the values that will come up. Don’t forget that users can change these settings through the Settings app, so do never be confident that the initial configuration made in code is always valid.
-        
         print(notificationSettings.types.rawValue)
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        // This method is called when a notification has been received while the app is in the foreground
-        print("Received Local Notification:")
-        print(notification.alertBody)
+        let state = application.applicationState
+        if (state != UIApplicationState.Active) {
+            handleNotificationTap(notification.userInfo!)
+        }
     }
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-        let type = notification.userInfo!["type"] as! String
-        
         application.applicationIconBadgeNumber = 0
-
         if identifier == "GO_ACTION" {
-            if      type == "dailySurvey"   { NSNotificationCenter.defaultCenter().postNotificationName("dailySurvey", object: nil) }
-            else if type == "weeklySurvey"  { NSNotificationCenter.defaultCenter().postNotificationName("weeklySurvey", object: nil) }
+            handleNotificationTap(notification.userInfo!)
         }
-        
         completionHandler()
     }
     
-    
-    
-    // MARK: Other lifecycle delegate methods
-
     func applicationWillResignActive(application: UIApplication) {
-        // TODO: SplashView
-        /*if ORKPasscodeViewController.isPasscodeStoredInKeychain() {
-            // Hide content so it doesn't appear in the app switcher.
-            
-        }*/
+    }
+    
+    func applicationDidEnterBackground(application: UIApplication) {
+    }
+    
+    func applicationWillEnterForeground(application: UIApplication) {
         
     }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        //lock()
-    }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
 extension AppDelegate: ORKPasscodeDelegate {
