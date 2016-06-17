@@ -76,9 +76,6 @@
 		32792D5A1CE37E34002BD711 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		329EACA31C21B0D8008B0038 /* Nettskjema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nettskjema.swift; sourceTree = "<group>"; };
 		329EACA71C22A8D5008B0038 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
-		329EACAE1C22A984008B0038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		329EACAF1C22A985008B0038 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
-		329EACB01C22A9D1008B0038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32A994E81C5EA2630044157C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		32A994EC1C5EB3790044157C /* TaskTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCellView.xib; sourceTree = "<group>"; };
 		32CEB6B91C20B7580021A363 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +112,7 @@
 		8F76EBDBD97987FE02805B52 /* Pods-MinDagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinDagUITests/Pods-MinDagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2BB71E84D6D7D9FFE67FC10 /* Pods-MinDagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinDagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinDagTests/Pods-MinDagTests.release.xcconfig"; sourceTree = "<group>"; };
 		E23B360877273F48FDF9CA46 /* Pods_MinDagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinDagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4FBB2E01D19345200C6B931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -635,9 +633,7 @@
 		329EACAD1C22A97E008B0038 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				329EACAE1C22A984008B0038 /* en */,
-				329EACAF1C22A985008B0038 /* nb */,
-				329EACB01C22A9D1008B0038 /* Base */,
+				E4FBB2E01D19345200C6B931 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

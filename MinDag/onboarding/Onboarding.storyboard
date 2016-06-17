@@ -53,6 +53,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Studie ID (3-8 tegn)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-sP-gXD">
                                 <rect key="frame" x="175" y="343" width="250" height="50"/>
+                                <accessibility key="accessibilityConfiguration" label="studieId"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3zb-wN-sHU"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="74f-wR-6wB"/>
@@ -66,6 +67,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gjenta studie ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zH1-i1-36z">
                                 <rect key="frame" x="175" y="401" width="250" height="50"/>
+                                <accessibility key="accessibilityConfiguration" label="gjentaStudieId"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5cj-br-WNU"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="7I9-47-A6R"/>
