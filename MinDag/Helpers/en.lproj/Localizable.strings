@@ -117,13 +117,13 @@
 "INTERMEDIATE_TITLE" = "";
 "INTERMEDIATE_TEXT" = "Over the course of this period, indicate the types of emotion you have experienced, and how often you have experienced them";
 
-"TEXT_CHOICE_1_TITLE" = "Sadness...";
-"TEXT_CHOICE_2_TITLE" = "Joy...";
-"TEXT_CHOICE_3_TITLE" = "Irritability...";
-"TEXT_CHOICE_4_TITLE" = "Panic...";
-"TEXT_CHOICE_5_TITLE" = "Anxiety...";
-"TEXT_CHOICE_6_TITLE" = "Anger...";
-"TEXT_CHOICE_7_TITLE" = "Euphoria...";
+"TEXT_CHOICE_1_TITLE" = "Sadness";
+"TEXT_CHOICE_2_TITLE" = "Joy";
+"TEXT_CHOICE_3_TITLE" = "Irritability";
+"TEXT_CHOICE_4_TITLE" = "Panic";
+"TEXT_CHOICE_5_TITLE" = "Anxiety";
+"TEXT_CHOICE_6_TITLE" = "Anger";
+"TEXT_CHOICE_7_TITLE" = "Euphoria";
 
 "TEXT_CHOICE_1" = "Never";
 "TEXT_CHOICE_2" = "Occasionally";
