@@ -55,10 +55,6 @@ public var SleepSurveyTask: ORKOrderedTask {
     let noInternetStep = ORKCompletionStep(identifier: Identifier.noInternetStep.rawValue)
     noInternetStep.title = "INTERNET_UNAVAILABLE_TITLE".localized
     noInternetStep.text = "INTERNET_UNAVAILABLE_STEP_TEXT".localized
-    
-    /*let noStep = NoInternetConnectionStep(identifier: "NoInternetStep")
-    noStep.title = "yolo"
-    noStep.text = "besj" */
 
     let waitStepIndeterminate = ORKWaitStep(identifier: Identifier.WaitCompletionStep.rawValue)
     waitStepIndeterminate.title = "Ferdig"

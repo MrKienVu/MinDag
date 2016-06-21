@@ -48,24 +48,6 @@ enum TaskListRow: Int, CustomStringConvertible {
     case MathysTask
     case SleepSurvey
     
-    
-    /// Returns an array of all the task list row enum cases.
-    
-    /*static var allCases: [TaskListRow] {
-        /*
-        Create a generator that creates a `TaskListRow` at a specific index.
-        When `TaskListRow`'s `rawValue` initializer returns `nil`, the generator
-        will stop generating values. This will happen when the enum has no more
-        cases represented by `caseIndex`.
-        */
-        var caseIndex = 0
-        let caseGenerator = anyGenerator { TaskListRow(rawValue: caseIndex++) }
-        
-        // Create a sequence that will consume the generator to create an array.
-        let caseSequence = AnySequence(caseGenerator)
-        
-        return Array(caseSequence)
-    }*/
     static let allCases = [MathysTask, SleepSurvey]
     
     // MARK: Printable
@@ -88,8 +70,6 @@ enum TaskListRow: Int, CustomStringConvertible {
     }
     
     // MARK: Properties
-    
-    /// Returns a new `ORKTask` that the `TaskListRow` enumeration represents.
     var representedTask: ORKTask {
         switch self {
         case .MathysTask:

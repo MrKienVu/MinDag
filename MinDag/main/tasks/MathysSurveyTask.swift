@@ -74,12 +74,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     )
     
     steps.append(textQuestionStep)
-    
-    /*let completionStep = ORKCompletionStep(identifier: Identifier.MathysCompletionStep.rawValue)
-    completionStep.title = "MATHYS_COMPLETION_TITLE".localized
-    completionStep.text = "MATHYS_COMPLETION_TEXT".localized
-    steps.append(completionStep)*/
-    
+        
     let waitStepIndeterminate = ORKWaitStep(identifier: Identifier.WaitCompletionStep.rawValue)
     waitStepIndeterminate.title = "Ferdig"
     waitStepIndeterminate.text = "Laster opp..."
