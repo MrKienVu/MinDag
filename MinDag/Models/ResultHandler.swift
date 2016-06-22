@@ -8,6 +8,7 @@
 
 import Foundation
 import ResearchKit
+import Locksmith
 
 private class CSV {
     // Private helper object imitating a CSV file
@@ -34,7 +35,7 @@ private class CSV {
 public class ResultHandler {
     
     private static let respondentID = UserDefaults.objectForKey(UserDefaultKey.UUID)! as! String
-    private static let studyID = UserDefaults.objectForKey(UserDefaultKey.StudyID)! as! String
+    private static let studyID = Locksmith.loadDataForUserAccount(Encrypted.account)![Encrypted.studyID]! as! String
     
     class func createCSVFromResult(result: ORKTaskResult) -> NSData? {
         let metaCSV = getMetadata(result)
