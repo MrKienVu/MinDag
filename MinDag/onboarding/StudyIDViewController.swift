@@ -56,12 +56,45 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func equalTextFields() -> Bool {
-        if idTextField.text == repeatIdTextField.text && repeatIdTextField.text?.characters.count >= 3 {
-            return true
+    func validateOneLetterId(studyId: String) -> Bool {
+        let len = studyId.characters.count
+        if len < 3 || len > 7 {
+            return false
         }
         
-        return false
+        let index = studyId.startIndex.advancedBy(1)
+        let firstLetter = studyId.substringToIndex(index)
+        let rest = studyId.substringFromIndex(index)
+        
+        let letterRange = firstLetter.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet())
+        let numberRange = Int(rest)
+        
+        return letterRange != nil && numberRange != nil
+        
+    }
+    
+    func validateTwoLetterId(repeatedStudyId: String) -> Bool {
+        let len = repeatedStudyId.characters.count
+        if len < 4 || len > 8 {
+            return false
+        }
+        
+        let index = repeatedStudyId.startIndex.advancedBy(2)
+        let firstLetter = repeatedStudyId.substringToIndex(index)
+        let rest = repeatedStudyId.substringFromIndex(index)
+        
+        let letterRange = firstLetter.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet())
+        let numberRange = Int(rest)
+        
+        
+        return letterRange != nil && numberRange != nil
+    }
+    
+    
+    func equalTextFields() -> Bool {
+
+        return (validateOneLetterId(idTextField.text!) || validateTwoLetterId(repeatIdTextField.text!))
+                && idTextField.text == repeatIdTextField.text
     }
     
     func animateEqualTextfields() {
