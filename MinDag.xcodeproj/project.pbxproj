@@ -105,6 +105,7 @@
 		98A746331D1ABD1B006487E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		98A746341D1ABD1B006487E7 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<group>"; };
 		E4FBB2E01D19345200C6B931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4FBB2E81D1D182E00C6B931 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +491,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E4FBB2E01D19345200C6B931 /* Base */,
+				E4FBB2E81D1D182E00C6B931 /* nb */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
