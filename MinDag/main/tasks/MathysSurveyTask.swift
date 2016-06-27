@@ -19,17 +19,16 @@ public var MathysSurveyTask: ORKOrderedTask {
     steps.append(instructionStep)
     
     func verticalScaleWithHighValue(highValue: String, lowValue: String) -> ORKAnswerFormat {
-        let answer = ORKAnswerFormat.scaleAnswerFormatWithMaximumValue(
-            9,
+        let answer = ORKAnswerFormat.continuousScaleAnswerFormatWithMaximumValue(
+            10,
             minimumValue: 1,
-            defaultValue: NSIntegerMax,
-            step: 1,
+            defaultValue: 0,
+            maximumFractionDigits: 0,
             vertical: true,
             maximumValueDescription: highValue,
             minimumValueDescription: lowValue
         )
         answer.numberFormatter.positiveFormat = "\n"
-        
         return answer
     }
     
@@ -42,7 +41,7 @@ public var MathysSurveyTask: ORKOrderedTask {
                 "SCALE_QUESTION_\(i)_HIGH".localized,
                 lowValue: "SCALE_QUESTION_\(i)_LOW".localized
             )
-        ))
+            ))
     }
     
     let intermediateStep = ORKInstructionStep(identifier: Identifier.MathysIntermediateStep.rawValue)
@@ -57,7 +56,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     }
     
     let textChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: textChoices)
-
+    
     for i in 1..<8 {
         steps.append(ORKQuestionStep(
             identifier: Identifier.TextChoiceQuestion.rawValue + "\(i)",
@@ -74,7 +73,7 @@ public var MathysSurveyTask: ORKOrderedTask {
     )
     
     steps.append(textQuestionStep)
-        
+    
     let waitStepIndeterminate = ORKWaitStep(identifier: Identifier.WaitCompletionStep.rawValue)
     waitStepIndeterminate.title = "Ferdig"
     waitStepIndeterminate.text = "Laster opp..."
