@@ -50,9 +50,8 @@
 
 "MATHYS_DESCRIPTION" = "Ukentlig skjema";
 
-"INTRO_TITLE" = "Ukentlig skjema (Multidimensional Assessment of Thymic States) survey";
+"INTRO_TITLE" = "Ukentlig skjema";
 "INTRO_TEXT" = "The following survey aims to evaluate your mood during the last week. For each statement, indicate how you usually feel by dragging the slider.";
-
 "INTRO_DETAIL" = "More details about the survey can be placed here.";
 
 "SCALE_QUESTION_1_HIGH" = "I am more sensitive to colours than usual";
@@ -122,13 +121,13 @@
 "INTERMEDIATE_TITLE" = "";
 "INTERMEDIATE_TEXT" = "On the next pages you are going to indicate the types of emotion you have experienced, and how often you have experienced them over the course of this period.";
 
-"TEXT_CHOICE_1_TITLE" = "Sadness...";
-"TEXT_CHOICE_2_TITLE" = "Joy...";
-"TEXT_CHOICE_3_TITLE" = "Irritability...";
-"TEXT_CHOICE_4_TITLE" = "Panic...";
-"TEXT_CHOICE_5_TITLE" = "Anxiety...";
-"TEXT_CHOICE_6_TITLE" = "Anger...";
-"TEXT_CHOICE_7_TITLE" = "Euphoria...";
+"TEXT_CHOICE_1_TITLE" = "Sadness";
+"TEXT_CHOICE_2_TITLE" = "Joy";
+"TEXT_CHOICE_3_TITLE" = "Irritability";
+"TEXT_CHOICE_4_TITLE" = "Panic";
+"TEXT_CHOICE_5_TITLE" = "Anxiety";
+"TEXT_CHOICE_6_TITLE" = "Anger";
+"TEXT_CHOICE_7_TITLE" = "Euphoria";
 
 "TEXT_CHOICE_1" = "Never";
 "TEXT_CHOICE_2" = "Occasionally";
