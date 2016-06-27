@@ -52,6 +52,7 @@
 
 "INTRO_TITLE" = "Ukentlig skjema (Multidimensional Assessment of Thymic States) survey";
 "INTRO_TEXT" = "The following survey aims to evaluate your mood during the last week. For each statement, indicate how you usually feel by dragging the slider.";
+
 "INTRO_DETAIL" = "More details about the survey can be placed here.";
 
 "SCALE_QUESTION_1_HIGH" = "I am more sensitive to colours than usual";

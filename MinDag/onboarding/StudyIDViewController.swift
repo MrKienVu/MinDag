@@ -41,7 +41,7 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func repeatIdChanged(sender: AnyObject) {
-        if equalTextFields() {
+        if validateTextFields() {
             animateEqualTextfields()
         } else {
             animateInequalTextFields()
@@ -49,19 +49,39 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func IdChanged(sender: AnyObject) {
-        if equalTextFields() {
+        if validateTextFields() {
             animateEqualTextfields()
         } else {
             animateInequalTextFields()
         }
     }
-    
-    func equalTextFields() -> Bool {
-        if idTextField.text == repeatIdTextField.text && repeatIdTextField.text?.characters.count >= 3 {
-            return true
+
+    func validateId(studyId: String, letters: Int) -> Bool {
+        
+        let length = studyId.characters.count
+        if length < (letters + 2) || length > (letters + 6) {
+            return false
         }
         
-        return false
+        let index = studyId.startIndex.advancedBy(letters)
+        let firstLetters = studyId.substringToIndex(index)
+        let rest = studyId.substringFromIndex(index)
+        
+        let letterRange = firstLetters.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet())
+        
+        /* When ID contains 2 letters, the letterRange can't validate if its string only*/
+        if firstLetters.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil {
+            return false;
+        }
+      
+        let numberRange = Int(rest)
+        
+        return letterRange != nil && numberRange != nil
+    }
+    
+    func validateTextFields() -> Bool {
+        return (validateId(idTextField.text!, letters: 1) || validateId(repeatIdTextField.text!, letters: 2)) &&
+                idTextField.text == repeatIdTextField.text
     }
     
     func animateEqualTextfields() {
