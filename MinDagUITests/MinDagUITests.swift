@@ -1,11 +1,3 @@
-//
-//  MathysUITests.swift
-//  MathysUITests
-//
-//  Created by ingeborg ødegård oftedal on 15/12/15.
-//  Copyright © 2015 ingeborg ødegård oftedal. All rights reserved.
-//
-
 import XCTest
 
 class MinDagUITests: XCTestCase {
