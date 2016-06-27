@@ -45,16 +45,13 @@ import ResearchKit
  types of functionality supported by the ResearchKit framework.
  */
 enum TaskListRow: Int, CustomStringConvertible {
-    case MathysTask
     case SleepSurvey
     
-    static let allCases = [MathysTask, SleepSurvey]
+    static let allCases = [SleepSurvey]
     
     // MARK: Printable
     var description: String {
         switch self {
-        case .MathysTask:
-            return "MATHYS_DESCRIPTION".localized
         case .SleepSurvey:
             return "SLEEP_DESCRIPTION".localized
         }
@@ -62,8 +59,6 @@ enum TaskListRow: Int, CustomStringConvertible {
     
     var subtitle: String {
         switch self {
-        case .MathysTask:
-            return "MATHYS_SUBTITLE".localized
         case .SleepSurvey:
             return "SLEEP_SUBTITLE".localized
         }
@@ -72,8 +67,6 @@ enum TaskListRow: Int, CustomStringConvertible {
     // MARK: Properties
     var representedTask: ORKTask {
         switch self {
-        case .MathysTask:
-            return MathysSurveyTask
         case .SleepSurvey:
             return SleepSurveyTask
         }
