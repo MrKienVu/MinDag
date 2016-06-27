@@ -28,6 +28,11 @@ struct UserDefaultKey {
     static let CompletedOnboarding = "CompletedOnboarding"
 }
 
+struct Encrypted {
+    static let account = "User"
+    static let studyID = "StudyID"
+}
+
 let Days: [Int: String] = [
     0: "Mandag",
     1: "Tirsdag",

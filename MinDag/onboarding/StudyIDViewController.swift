@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Locksmith
 
 class StudyIDViewController: UIViewController, UITextFieldDelegate {
 
@@ -147,7 +148,8 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        UserDefaults.setObject(repeatIdTextField.text!, forKey: UserDefaultKey.StudyID)
+        let studyID = repeatIdTextField.text!
+        try! Locksmith.updateData([Encrypted.studyID: studyID], forUserAccount: Encrypted.account)
     }
 
 }

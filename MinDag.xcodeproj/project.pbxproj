@@ -41,8 +41,9 @@
 		5FADEE151CE1A8F700391278 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADEE141CE1A8F700391278 /* Reachability.swift */; };
 		5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */; };
 		5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */; };
-		98A746351D1ABD1B006487E7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A746331D1ABD1B006487E7 /* Alamofire.framework */; };
-		98A746361D1ABD1B006487E7 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A746341D1ABD1B006487E7 /* ResearchKit.framework */; };
+		B960BAA71D1AC5BE00DDF5E9 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B960BAA61D1AC5BE00DDF5E9 /* Locksmith.framework */; };
+		B960BAAA1D1AC61300DDF5E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B960BAA91D1AC61300DDF5E9 /* Alamofire.framework */; };
+		B960BAAC1D1AC62200DDF5E9 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B960BAAB1D1AC62200DDF5E9 /* ResearchKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +103,9 @@
 		5FADEE141CE1A8F700391278 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathysSurveyTask.swift; sourceTree = "<group>"; };
 		5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepSurveyTask.swift; sourceTree = "<group>"; };
-		98A746331D1ABD1B006487E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		98A746341D1ABD1B006487E7 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<group>"; };
+		B960BAA61D1AC5BE00DDF5E9 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		B960BAA91D1AC61300DDF5E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		B960BAAB1D1AC62200DDF5E9 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = Carthage/Build/iOS/ResearchKit.framework; sourceTree = "<group>"; };
 		E4FBB2E01D19345200C6B931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4FBB2E81D1D182E00C6B931 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,8 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A746351D1ABD1B006487E7 /* Alamofire.framework in Frameworks */,
-				98A746361D1ABD1B006487E7 /* ResearchKit.framework in Frameworks */,
+				B960BAAC1D1AC62200DDF5E9 /* ResearchKit.framework in Frameworks */,
+				B960BAAA1D1AC61300DDF5E9 /* Alamofire.framework in Frameworks */,
+				B960BAA71D1AC5BE00DDF5E9 /* Locksmith.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +188,9 @@
 		5F7F06F01C202523007B0B93 = {
 			isa = PBXGroup;
 			children = (
-				98A746331D1ABD1B006487E7 /* Alamofire.framework */,
-				98A746341D1ABD1B006487E7 /* ResearchKit.framework */,
+				B960BAAB1D1AC62200DDF5E9 /* ResearchKit.framework */,
+				B960BAA91D1AC61300DDF5E9 /* Alamofire.framework */,
+				B960BAA61D1AC5BE00DDF5E9 /* Locksmith.framework */,
 				5F4542E81C2059DE00A408A1 /* .gitignore */,
 				5F7F06FB1C202523007B0B93 /* MinDag */,
 				5F7F07101C202523007B0B93 /* MinDagTests */,
@@ -414,6 +418,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ResearchKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
 			);
 			outputPaths = (
 			);
