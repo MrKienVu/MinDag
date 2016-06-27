@@ -80,9 +80,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         application.applicationIconBadgeNumber = 0
-        if identifier == "GO_ACTION" {
-            handleNotificationTap(notification.userInfo!)
+        
+        switch identifier {
+            case "GO_ACTION"?:
+                handleNotificationTap(notification.userInfo!)
+            case "SNOOZE_ACTION"?:
+                notification.fireDate = NSDate().dateByAddingTimeInterval(Double(60 * Notifications.snoozeDelayInMinutes))
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            default: break
         }
+        
         completionHandler()
     }
     

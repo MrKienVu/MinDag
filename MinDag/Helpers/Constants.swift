@@ -16,6 +16,10 @@ struct Color {
     static let secondaryColor = UIColor.lightGrayColor()
 }
 
+struct Notifications {
+    static let snoozeDelayInMinutes = 60
+}
+
 struct UserDefaultKey {
     static let WeekdayTime = "WeekdayTime"
     static let WeekendTime = "WeekendTime"
