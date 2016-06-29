@@ -7,7 +7,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
     
     let taskListRows = TaskListRow.allCases
-    let taskIcons = ["copier", "crescentmoon"]
+    let taskIcons = ["crescentmoon"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
