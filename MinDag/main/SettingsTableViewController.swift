@@ -73,7 +73,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if      indexPath.section == 1 && indexPath.row == 0 { toggleDatepicker(1) } // WeekdayTimePicker
         else if indexPath.section == 1 && indexPath.row == 2 { toggleDatepicker(2) } // WeekendTimePicker
-        else if indexPath.section == 3 {
+        else if indexPath.section == 2 {
             sendEmail()
             
         }
