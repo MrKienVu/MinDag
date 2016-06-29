@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		320735511C597591005D083C /* ResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320735501C597591005D083C /* ResultHandler.swift */; };
 		32193C601C7754580029C789 /* StudyIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32193C5F1C7754580029C789 /* StudyIDViewController.swift */; };
 		32193C641C7754740029C789 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32193C631C7754740029C789 /* PasscodeViewController.swift */; };
 		3233BEFB1C74BB1A00C1B0F6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3233BEFA1C74BB1A00C1B0F6 /* Onboarding.storyboard */; };
@@ -64,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		320735501C597591005D083C /* ResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHandler.swift; sourceTree = "<group>"; };
 		32193C5F1C7754580029C789 /* StudyIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyIDViewController.swift; sourceTree = "<group>"; };
 		32193C631C7754740029C789 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		3233BEFA1C74BB1A00C1B0F6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 			children = (
 				329EACA31C21B0D8008B0038 /* Nettskjema.swift */,
 				325CD4961C3353B90062C0B3 /* Notification.swift */,
-				320735501C597591005D083C /* ResultHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,7 +442,6 @@
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				32792D5B1CE37E34002BD711 /* DateExtensions.swift in Sources */,
 				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,
-				320735511C597591005D083C /* ResultHandler.swift in Sources */,
 				32193C601C7754580029C789 /* StudyIDViewController.swift in Sources */,
 				32193C641C7754740029C789 /* PasscodeViewController.swift in Sources */,
 				32DD5E311C29BAF1002CB02A /* InformationViewController.swift in Sources */,
