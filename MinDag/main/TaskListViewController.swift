@@ -167,17 +167,29 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
          */
         
         let taskResult = taskViewController.result
+        var hoursOfSleep: Int?
+        var sleepQuality: Int?
+        var answerTime: NSDate?
         
-        switch reason {
-        case .Completed:
-            if let csv = ResultHandler.createCSVFromResult(taskResult) {
-                Nettskjema.upload(csv)
-            } else {
-                NSLog("Failed to encode task result as NSData")
+        if reason == .Completed {
+            if let stepResults = taskResult.results as? [ORKStepResult] {
+                for stepResult in stepResults {
+                    for result in stepResult.results! {
+                        if result.identifier == Identifier.HoursOfSleepStep.rawValue {
+                            let hoursOfSleepAnswer = result as? ORKChoiceQuestionResult
+                            hoursOfSleep = (hoursOfSleepAnswer!.answer as? [Int])?[0]
+                        }
+                        if result.identifier == Identifier.SleepQualityStep.rawValue {
+                            let sleepQualityAnswer = result as? ORKScaleQuestionResult
+                            sleepQuality = sleepQualityAnswer!.answer as? Int
+                            answerTime = (sleepQualityAnswer?.endDate)!
+                        }
+                    }
+                }
             }
-        case .Failed, .Discarded, .Saved:
-            break
+            Nettskjema.submit(hoursOfSleep, quality: sleepQuality, time: answerTime!)
         }
+        
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
