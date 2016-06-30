@@ -194,20 +194,19 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
                     for result in stepResult.results! {
                         if result.identifier == Identifier.HoursOfSleepStep.rawValue {
                             let hoursOfSleepAnswer = result as? ORKChoiceQuestionResult
-                            hoursOfSleep = (hoursOfSleepAnswer!.answer as? [Int])![0]
+                            hoursOfSleep = (hoursOfSleepAnswer!.answer as? [Int])?[0]
                         }
                         if result.identifier == Identifier.SleepQualityStep.rawValue {
                             let sleepQualityAnswer = result as? ORKScaleQuestionResult
-                            sleepQuality = (sleepQualityAnswer!.answer as? Int)!
+                            sleepQuality = sleepQualityAnswer!.answer as? Int
                             answerTime = (sleepQualityAnswer?.endDate)!
-                            
                         }
                     }
                 }
-                Nettskjema.submit(hoursOfSleep!, quality: sleepQuality!, time: answerTime!)
             }
-            
+            Nettskjema.submit(hoursOfSleep, quality: sleepQuality, time: answerTime!)
         }
+        
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }

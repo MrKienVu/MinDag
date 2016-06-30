@@ -48,11 +48,6 @@ private extension MultipartFormData {
         self.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: field.rawValue)
     }
     
-    func addTwoString(hours: String, quality: String, hoursField: Field, qualityField: Field) {
-        self.appendBodyPart(data: hours.dataUsingEncoding(NSUTF8StringEncoding)!, name: hoursField.rawValue)
-        self.appendBodyPart(data: quality.dataUsingEncoding(NSUTF8StringEncoding)!, name: qualityField.rawValue)
-    }
-    
     func addFormattedDateTime(time: NSDate, format: String, field: Field) {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
@@ -63,6 +58,7 @@ private extension MultipartFormData {
 class Nettskjema {
     private static let pingUrl = "https://nettskjema.uio.no/ping.html"
     private static let formUrl = "https://nettskjema.uio.no/answer/deliver.json?formId=73906"
+    
     private static var csrfToken: String?
     
     private class func getCsrfToken(completion: (String?, NSError?) -> Void) -> () {
@@ -97,6 +93,7 @@ class Nettskjema {
                 switch encodingResult {
                 case .Success(let upload, _, _):
                     upload.responseString { response in
+                        print(response)
                         NSLog("Upload success. Status code: \(response.response?.statusCode)")
                     }
                 case .Failure(let encodingError):
@@ -115,13 +112,16 @@ class Nettskjema {
         }
     }
     
-    private class func submit(sleep value: String, quality: String, time: NSDate) {
-        submit(using: { data in data.addTwoString(value, quality: quality, hoursField: Field.hoursSlept, qualityField: Field.sleepQuality)},
+    private class func submit(sleep hours: String?, quality: String?, time: NSDate) {
+        submit(using: { data in
+            if let hoursValue = hours { data.addString(hoursValue, field: Field.hoursSlept) }
+            if let qualityValue = quality { data.addString(qualityValue, field: Field.sleepQuality) }
+            },
                time: time)
     }
     
-    class func submit(hours: Int, quality: Int, time: NSDate) {
-        submit(sleep: hoursSleptOptions[hours]!, quality: String(quality), time: time)
+    class func submit(hours: Int?, quality: Int?, time: NSDate) {
+        submit(sleep: hours != nil ? hoursSleptOptions[hours!] : nil, quality: quality != nil ? String(quality!) : nil, time: time)
     }
     
 }
