@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  Mathys
-//
-//  Created by ingeborg ødegård oftedal on 15/12/15.
-//  Copyright © 2015 ingeborg ødegård oftedal. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -23,8 +15,6 @@ struct Notifications {
 struct UserDefaultKey {
     static let WeekdayTime = "WeekdayTime"
     static let WeekendTime = "WeekendTime"
-    static let MathysTime = "MathysTime"
-    static let MathysDay = "MathysDay"
     static let hasLaunchedBefore = "HasLaunchedBefore"
     static let UUID = "UUID"
     static let StudyID = "StudyID"

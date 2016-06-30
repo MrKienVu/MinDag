@@ -1,12 +1,3 @@
-//
-//  NettskjemaHandler.swift
-//  Mathys
-//
-//  Created by Paul Philip Mitchell on 16/12/15.
-//  Copyright © 2015 Universitetet i Oslo. All rights reserved.
-//
-
-
 import Foundation
 import UIKit
 import ResearchKit

@@ -1,11 +1,3 @@
-//
-//  TaskListViewController.swift
-//  Mathys
-//
-//  Created by Paul Philip Mitchell on 15/12/15.
-//  Copyright © 2015 ingeborg ødegård oftedal. All rights reserved.
-//
-
 import UIKit
 import ResearchKit
 
@@ -15,7 +7,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
     
     let taskListRows = TaskListRow.allCases
-    let taskIcons = ["copier", "crescentmoon"]
+    let taskIcons = ["crescentmoon"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +18,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         animateSettingsIconWithDuration(1.7)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentDailySurvey), name: "dailySurvey", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TaskListViewController.presentWeeklySurvey), name: "weeklySurvey", object: nil)
         
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
@@ -86,16 +77,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         presentViewController(taskViewController, animated: true, completion: nil)
     }
     
-    func presentWeeklySurvey() {
-        let taskListRow = taskListRows[0]
-        let task = taskListRow.representedTask
-        let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
-        taskViewController.delegate = self
-        navigationController?.topViewController?.presentViewController(taskViewController, animated: false, completion: nil)
-    }
-    
     func presentDailySurvey() {
-        let taskListRow = taskListRows[1]
+        let taskListRow = taskListRows[0]
         let task = taskListRow.representedTask
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
         taskViewController.delegate = self
@@ -159,7 +142,7 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
         
         stepViewController.skipButtonTitle = "Ønsker ikke å svare / ikke relevant"
         
-        if identifier == Identifier.MathysCompletionStep.rawValue || identifier == Identifier.SleepCompletionStep.rawValue {
+        if identifier == Identifier.SleepCompletionStep.rawValue {
             stepViewController.continueButtonTitle = "Send inn"
         }
         

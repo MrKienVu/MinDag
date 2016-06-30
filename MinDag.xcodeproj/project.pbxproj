@@ -39,7 +39,6 @@
 		5F7F07411C202672007B0B93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F07401C202672007B0B93 /* Constants.swift */; };
 		5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */; };
 		5FADEE151CE1A8F700391278 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADEE141CE1A8F700391278 /* Reachability.swift */; };
-		5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */; };
 		5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */; };
 		B960BAA71D1AC5BE00DDF5E9 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B960BAA61D1AC5BE00DDF5E9 /* Locksmith.framework */; };
 		B960BAAA1D1AC61300DDF5E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B960BAA91D1AC61300DDF5E9 /* Alamofire.framework */; };
@@ -101,7 +100,6 @@
 		5F7F07401C202672007B0B93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F837C5F1C3C067B008C3DB4 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		5FADEE141CE1A8F700391278 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathysSurveyTask.swift; sourceTree = "<group>"; };
 		5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepSurveyTask.swift; sourceTree = "<group>"; };
 		B960BAA61D1AC5BE00DDF5E9 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		B960BAA91D1AC61300DDF5E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		32193C661C7757C30029C789 /* tasks */ = {
 			isa = PBXGroup;
 			children = (
-				5FDA12391C2157E200BF0363 /* MathysSurveyTask.swift */,
 				5FDA12401C21602600BF0363 /* SleepSurveyTask.swift */,
 				32FEEE6F1C215D7E0027F894 /* TaskListRow.swift */,
 				5F2F24471CE1F91100BBA362 /* NoInternetConnectionStep.swift */,
@@ -441,7 +438,6 @@
 				5F837C601C3C067B008C3DB4 /* SetUpViewController.swift in Sources */,
 				329EACA81C22A8D5008B0038 /* Identifier.swift in Sources */,
 				5F2F244E1CE1F93D00BBA362 /* NoInternetConnectionViewController.swift in Sources */,
-				5FDA123A1C2157E200BF0363 /* MathysSurveyTask.swift in Sources */,
 				5FDA12411C21602600BF0363 /* SleepSurveyTask.swift in Sources */,
 				32792D5B1CE37E34002BD711 /* DateExtensions.swift in Sources */,
 				32DD5E351C29BB12002CB02A /* InformationPageContentViewController.swift in Sources */,

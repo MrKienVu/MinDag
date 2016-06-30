@@ -1,11 +1,3 @@
-//
-//  Identifier.swift
-//  Mathys
-//
-//  Created by Paul Philip Mitchell on 17/12/15.
-//  Copyright © 2015 Universitetet i Oslo. All rights reserved.
-//
-
 import Foundation
 enum Identifier: String {
     
@@ -16,15 +8,6 @@ enum Identifier: String {
     case SleepQualityStep =      "SleepQuality"
     case SleepCompletionStep =   "SleepCompletionStep"
     
-    // Mathys Survey
-    case MathysTask =             "MathysTask"
-    case MathysInstructionStep =  "MathysInstructionStep"
-    case ScaleQuestion =          "ScaleQuestion"
-    case MathysIntermediateStep = "MathysIntermediateStep"
-    case TextChoiceQuestion =     "TextChoiceQuestion"
-    case TextQuestionStep =       "TextQuestionStep"
-    case MathysCompletionStep =   "MathysCompletionStep"
     case WaitCompletionStep =     "WaitCompletionStep"
-    
     case noInternetStep =         "NoInternetStep"
 }
