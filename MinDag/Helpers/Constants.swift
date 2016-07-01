@@ -20,6 +20,7 @@ struct UserDefaultKey {
     static let StudyID = "StudyID"
     static let NotificationsEnabled = "NotificationsEnabled"
     static let CompletedOnboarding = "CompletedOnboarding"
+    static let testModeEnabled = "TestModeEnabled"
 }
 
 struct Encrypted {

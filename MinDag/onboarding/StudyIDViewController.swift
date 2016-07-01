@@ -81,8 +81,11 @@ class StudyIDViewController: UIViewController, UITextFieldDelegate {
     }
     
     func validateTextFields() -> Bool {
-        return (validateId(idTextField.text!, letters: 1) || validateId(repeatIdTextField.text!, letters: 2)) &&
-                idTextField.text == repeatIdTextField.text
+        let testModeEnabled = repeatIdTextField.text?.lowercaseString == "test"
+        UserDefaults.setBool(testModeEnabled, forKey: UserDefaultKey.testModeEnabled)
+        return testModeEnabled ||
+                (validateId(idTextField.text!, letters: 1) || validateId(repeatIdTextField.text!, letters: 2)) &&
+                 idTextField.text == repeatIdTextField.text
     }
     
     func animateEqualTextfields() {
