@@ -25,12 +25,20 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    func showAlert(){
-        let alertController = UIAlertController(title: "INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, preferredStyle: .Alert)
+    func createAlertController(title: String, message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(defaultAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        return alertController
+    }
+    
+    func showAlert(title: String, message: String) {
+        presentViewController(createAlertController(title, message: message), animated: true, completion: nil)
+    }
+    
+    func showAlert(title: String, message: String, taskViewController: ORKTaskViewController) {
+        taskViewController.presentViewController(createAlertController(title, message: message), animated: true, completion: nil)
     }
     
     // MARK: UITableViewDataSource
@@ -57,7 +65,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if !Reachability.isConnected() { showAlert() }
+        if !Reachability.isConnected() { showAlert("INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized) }
         
         // Present the task view controller that the user asked for.
         let taskListRow = taskListRows[indexPath.row]
@@ -150,11 +158,18 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
             stepViewController.cancelButtonItem = nil
             delay(2.0, closure: { () -> () in
                 if let stepViewController = stepViewController as? ORKWaitStepViewController {
-                    stepViewController.goForward()
+                    if Reachability.isConnected() {
+                        stepViewController.goForward()
+                    } else {
+                        stepViewController.goBackward()
+                        self.showAlert("INTERNET_UNAVAILABLE_TITLE".localized, message: "INTERNET_UNAVAILABLE_TEXT".localized, taskViewController: taskViewController)
+                    }
                 }
             })
         }
     }
+    
+    
     
     func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
         /*
@@ -187,7 +202,7 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
                     }
                 }
             }
-            Nettskjema.submit(hoursOfSleep, quality: sleepQuality, time: answerTime!)
+            Nettskjema.submit(hoursOfSleep, quality: sleepQuality, time: answerTime!, onFailure: { self.showAlert("UPLOAD_REQUEST_FAILED_TITLE".localized, message: "UPLOAD_REQUEST_FAILED_TEXT".localized, taskViewController: taskViewController) })
         }
         
         
