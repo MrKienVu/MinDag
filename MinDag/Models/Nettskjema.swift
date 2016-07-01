@@ -115,7 +115,7 @@ class Nettskjema {
         }
     }
     
-    private class func post(valueAdder: (MultipartFormData) -> Void, time: NSDate, csrf: String) {
+    private class func post(valueAdder: (MultipartFormData) -> Void, time: NSDate, csrf: String, onFailure: () -> Void) {
         Alamofire.upload(
             .POST,
             deliveryBaseUrl + form.formId,
@@ -132,37 +132,46 @@ class Nettskjema {
                 switch encodingResult {
                 case .Success(let upload, _, _):
                     upload.responseString { response in
-                        print(response)
+                        if String(response).containsString("failure") {
+                            onFailure()
+                            handleNettskjemaError(response)
+                        }
                         NSLog("Upload success. Status code: \(response.response?.statusCode)")
                     }
                 case .Failure(let encodingError):
+                    onFailure()
                     NSLog("Upload failed. Error: \(encodingError)")
                 }
         })
     }
     
-    private class func submit(using dataAdder: (MultipartFormData) -> Void, time: NSDate) {
+    private class func handleNettskjemaError(response: Response<String, NSError>) {
+        NSLog(response.debugDescription)
+        fatalError()
+    }
+    
+    private class func submit(using dataAdder: (MultipartFormData) -> Void, time: NSDate, onFailure: () -> Void) {
         getCsrfToken { (data, error) in
             if let token = data {
-                self.post(dataAdder, time: time, csrf: token)
+                self.post(dataAdder, time: time, csrf: token, onFailure: onFailure)
             } else {
+                onFailure()
                 NSLog("Failed to get CSRF token with error: \(error!)")
             }
         }
     }
     
-    private class func submit(sleep hours: String?, quality: String?, time: NSDate) {
+    private class func submit(sleep hours: String?, quality: String?, time: NSDate, onFailure: () -> Void) {
         submit(using: { data in
             if let hoursValue = hours { data.addString(hoursValue, field: form.hoursSlept) }
             if let qualityValue = quality { data.addString(qualityValue, field: form.sleepQuality) }
             },
-               time: time)
+               time: time, onFailure: onFailure)
     }
     
-    class func submit(hours: Int?, quality: Int?, time: NSDate) {
-        submit(sleep: hours != nil ? form.hoursSleptOptions[hours!] : nil, quality: quality != nil ? String(quality!) : nil, time: time)
-    }
-    
+    class func submit(hours: Int?, quality: Int?, time: NSDate, onFailure: () -> Void) {
+        submit(sleep: hours != nil ? form.hoursSleptOptions[hours!] : nil, quality: quality != nil ? String(quality!) : nil, time: time, onFailure: onFailure)
+    }    
 }
 
 
