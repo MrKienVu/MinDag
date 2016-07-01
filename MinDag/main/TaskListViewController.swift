@@ -1,13 +1,23 @@
 import UIKit
 import ResearchKit
 
+private let dailyFormIndex = 0
+
+private extension NSDate {
+    func isBeforeToday() -> Bool {
+        let midnight = NSCalendar.currentCalendar().dateBySettingHour(
+            0, minute: 0, second: 0, ofDate: NSDate(), options: NSCalendarOptions())!
+        return self.timeIntervalSinceDate(midnight) <= 0
+    }
+}
+
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsIcon: UIBarButtonItem!
     
     let taskListRows = TaskListRow.allCases
-    let taskIcons = ["crescentmoon"]
+    let dailyFormIcon = "crescentmoon"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +32,31 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Register custom cell
         let nib = UINib(nibName: "TaskTableViewCellView", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Default")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.viewWillEnterForeground), name: UIApplicationWillEnterForegroundNotification, object: UIApplication.sharedApplication())
+        tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func viewWillEnterForeground() {
+        tableView.reloadData()
+    }
+    
+    func taskDisabled(taskIndex: Int) -> Bool {
+        return taskIndex == dailyFormIndex ? !dailyFormAvailable() : false
+    }
+    
+    func dailyFormAvailable() -> Bool {
+        if let lastDeliveryTime = UserDefaults.valueForKey(UserDefaultKey.lastDailyFormTime) as? NSDate {
+            return lastDeliveryTime.isBeforeToday()
+        }
         
+        return true
     }
     
     func createAlertController(title: String, message: String) -> UIAlertController {
@@ -52,7 +86,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let taskListRow = taskListRows[indexPath.row]
         
         cell.titleLabel.text = "\(taskListRow)"
-        cell.iconLabel.text = taskIcons[indexPath.row]
+        cell.iconLabel.text = dailyFormIcon
+        
+        if taskDisabled(indexPath.row) {
+            cell.iconLabel.textColor = Color.disabledColor
+            cell.userInteractionEnabled = false
+        } else {
+            cell.iconLabel.textColor = Color.primaryColor
+            cell.userInteractionEnabled = true
+        }
         
         return cell
     }
@@ -202,9 +244,10 @@ extension TaskListViewController: ORKTaskViewControllerDelegate {
                     }
                 }
             }
+
+            UserDefaults.setObject(answerTime!, forKey: UserDefaultKey.lastDailyFormTime)
             Nettskjema.submit(hoursOfSleep, quality: sleepQuality, time: answerTime!, onFailure: { self.showAlert("UPLOAD_REQUEST_FAILED_TITLE".localized, message: "UPLOAD_REQUEST_FAILED_TEXT".localized, taskViewController: taskViewController) })
         }
-        
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
