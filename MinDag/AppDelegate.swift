@@ -1,5 +1,8 @@
 import UIKit
 import ResearchKit
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             handleNotificationTap(userInfo);
         }
-        
+        Fabric.with([Crashlytics.self])
         return true
     }
     
